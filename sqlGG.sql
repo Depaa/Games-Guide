@@ -2,28 +2,31 @@ create table `Admin`
 (
 	`Nickname` varchar(16) not null unique,
     `Password` varchar(16) not null,
+    `Nome` varchar(20) not null,
+    `Cognome` varchar(20) not null,
     `CodFiscale` varchar(16) not null unique,
     `DataNascita` date not null,
-    `Email` varchar(20) not null unique,
+    `Email` varchar(32) not null unique,
+    
     
     primary key(`Nickname`)
 )
 
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-insert into `Admin` (`Nickname`, `Password`, `CodFiscale`, `DataNascita`, `Email`)
-values ('admin', 'admin', 'DMNDMN95R01C743Q', '1995-10-01', 'admin@admin.admin'),
-('Peachka', 'ciaone', 'FNELCU95H70B745B', '1995-06-30', 'lucia.fenu95@gmail.com'),
-('Aiolos', '123qwerty789', 'PTTGMR95M20C743Y', '1995-08-20', 'gian82095@gmail.com'),
-('Gionny-Atlas', '0987654321', 'BTTFRC94R01C743T', '1994-10-01', 'frabat@icloud.com'),
-('Depaa', 'asdfghjkl', 'DPSMTT95M20C743A', '1995-08-20', 'depascale.matteo@gmail.com');
+insert into `Admin` (`Nickname`, `Password`, `Nome`, `Cognome`, `CodFiscale`, `DataNascita`, `Email`)
+values ('admin', 'admin', 'admin', 'admin', 'DMNDMN95R01C743Q', '1995-10-01', 'admin@admin.admin'),
+('Peachka', 'ciaone', 'Lucia', 'Fenu', 'FNELCU95H70B745B', '1995-06-30', 'lucia.fenu95@gmail.com'),
+('Aiolos', '123qwerty789', 'Gianmarco', 'Pettenuzzo', 'PTTGMR95M20C743Y', '1995-08-20', 'gian82095@gmail.com'),
+('Gionny-Atlas', '0987654321', 'Francesco', 'Battistella', 'BTTFRC94R01C743T', '1994-10-01', 'frabat@icloud.com'),
+('Depaa', 'asdfghjkl', 'Matteo', 'Depascale', 'DPSMTT95M20C743A', '1995-08-20', 'depascale.matteo@gmail.com');
 
 create table `Notizia`
 (
 	`DataPubblicazione` date not null,
 	`Titolo` varchar(144) not null unique,
     `AdminNick` varchar(16) not null,
-    `Testo` varchar(5000) not null,
+    `Testo` varchar(8192) not null,
     `XboxOne` int(1),
     `Xbox360` int(1),
     `NintendoDS` int(1),
@@ -73,7 +76,7 @@ create table `User`
     `Cognome` varchar(20) not null,
     `Password` varchar(10) not null,
     `DataNascita` date not null,
-    `Email` varchar(20) not null unique,
+    `Email` varchar(32) not null unique,
     
     primary key (`Nickname`)
 )
@@ -86,12 +89,17 @@ values ('user', 'user', 'user', 'user', '01-10-1995', 'user@user.user'),
 ('Mmasier', 'Marco', 'Masiero', 'Chubby', '1996-09-09','marcmasi@icloud.com'),
 ('Snordio', 'Stefano', 'Nordio', 'Chioggia4ever', '1995-06-15', 'steno996@gmail.com'),
 ('Drakex94', 'Francesco', 'Sacchetto', 'helpme', '1994-12-19', 'frasack94@gmail.com'),
-('DarkWarrior', 'Francesco', 'Pecile', 'pecpecpec', '1996-12-09', 'frapec96@gmail.com');
+('DarkWarrior', 'Francesco', 'Pecile', 'pecpecpec', '1996-12-09', 'frapec96@gmail.com'),
+('Peachka', 'Lucia', 'Fenu', 'ciaone', '1995-06-30', 'lucia.fenu95@gmail.com'),
+('Aiolos', 'Gianmarco', 'Pettenuzzo', '123qwerty789', '1995-08-20', 'gian82095@gmail.com'),
+('Gionny-Atlas', 'Francesco', 'Battistella', '0987654321', '1994-10-01', 'frabat@icloud.com'),
+('Depaa', 'Matteo', 'Depascale', 'asdfghjkl', '1995-08-20', 'depascale.matteo@gmail.com');
+
 
 create table `Valutazione`
 (
 	`Voto` int not null,
-    `NomeGioco` varchar(100) not null,
+    `NomeGioco` varchar(144) not null,
     `UserNick` varchar(16) not null unique,
     
     primary key (`NomeGioco`, `UserNick`),
@@ -135,7 +143,7 @@ Parlando di differenze, questi sono i principali tipi di gare: Corsa: Gara class
 Le Speed Card si ricevono alla fine di una gara, si comprano in officina oppure si trovano in una "consegna", una specie di pacchetto ricompense che viene assegnato o ottenibile accumulando stelle delle varie attività. Da segnalare si possono ottenere pacchetti anche comprandoli – realmente però, non con crediti di gioco! Insomma, sono riusciti a microtransazioni perfino in Need For Speed. Non c''è da dannarsi, però: con un po'' di grinding selvaggio si risolvono tutti i problemi di crediti. Se con le Speed Card si perde un punto, lo si riguadagna quando si parla di modifiche estetiche: cofano, cerchi, dischi dei freni e alette sul paraurti anteriore, insomma ogni singolo aspetto della macchina è personalizzabile, soprattutto per quanto riguarda le aerografie. Il gioco utilizza un sistema che ricorda molto i livelli di photoshop, posizionabili e scalabili liberamente, su ogni punto della carrozzeria. 
 Sta solo alla creatività del giocatore! Su PS4 si ha un ottima resa visiva. Need For Speed: Payback, grazie all''ottimo motore grafico, offre delle viste mozzafiato. Non ci sono frame drop da segnalare, il gioco mantiene i 30 Frame al Secondo praticamente sempre, anche in gare fuoristrada dove gli effetti sono tanti. Il tutto senza casi di aliasing eclatanti. Le uniche situazioni in cui una PS4 standard si affanna sono le gare notturne in fuoristrada. Con l''illuminazione e il terreno ricco di particolari, la GPU sembra un po'' sotto stress. Il mondo aperto ed esplorabile nel gioco è una delle introduzioni più gradite: la mappa è molto vasta, con ogni tipo di pista – questo causa qualche piccolo glitch – ma nulla di esagerato. Le piste in cui si svolgono le gare sono pezzi della mappa in cui si guida liberamente, dai deserti, in grande numero, alle montagne, per finire anche città. 
 Ovviamente, ma c''è qualcosa che manca, un qualcosa che per i fan delle corse fa la differenza: la visuale interna del veicolo. Inoltre, i danni al veicolo sono solo estetici, non influiscono sulle prestazioni del mezzo e per di più basta passare da un benzinaio per far sparire tutto. Ci sono alcuni dettagli che bisogna valorizzare, come lo sporco sull''auto – dopo un po'' di offroad il veicolo è così sporco che vi vien la voglia di scriverci "Lavami" sul lunotto posteriore –  oppure la modalità foto, dove potrete fermare il tempo per scattare una foto del vostro gioiellino da una qualsiasi angolazione, in qualsiasi situazione. Inoltre la radio ha diversi generi, che spaziano dal hip hop al rock, con diversi bei brani. Peccato, però, che la radio non si possa spegnere per godersi il rombo del motore. È un ottimo gioco, molto divertente. Siamo di fronte ad un erede dei cari e vecchi Need For Speed Undergound. Ci sono delle differenze, come ovvio che sia, ma rimane comunque un titolo che vi terrà impegnati per del tempo.',
-'30-11-2017');
+'2017-11-30');
 
 create table `CommentiRecensione` (
   `TitoloRec` varchar (144) not null unique,
@@ -149,3 +157,28 @@ create table `CommentiRecensione` (
 )
 
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+insert into `CommentiRecensiome` (`TitoloRec`, `Data`, `Ora`, `UserNick`, `Commento`)
+values('Need For Speed Payback – La vendetta è servita', '2017-11-30', '10:30:00', 'Nikocister',
+'molto bella la grafica, ho perso un semestre a causa di questo gioco'
+);
+
+
+/*
+
+query:
+- mostrare in ordine di data & ora i commenti di un utente
+- mostrare in ordine di data le news
+- mostrare in ordine di data le recensioni
+- mostrare giochi scelti per piattaforma
+- mostrare news scelte per piattaforma
+- mostrare giochi scelti per genere
+- mostrare giochi scelti per valutazione
+
+
+trigger:
+- dopo ogni valutazione, aggiornare la valutazione del gioco
+- aggiornare database dopo ogni registrazione al sito
+- aggiornare database dopo ogni commento inserito dall'utente
+
+*/
