@@ -4,7 +4,7 @@ create table `Admin`
     `Password` varchar(16) not null,
     `Nome` varchar(20) not null,
     `Cognome` varchar(20) not null,
-    `CodFiscale` varchar(16) not null unique,
+    `CodFiscale` char(16) not null unique,
     `DataNascita` date not null,
     `Email` varchar(32) not null unique,
     
