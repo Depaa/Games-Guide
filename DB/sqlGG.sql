@@ -155,7 +155,7 @@ insert into `Valutazione` (`UserNick`, `NomeGioco`, `Voto`) values
 ('Drakex94', 'Super Mario Odissey' , 4), 
 ('DarkWarrior', 'Call of Duty: World War II' , 1),
 ('Nikocister', 'Need For Speed: Payback' , 4), 
-('Mmasier', 'Assassin''s Creed: Brotherhood' , 3), 
+('Mmasier', 'Assassin''s Creed: Brotherhood' , 4), 
 ('Snordio', 'Clash of Clans' , 5), 
 ('Drakex94', 'The Sims 3' , 4), 
 ('DarkWarrior', 'Crash Bandicoot: N.Sane Trilogy', 1),
