@@ -203,7 +203,7 @@ create table `Giochi` (
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`,`Valutazione`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `PC`, `iOS`, `Android`) values (`Need For Speed Payback`, 2017-11-10, `Race`, `Action`, null, 12, null, 0,1,0,1,0,0,1,0,0),
-       ('Assassin''s Creed Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null,1,1,1,1,0,0,1,0,0),
+       ('Assassin''s Creed: Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null,1,1,1,1,0,0,1,0,0),
        ('Call of Duty: World War II', '2017-11-03', 'FPS', 'Action', null, 18, null, 0,1,0,1,0,0,1,0,0),
        ('The Legend of Zelda: A Link between worlds', '2013-11-22', 'Adventure','RPG', null, 12, null, 0,0,0,0,1,0,0,0,0),
        ('Outlast II', '2017-04-25', 'Horror', 'Action', null, 18, null, 0,1,0,1,0,0,1,0,0),
