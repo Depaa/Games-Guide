@@ -111,16 +111,16 @@ ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 insert into `Valutazione` (`UserNick`, `NomeGioco`, `Voto`)
 values ('Nikocister', 'Outlast II' , 4), 
-('Mmasier', 'FIFA18' , 3), 
-('Snordio', 'The Legend Of Zelda - Link Between World' , 5), 
-('Drakex94', 'Mario Odissey' , 4), 
-('DarkWarrior', 'Call of Duty - World War II' , 1),
-('Nikocister', 'Need For Speed - Payback' , 4), 
-('Mmasier', 'Assassin''s Creed - Brotherhood' , 3), 
-('Snordio', 'Clash Of Clans' , 5), 
-('Drakex94', 'The Sims III' , 4), 
-('DarkWarrior', 'Crash - Trilogy', 1),
-('DarkWarrior', 'Mortal Combat V', 5);
+('Mmasier', 'FIFA 18' , 3), 
+('Snordio', 'The Legend of Zelda: A Link between world' , 5), 
+('Drakex94', 'Super Mario Odissey' , 4), 
+('DarkWarrior', 'Call of Duty: World War II' , 1),
+('Nikocister', 'Need For Speed: Payback' , 4), 
+('Mmasier', 'Assassin''s Creed: Brotherhood' , 3), 
+('Snordio', 'Clash of Clans' , 5), 
+('Drakex94', 'The Sims 3' , 4), 
+('DarkWarrior', 'Crash Bandicoot: N.Sane Trilogy', 1),
+('DarkWarrior', 'Mortal Combat X', 5);
 
 create table `Recensione` 
 (
@@ -211,8 +211,8 @@ ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`,`Valutazione`, 
 				`Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `PC`, `iOS`, `Android`)
-values ('Need For Speed Payback', '2017-11-10', 'Race', 'Action', null, 12, null, 0,1,0,1,0,0,1,0,0),
-       ('Assassin''s Creed Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null,1,1,1,1,0,0,1,0,0),
+values ('Need For Speed: Payback', '2017-11-10', 'Race', 'Action', null, 12, null, 0,1,0,1,0,0,1,0,0),
+       ('Assassin''s Creed: Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null,1,1,1,1,0,0,1,0,0),
        ('Call of Duty: World War II', '2017-11-03', 'FPS', 'Action', null, 18, null, 0,1,0,1,0,0,1,0,0),
        ('The Legend of Zelda: A Link between worlds', '2013-11-22', 'Adventure','RPG', null, 7, null, 0,0,0,0,1,0,0,0,0),
        ('Outlast II', '2017-04-25', 'Horror', 'Action', null, 18, null, 0,1,0,1,0,0,1,0,0),
