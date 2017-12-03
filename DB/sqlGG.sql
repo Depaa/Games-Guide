@@ -1,3 +1,5 @@
+/*AGGIORNATO 03/12 14.00*/
+
 create table `Admin`
 (
 	`Nickname` varchar(16) not null unique,
