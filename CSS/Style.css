@@ -1,103 +1,108 @@
 /*STYLE*/
 
-.container {
-    position: relative; 
-    max-width: 35%; /* Maximum width */
-    margin: 0 auto; /* Center it */
-}
-
-#ACO {
-	width: 100%;
-}
-
-.container .content {
-    position: absolute; /* Position the background text */
-    bottom: 0.2em; /* At the bottom. Use top:0 to append it to the top */
-    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
-    width: 100%; /* Full width */
-    padding: 0.1px; /* Some padding */
-}
-
+/***************************************************BODY MENU***************************************************/
 /* Navbar container */
 .navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
+	/*position: sticky*/ /*permette di avere la barra del menu fissata in alto dopo lo scroll*/
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial;
 }
 
 /* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.navbar a {	/*in logo, ricerca, login*/
+	float: left;
+	font-size: 100%;
+	color: white;
+	text-align: center;
+	padding: 1em 0.5em 1em 0.5em;
+	text-decoration: none;
 }
 
 /* The dropdown container */
 .dropdown {
-  float: left;
-  overflow: hidden;
+	float: left;
+	overflow: hidden;
 }
 
 /* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px; 
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
+.dropdown .dropbtn {	/*in notizie, recensioni, videogiochi*/
+	font-size: 100%; 
+	border: none;
+	outline: none;
+	color: white;
+	padding: 1em 0.5em 1em 0.5em;
+	background-color: inherit;
 }
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+	background-color: red;
+}
+
+.dropdown-content-newsrev {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 5%;	/*cambio la grandezza della finestra del contenuto di news&rev*/
+	box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+	z-index: 1; /*type of layer*/
+}
+
+.dropdown-content-newsrev a {
+	float: none;
+	color: black;
+	padding: 0.5em 0.5em 0.5em 0.5em;	/*cambiare quando vanno le immagini*/
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content-newsrev a:hover {
+	background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content-newsrev {
+	display: block;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 100%;
-  left: 0;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 20%;	/*cambio la grandezza della finestra del contenuto di news&rev*/
+	left: 0;
+	box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+	z-index: 1; /*type of layer*/
 }
 
-/* Mega Menu header, if needed */
-.dropdown-content .header {
-  background: blue;
-  padding: 16px;
-  color: white;
-  display: none;
-}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 
 /* Create three equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  background-color: #ccc;
-  height: 250px;
+	float: left;
+	width: 33.33%;
+	padding: 1em;
+	background-color: #ccc;
+	height: 13em;
 }
 
 /* Style links inside the columns */
 .column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+	float: none;
+	color: black;
+	padding: 0.5em;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
 
 /* Add a background color on hover */
@@ -107,7 +112,35 @@
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
+
+/***************************************************BODY HOME***************************************************/
+
+.images {
+    position: relative; 
+    max-width: 50%; /* Maximum width */
+    margin: 0 auto; /* Center it */
+	
+	display: none;
+}
+
+#ACO {	/*immagine assassin's creed*/
+	width: 100%;
+	
+	display:none;
+}
+
+.images .images_description {
+    position: absolute; /* Position the background text */
+    bottom: 0.2em; /* At the bottom. Use top:0 to append it to the top */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 0.1px; /* Some padding */
+	
+	display: none;
+}
+
