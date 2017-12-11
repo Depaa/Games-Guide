@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+.navbar a {
+    float: left;
+    font-size: 120%;
+    color: white;
+    text-align: center;
+    padding: .75em .75em .75em .75em;	
+    text-decoration: none;
+	
+	
+	margin-left: 10%;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 120%;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em;
+    background-color: inherit;
+	font-weight: bold;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+	color: black;
+	
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white; /*do not use #f9f9f9*/ /*inherit*/
+    width: 100%;
+    left: 0;
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+    z-index: 1;
+	text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Create equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 20%;
+    padding: 0em 0em 0.5em 0em;
+    background-color: #ffffff;
+    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 13.5em*/
+	font-size: 120%;
+}
+
+.column a {
+    float: none;
+	text-align: center;
+    color: black;
+	margin-left: 0em;
+    padding: 0.5em 0em 0.25em 0em;
+    text-decoration: none;
+    display: block;
+	
+	
+	font-size: 100%;
+}
+
+.column a:hover {
+    background-color: #333;
+	color: white;
+}
+
+#top4 {
+	display: block;
+	max-width: 90%;
+	margin: auto;
+	
+	margin-top: 7.5%;
+	
+    display: flex;
+	
+	/*immagini ridimensionate a mano, chiedere perchè non va bene*/
+	
+	/*NOTA BENE: IMMAGINI
+		1920x1080
+	*/
+	
+}
+
+#top4:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);	/*per fare il contorno alle immagini*/
+}
+
+.polaroid {
+    float: left;
+    width: 20%;
+    padding: 0em;
+    background-color: #ffffff;
+    height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
+
+	
+}
+
+.container{
+	text-align: center;
+	max-width: 90%;
+	margin: auto;
+	
+	font-weight: bold;
+}
+
+.search {
+	color: white;
+	font-size: 120%;
+	font-style: italic;
+	border-left:1px solid white;
+	border-right:1px solid white;
+	white-space: nowrap;
+	vertical-align: middle;
+	
+	
+	
+}
+
+.search .icon {
+	float:left;
+	/*top: 50%;*/
+	margin-top: 0.75em;
+	z-index: 1;
+	
+	margin-left: 8%;/*margine per spostarlo infondo al menu*/
+	
+}
+
+.search input[type=text] {
+	width: 10%;
+    box-sizing: border-box;
+	padding: .75em .75em .75em .75em;
+    border: none;
+    font-size: 100%;
+    background-color: inherit;
+	color: white;
+	/*così Log in sta a sx*/
+	
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	/*margine per spostarlo infondo al menu*/
+	
+	
+
+}
+
+.search input::placeholder {	/*coloro di bianco il Cerca...*/
+	color: white;
+	font-size: 100%;
+	font-style: italic;
+}
+
+.search input[type=text]:focus {
+    width: 20%;
+	font-style: italic;
+	color: white;
+	outline: none; /*tolto il riquadro orrendo blu*/
+	
+}
+
+#login { /*se uso il fa fa login dovrei fare molto prima, se esiste*/
+	/*display: block;
+	width: 2.5%;
+	margin-left: 95.5%;*/	/*così lo metto in fondo a dx*/ /*NB lascio 2% spazio*/
+	
+	/*height: auto;
+    display: flex;*/
+}
+
+#GOW {
+	display: block;
+	width: 100%;
+	
+}
+/* VIDEOGIOCHI */ 
+.filtro {
+	margin: 0% 90% 0% 0%;
+	padding-left: 0%;
+	border-right: 1px solid #333;
+}
+
+.filtro h5 {
+	text-align: left;
+	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
+	color: #333;
+	padding-left: 15%;
+}
+.elenco {
+	display:block;
+    position: relative;
+	padding: 0% 0% 5% 20%; /*sposta le righe (cerchio + parole)*/
+	margin-right: 0%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    font-size: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.elenco input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+	display: block;
+    position: absolute;
+    top: 0.15em;  /*centra il cerchio allinea con le parole*/
+    left: 8%;
+    height: 0.7em;/* grandezze cerchio*/
+    width: 0.7em;
+    background-color: #ccc; /*colore normale*/
+    border-radius: 35%;
+}
+
+.elenco:hover input ~ .checkmark {
+    background-color: #eee;   /*colore quando vado sopra il cerchio*/
+}
+
+.elenco input:checked ~ .checkmark {
+    background-color: #333; /*colore quando clicco sul cerchio*/
+}
+
+.piattaforme {
+	margin-bottom: 0.7em;
+}
+.piattaforme h4 {
+	padding-left: 8%;
+	padding-top: 10%;
+	margin-top: 0%;
+	color: #333;
+}
+.generi {
+	border-top: 1px solid #333;
+}
+.generi h4{
+	padding-left: 8%;
+	padding-top: 10%;
+	margin-top: 0%;
+	color: #333;
+}
+
