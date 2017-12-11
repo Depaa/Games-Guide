@@ -164,7 +164,8 @@ body {
 	
 	margin-left: 5.5%;/*margine per spostarlo infondo al menu*/
 
-	border-left: 2px solid white;
+	/*border-left: 2px solid white;*/
+	border-right: 2px solid white;
 
 }
 
@@ -184,7 +185,14 @@ body {
 	
 }
 
+.login .icon{
+	width: 200%;
+	
+	position: absolute;
+}
+
 #login { /*se uso il fa fa login dovrei fare molto prima, se esiste*/
+	
 	/*display: block;
 	width: 2.5%;
 	margin-left: 95.5%;*/	/*così lo metto in fondo a dx*/ /*NB lascio 2% spazio*/
