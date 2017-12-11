@@ -48,12 +48,11 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: inherit; /*do not use #f9f9f9*/
+    background-color: white; /*do not use #f9f9f9*/ /*inherit*/
     width: 100%;
     left: 0;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
     z-index: 1;
-	
 	text-align: center;
 }
 
@@ -65,22 +64,23 @@ body {
 .column {
     float: left;
     width: 20%;
-    padding: 0em;
+    padding: 0em 0em 0.5em 0em;
     background-color: #ffffff;
     height: 100%;	/*da controllare come sistemare la %*/ /*prima era 13.5em*/
-	
-	
-
+	font-size: 120%;
 }
 
 .column a {
     float: none;
-	
+	text-align: center;
     color: black;
+	margin-left: 0em;
     padding: 0.5em 0em 0.25em 0em;
     text-decoration: none;
     display: block;
 	
+	
+	font-size: 100%;
 }
 
 .column a:hover {
@@ -132,9 +132,9 @@ body {
 	font-size: 120%;
 	font-style: italic;
 	
-	/*white-space: nowrap;
+	white-space: nowrap;
 	vertical-align: middle;
-	position: relative;*/
+	position: relative;
 	
 	
 }
@@ -155,18 +155,17 @@ body {
 	padding: .75em .75em .75em .75em;
     border: none;
     font-size: 100%;
-	
     background-color: inherit;
 	color: white;
-	
 	float: left; /*così Log in sta a sx*/
 	
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 	
-	
-	
 	margin-left: 5.5%;/*margine per spostarlo infondo al menu*/
+
+	border-left: 2px solid white;
+
 }
 
 .search input::placeholder {	/*coloro di bianco il Cerca...*/
@@ -192,4 +191,10 @@ body {
 	
 	/*height: auto;
     display: flex;*/
+}
+
+#GOW {
+	display: block;
+	width: 100%;
+	
 }
