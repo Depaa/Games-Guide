@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+	background:url(http://ilovehdwallpapers.com/thumbs/simple-one-color-grey-background-t2.jpg); 
+	background-size: 100%;
 }
 
 .navbar {
@@ -32,7 +34,7 @@ body {
 	border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em 1.5em .75em 0em;
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -48,7 +50,7 @@ body {
     border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em 1.5em .75em 1.5em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -69,7 +71,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     background-color: white; /*do not use #f9f9f9*/ /*oscuro signore*/
     width: 100%;
     left: 0;
-    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: center;
 }
@@ -149,7 +151,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em 0em .75em 1.5em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -160,7 +162,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: absolute;
     background-color: white;
     width: 10%;
-    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: center;
 	margin: 0;
@@ -207,8 +209,40 @@ label {
 }
 
 /*********************************CONTENUTO HOME PAGE*********************************/
-.imgeff img {
-	display: block;
-	width: 100%;
+/* Slideshow container */
+.pagecontent {
+	top:0;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
+.slides-content {
+	max-width: 100%;
+	position: relative;
+	padding-top: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	overflow: hidden;
+}
+
+.mySlides {
+	display:none
+	position: relative;
+	margin: 0;
+}
+
+.mySlides img {
+	max-width: 100%;
+	margin-bottom: -1%; /*viene fuori il bordo sotto, va tolto*/
+}
+
+.mySlides .textslide {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+	color: #ffffff;
+	width: 100%;
+	padding: 0% 1% 0% 1%;
+}
