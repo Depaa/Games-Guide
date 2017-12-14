@@ -156,7 +156,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .dropdown-content-login {
-	/*display: none;*/
+	display: none;
 	position: absolute;
     background-color: white;
     width: 10%;
@@ -191,6 +191,17 @@ label {
 }
 
 .loginbtn {
+    background-color: #333;
+    color: white;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 1% 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	color: white;
+}
+
+.signinbtn {
     background-color: #333;
     color: white;
     padding: 3% 1.5% 3% 1.5%;
