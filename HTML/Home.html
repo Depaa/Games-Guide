@@ -12,7 +12,8 @@
 		
 		<!--serve per mettere icone carine -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+		
+		<!--<meta http-equiv="refresh" content="3" />-->
 		
 	</head>
 	
@@ -169,11 +170,69 @@
 				</div>
 			</div>
 		</div>
+		
 
-		<div class="imgeff">
-			<img src="C:\Users\matteo\Desktop\GamesGuide\IMG\GOW4.jpg" alt="GOW4"/>
-			<img src="C:\Users\matteo\Desktop\GamesGuide\IMG\GOW4.jpg" alt="GOW4"/>
+		<div class="pagecontent">
+			<div class="slides-content">
+				<div class="mySlides">
+					<img src="C:\Users\matteo\Desktop\GamesGuide\IMG\XboxOneX.jpg" alt="XboxOneX"/>
+					<div class="textslide">
+						<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
+					</div>
+				</div>
+
+				<div class="mySlides">
+					<img src="C:\Users\matteo\Desktop\GamesGuide\IMG\GOW4.jpg" alt="XboxOneX"/>
+					<div class="textslide">
+						<h1>GOD OF WAR: KRATOS IS BACK OMGOMGOMGOMGOMG NON VEDO L'ORA MI COMPRO UNA PS4 PER QUESTO GIOCO SICURO</h1>
+					</div>
+				</div>
+
+				<div class="mySlides">
+					<img src="C:\Users\matteo\Desktop\GamesGuide\IMG\alexaecho.jpg" alt="XboxOneX"/>
+					<div class="textslide">
+					<h1>ALEXA ECHO: RISSA SULLE STRADE PER IL BEST SITO EVER</h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="dottod">
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+				<span class="dot"></span> 
+			</div>
+			
+			
+			<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
+			<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
 		</div>
+		
+		
+			
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+			   slides[i].style.display = "none";  
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}    
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+				setTimeout(showSlides, 500000); // Change image every 2 seconds
+			}
+		</script>
+		
+		
+
 	</body>
 </html>
 <!--
