@@ -10,18 +10,10 @@ body {
     overflow: hidden;
     background-color: #333;
     font-family: Arial;
-}
-
-.navbar a {
-    float: left;
-    font-size: 120%;
-    color: white;
-    text-align: center;
-    padding: .75em .75em .75em .75em;	
-    text-decoration: none;
-	
-	
-	margin-left: 10%;
+	/*menu fisso ma non va il dropdown*/
+	/*position: sticky; 
+	top: 0%;
+	z-index: 1;*/
 }
 
 .dropdown {
@@ -29,26 +21,52 @@ body {
     overflow: hidden;
 }
 
+.dropdownlogo {
+    float: left;
+    overflow: hidden;
+	margin-left:10%;
+}
+
+.dropdownlogo .dropbtnlogo {
+    font-size: 120%;    
+	border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
+}
+
+.dropbtnlogo a:link, .dropbtnlogo a:visited {
+	text-decoration: none;
+	color: white;
+}
+
 .dropdown .dropbtn {
     font-size: 120%;    
     border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em;
-    background-color: inherit;
+    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
 	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {	/*occhio questo fa hover su tutti i link di dropbtn*/
     background-color: white;
 	color: black;
-	
+}
+
+i.fa.fa-caret-down { /*metto padding a freccetta*/
+	padding-left: 0.5em;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white; /*do not use #f9f9f9*/ /*inherit*/
+    background-color: white; /*do not use #f9f9f9*/ /*oscuro signore*/
     width: 100%;
     left: 0;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
@@ -75,11 +93,9 @@ body {
 	text-align: center;
     color: black;
 	margin-left: 0em;
-    padding: 0.5em 0em 0.25em 0em;
+    padding: 0.25em 0em 0.25em 0em;
     text-decoration: none;
     display: block;
-	
-	
 	font-size: 100%;
 }
 
@@ -92,17 +108,12 @@ body {
 	display: block;
 	max-width: 90%;
 	margin: auto;
-	
 	margin-top: 7.5%;
-	
     display: flex;
-	
 	/*immagini ridimensionate a mano, chiedere perchè non va bene*/
-	
 	/*NOTA BENE: IMMAGINI
 		1920x1080
 	*/
-	
 }
 
 #top4:hover {
@@ -115,94 +126,89 @@ body {
     padding: 0em;
     background-color: #ffffff;
     height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
-
-	
 }
 
-.container{
+.container {
 	text-align: center;
 	max-width: 90%;
 	margin: auto;
-	
 	font-weight: bold;
 }
 
-.search {
-	color: white;
-	font-size: 120%;
-	font-style: italic;
-	
-	white-space: nowrap;
-	vertical-align: middle;
-	position: relative;
-	
-	
+
+
+/*********************************LOGIN*********************************/
+.dropdownlogin {
+    float: right;
+    overflow: hidden;
+	margin-right: 10%;
 }
 
-.search .icon {
-	position: absolute;
-	/*top: 50%;*/
-	margin-top: 0.75em;
-	z-index: 1;
-	
-	margin-left: 5%;/*margine per spostarlo infondo al menu*/
-	
-}
-
-.search input[type=text] {
-	width: 10%;
-    box-sizing: border-box;
-	padding: .75em .75em .75em .75em;
+.dropdownlogin .dropbtnlogin {
+    font-size: 120%;    
     border: none;
-    font-size: 100%;
-    background-color: inherit;
-	color: white;
-	float: left; /*così Log in sta a sx*/
-	
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-	
-	margin-left: 5.5%;/*margine per spostarlo infondo al menu*/
-
-	/*border-left: 2px solid white;*/
-	border-right: 2px solid white;
-
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
 }
 
-.search input::placeholder {	/*coloro di bianco il Cerca...*/
-	color: white;
-	font-size: 100%;
-	font-style: italic;
-
-}
-
-.search input[type=text]:focus {
-    width: 20%;
-	font-style: italic;
-	color: white;
-	
-	outline: none; /*tolto il riquadro orrendo blu*/
-	
-}
-
-.login .icon{
-	width: 200%;
-	
+.dropdown-content-login {
+	/*display: none;*/
 	position: absolute;
+    background-color: white;
+    width: 10%;
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+    z-index: 1;
+	text-align: center;
+	margin: 0;
 }
 
-#login { /*se uso il fa fa login dovrei fare molto prima, se esiste*/
-	
-	/*display: block;
-	width: 2.5%;
-	margin-left: 95.5%;*/	/*così lo metto in fondo a dx*/ /*NB lascio 2% spazio*/
-	
-	/*height: auto;
-    display: flex;*/
+.dropdownlogin:hover .dropdown-content-login {
+    display: block;
 }
 
+.form { /*dentro la dropdown*/
+	text-align: left;
+}
+
+.containerlogin {
+    padding: 1%;
+}
+
+.dropdown-content-login input[type=textLog], .dropdown-content-login input[type=passwordLog] {
+    width: 100%;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 0.5em 0em;	/*da sistemare*/
+    display: inline-block; /*non so cosa faccia di preciso*/
+}
+
+label {
+	font-weight: bold;
+	padding-left: 1%;
+}
+
+.loginbtn {
+    background-color: #333;
+    color: white;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 1% 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	color: white;
+}
+
+
+.span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/*********************************CONTENUTO HOME PAGE*********************************/
 #GOW {
 	display: block;
 	width: 100%;
-	
 }
