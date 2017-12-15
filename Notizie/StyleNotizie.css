@@ -32,7 +32,7 @@ body {
 	border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em .75em .75em 0em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -149,7 +149,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     border: none;
     outline: none;
     color: white;
-    padding: .75em .75em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em 0em .75em .75em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -208,6 +208,8 @@ label {
 
 
 .filtro {
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 	margin-left: 10%;
 	width: 10%;
 	float: left;
@@ -279,31 +281,31 @@ label {
 	color: #333;
 }
 
-.notizie {
-  height: 100%;
-  width: 57%; /* 100 - (10margin + 10filtro + 3spazio tra filtro e immagine + 20margin right)*/
-  margin-top: 5%;
-  margin-right: 20%;
-  margin-left: 23%;
-  position: absolute;
-  float: right;
+.Notizie {
+  border-right: 1px solid #333;
+  margin-top: 0%;
+  margin-right: 10%;
+  margin-left: 20%;
 }
 
+.lastnews {
+  max-width: 100%;
+  position: relative;
+  padding-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
 .lastnews img {
-  width: 10%;
+  max-width: 100%;
+  margin-bottom: -1%;
 }
 
 .lastnewsoverlay {
   position: absolute;
     background-color: #333;
-    overflow: hidden;
-    width: 10%;
-    height: 0;
+    width: 100%;
     transition: .5s ease;
-}
-
-.lastnews:hover .lastnewsoverlay {
-  height: 20%;
 }
 
 .lastnewstext {
@@ -311,10 +313,8 @@ label {
   white-space: nowrap;
   color: white;
   font-size: 100%;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
