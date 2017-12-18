@@ -16,14 +16,10 @@ body {
 	z-index: 1;*/
 }
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
+/*********************************LOGO*********************************/
 .dropdownlogo {
     float: left;
-    overflow: hidden;
+    /*overflow: hidden;*/
 	margin-left:10%;
 }
 
@@ -32,10 +28,10 @@ body {
 	border: none;
     outline: none;
     color: white;
-    padding: .75em 1.5em .75em 0em;
+    padding: .75em .75em .75em 0em;
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
-	width: 100%;
+	max-width: 100%;
 }
 
 .dropbtnlogo a:link, .dropbtnlogo a:visited {
@@ -43,18 +39,27 @@ body {
 	color: white;
 }
 
+.navbar .dropdownlogo:hover .dropbtnlogo {
+	cursor: pointer;
+}
+
+/*********************************NOTIZIE, RECENSIONI, VIDEOGIOCHI*********************************/
+.dropdown {
+    float: left;
+    /*overflow: hidden;*/
+}
 .dropdown .dropbtn {
     font-size: 120%;    
     border: none;
     outline: none;
     color: white;
-    padding: .75em 1.5em .75em 1.5em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em .75em .75em .75em;
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
 }
 
-.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {	/*occhio questo fa hover su tutti i link di dropbtn*/
+.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
     background-color: white;
 	color: black;
 }
@@ -78,13 +83,13 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: block;
 }
 
-/* Create equal columns that floats next to each other */
+/*creo le colonne che riempiranno tutta la pagina*/
 .column {
     float: left;
-    width: 20%;
+    width: 20%; /*5 colonne*/
     padding: 0em 0em 0.5em 0em;
     background-color: #ffffff;
-    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 13.5em*/
+    height: 100%;
 	font-size: 120%;
 }
 
@@ -128,19 +133,17 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
 }
 
-.container {
+.polaroidText {
 	text-align: center;
 	max-width: 90%;
 	margin: auto;
 	font-weight: bold;
 }
 
-
-
 /*********************************LOGIN*********************************/
 .dropdownlogin {
     float: right;
-    overflow: hidden;
+    /*overflow: hidden;*/
 	margin-right: 10%;
 }
 
@@ -149,7 +152,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     border: none;
     outline: none;
     color: white;
-    padding: .75em 0em .75em 1.5em; /*potrebbe essere sbagliato, perchè è la grandezza della barra ma dovrebbe stare nella navbar*/
+    padding: .75em .75em .75em .75em;
 	font-weight: bold;
 	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
@@ -159,10 +162,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	display: none;
 	position: absolute;
     background-color: white;
-    width: 10%;
+    width: 15%;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
-	text-align: center;
+	text-align: left;
 	margin: 0;
 }
 
@@ -171,7 +174,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .form { /*dentro la dropdown*/
-	text-align: left;
+
 }
 
 .containerlogin {
@@ -182,10 +185,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     width: 100%;
     padding: 3% 1.5% 3% 1.5%;
     margin: 0.5em 0em;	/*da sistemare*/
-    display: inline-block; /*non so cosa faccia di preciso*/
+    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
 }
 
-label {
+.containerlogin label {
 	font-weight: bold;
 	padding-left: 1%;
 }
@@ -210,8 +213,8 @@ label {
 /* Slideshow container */
 .pagecontent {
 	top:0;
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
+	border-left: 2px solid #333;
+	border-right: 2px solid #333;
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -243,4 +246,7 @@ label {
 	color: #ffffff;
 	width: 100%;
 	padding: 0% 1% 0% 1%;
+	font-size: 100%;
 }
+
+/*********************************FOOTER*********************************/
