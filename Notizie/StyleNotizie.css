@@ -1,4 +1,4 @@
-* {
+*  {
     box-sizing: border-box;
 }
 
@@ -206,12 +206,15 @@ label {
     padding-top: 16px;
 }
 
-
+.News {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  float: left;
+}
 .filtro {
-  border-left: 1px solid #333;
-  border-right: 1px solid #333;
-	margin-left: 10%;
 	width: 10%;
+  padding-top: 3%;
 	float: left;
 }
 
@@ -266,8 +269,7 @@ label {
 .piattaforme h4 {
 	font-family: Arial;
 	padding-left: 8%;
-	padding-top: 10%;
-	margin-top: 0%;
+  margin-top: 0%;
 	color: #333;
 }
 .data {
@@ -281,40 +283,95 @@ label {
 	color: #333;
 }
 
-.Notizie {
-  border-right: 1px solid #333;
-  margin-top: 0%;
-  margin-right: 10%;
-  margin-left: 20%;
+.Notizia {
+  background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
+	width: 90%;
+	position: relative;
+	float:left;
+	padding-top: 3%;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
 }
 
 .lastnews {
-  max-width: 100%;
+  width: 90%;
   position: relative;
-  padding-top: 10%;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 
 }
 .lastnews img {
-  max-width: 100%;
-  margin-bottom: -1%;
-}
-
-.lastnewsoverlay {
-  position: absolute;
-    background-color: #333;
-    width: 100%;
-    transition: .5s ease;
+  width: 100%;
 }
 
 .lastnewstext {
+  width: 100%;
+  color: #fff;
   font-family: Arial;
-  white-space: nowrap;
-  color: white;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 120%;
+  position: absolute;
+  overflow: hidden;
+  bottom: 1%;
+  margin: 0%;
+}
+.lastnewstext h4 {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 5%;
+}
+.lastnewstext p {
+  text-align: left;
   font-size: 100%;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 5%;
+}
+.notizie {
+  width: 90%;
+	float: left;
+	margin-bottom: 0%;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+
+			/******* COLONNA SINISTRA ****/
+
+
+.columnleft img {
+  width:  40%;
+  float: left;
+}
+
+
+			/******** COLONNA DESTRA ******/
+
+.columnright {
+  width: 60%;
+  height: auto;
+  float: left;
+}
+
+.titolonews {
+  text-align: left;
+  font-size: 160%;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+.titolonews a {
+  font-family: Arial;
+  font-weight: bold;
+  color: #333;
+}
+.titolonews p {
+  font-family: Arial;
+  color: #ccc;
+  margin: 0;
+  padding-top: 3%;
+  font-size: 80%;
 }
