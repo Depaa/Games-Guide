@@ -250,3 +250,32 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /*********************************FOOTER*********************************/
+
+
+/*********************************REGISTRAZIONE*********************************/
+.register-content {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.register-content label {
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.register-content input[type=text], .register-content input[type=password] {
+    width: 60%;
+    padding: 1.5% 1.5% 1.5% 1.5%;
+    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
+}
+
+.register-content .registratibtn {
+	background-color: #333;
+    color: white;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 1% 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+	color: white;
+}
