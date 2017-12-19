@@ -1,55 +1,82 @@
-* {
+*{
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+	
 }
 
 .navbar {
-	
     overflow: hidden;
     background-color: #333;
     font-family: Arial;
+	/*menu fisso ma non va il dropdown*/
+	/*position: sticky; 
+	top: 0%;
+	z-index: 1;*/
 }
 
-.navbar a {
-	margin-left: 10%;
+/*********************************LOGO*********************************/
+.dropdownlogo {
     float: left;
-    font-size: 120%;
-    color: white;
-    text-align: center;
-    padding: .75em .75em .75em .75em;	
-    text-decoration: none;
+    /*overflow: hidden;*/
+	margin-left:10%;
 }
 
+.dropdownlogo .dropbtnlogo {
+    font-size: 120%;    
+	border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em 0em;
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	max-width: 100%;
+}
+
+.dropbtnlogo a:link, .dropbtnlogo a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.navbar .dropdownlogo:hover .dropbtnlogo {
+	cursor: pointer;
+}
+
+/*********************************NOTIZIE, RECENSIONI, VIDEOGIOCHI*********************************/
 .dropdown {
     float: left;
-    overflow: hidden;
+    /*overflow: hidden;*/
+	
 }
-
 .dropdown .dropbtn {
-    font-size: 120%;
+    font-size: 120%;    
     border: none;
     outline: none;
     color: white;
     padding: .75em .75em .75em .75em;
-    background-color: inherit;
 	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
     background-color: white;
 	color: black;
+}
+
+i.fa.fa-caret-down { /*metto padding a freccetta*/
+	padding-left: 0.5em;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white; /*do not use #f9f9f9*/ /*inherit*/
+    background-color: white; /*do not use #f9f9f9*/ /*oscuro signore*/
     width: 100%;
     left: 0;
-    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2); /*ombreggiatura della finestra, molto belo*/
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: center;
 }
@@ -58,13 +85,13 @@ body {
     display: block;
 }
 
-/* Create equal columns that floats next to each other */
+/*creo le colonne che riempiranno tutta la pagina*/
 .column {
     float: left;
-    width: 20%;
+    width: 20%; /*5 colonne*/
     padding: 0em 0em 0.5em 0em;
     background-color: #ffffff;
-    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 13.5em*/
+    height: 100%;
 	font-size: 120%;
 }
 
@@ -73,7 +100,7 @@ body {
 	text-align: center;
     color: black;
 	margin-left: 0em;
-    padding: 0.5em 0em 0.25em 0em;
+    padding: 0.25em 0em 0.25em 0em;
     text-decoration: none;
     display: block;
 	font-size: 100%;
@@ -84,24 +111,19 @@ body {
 	color: white;
 }
 
-#top4 {
+.polaroid img {
 	display: block;
 	max-width: 90%;
 	margin: auto;
-	
 	margin-top: 7.5%;
-	
     display: flex;
-	
 	/*immagini ridimensionate a mano, chiedere perchè non va bene*/
-	
 	/*NOTA BENE: IMMAGINI
 		1920x1080
 	*/
-	
 }
 
-#top4:hover {
+.polaroid img:hover {
 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);	/*per fare il contorno alle immagini*/
 }
 
@@ -111,101 +133,104 @@ body {
     padding: 0em;
     background-color: #ffffff;
     height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
-
-	
 }
 
-.container{
+.polaroidText {
 	text-align: center;
 	max-width: 90%;
 	margin: auto;
 	font-weight: bold;
 }
 
-.search {
-	color: white;
-	font-size: 120%;
-	font-style: italic;
-	border-left:1px solid white;
-	border-right:1px solid white;
-	white-space: nowrap;
-	vertical-align: middle;
+/*********************************LOGIN*********************************/
+.dropdownlogin {
+    float: right;
+    /*overflow: hidden;*/
+	margin-right: 10%;
 }
 
-.search .icon {
-	float:left;
-	/*top: 50%;*/
-	margin-top: 0.75em;
-	z-index: 1;
-	
-	margin-left: 8%;/*margine per spostarlo infondo al menu*/
-	
-}
-
-.search input[type=text] {
-	width: 10%;
-    box-sizing: border-box;
-	padding: .75em .75em .75em .75em;
+.dropdownlogin .dropbtnlogin {
+    font-size: 120%;    
     border: none;
-    font-size: 100%;
-    background-color: inherit;
-	color: white;
-	/*così Log in sta a sx*/
-	
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-	/*margine per spostarlo infondo al menu*/
-	
-	
-
-}
-
-.search input::placeholder {	/*coloro di bianco il Cerca...*/
-	color: white;
-	font-size: 100%;
-	font-style: italic;
-}
-
-.search input[type=text]:focus {
-    width: 20%;
-	font-style: italic;
-	color: white;
-	outline: none; /*tolto il riquadro orrendo blu*/
-	
-}
-
-#login { /*se uso il fa fa login dovrei fare molto prima, se esiste*/
-	/*display: block;
-	width: 2.5%;
-	margin-left: 95.5%;*/	/*così lo metto in fondo a dx*/ /*NB lascio 2% spazio*/
-	
-	/*height: auto;
-    display: flex;*/
-}
-
-#GOW {
-	display: block;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em;
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
-	
+}
+
+.dropdown-content-login {
+	display: none;
+	position: absolute;
+    background-color: white;
+    width: 15%;
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
+    z-index: 1;
+	text-align: left;
+	margin: 0;
+}
+
+.dropdownlogin:hover .dropdown-content-login {
+    display: block;
+}
+
+.form { /*dentro la dropdown*/
+
+}
+
+.containerlogin {
+    padding: 1%;
+}
+
+.dropdown-content-login input[type=text], .dropdown-content-login input[type=password] {
+    width: 100%;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 0.5em 0em;	/*da sistemare*/
+    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
+}
+
+.containerlogin label {
+	font-weight: bold;
+	padding-left: 1%;
+}
+
+.logsigninbtn {
+    background-color: #333;
+    color: white;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 1% 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	color: white;
+}
+
+.span.psw {
+    float: right;
+    padding-top: 16px;
 }
 /* VIDEOGIOCHI */ 
 .videogiochi {
+	font-family: Arial;
+	color: #333;
 	margin-left: 10%;
 	margin-right: 10%;
 	float: left;
+	max-width: 80%;
 }
+
 .filtro {
 	width: 14%;
 	float: left;
 	top: 0;
+	background-color: #fff;
 }
 
 .filtro h5 {
 	text-align: left;
 	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
-	color: #333;
 	padding-left: 15%;
-	font-family: Arial;
 }
 .elenco {
 	display:block;
@@ -218,7 +243,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-	font-family: Arial;
 }
 
 .elenco input {
@@ -249,11 +273,9 @@ body {
 	margin-bottom: 0.7em;
 }
 .piattaforme h4 .generi h4{
-	font-family: Arial;
 	padding-left: 8%;
 	padding-top: 10%;
 	margin-top: 0%;
-	color: #333;
 	font-size: 90%;
 }
 .generi {
@@ -261,19 +283,25 @@ body {
 }
 /*PARTE GIOCHI*/
 .giochi {
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
 	width: 86%;
 	position: relative;
 	float:left;
 	margin-top: 0%;
-	border-right: 3px solid red;
-	border-left: 3px solid red;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
 }
 .scheda {
-	
+	width: 90%;
 	float: left;
 	margin-bottom: 0%;
 	margin-top: 10%;
 	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
 }
 .scheda h3 {
 	
@@ -288,10 +316,8 @@ body {
 
 .scheda a {
 	padding-left: 0.5em;
-	font-family: Arial;
-	text-decoration: none;
-	margin-bottom: 2%;
 	color: #333;
+	
 }
 .scheda a:hover {
 	color: blue;
@@ -299,7 +325,6 @@ body {
 
 .scheda .desc {
 	width: 80%;
-	position: relative;
 	padding-top: 0.5em;
 	float: left;
 }
@@ -318,9 +343,16 @@ body {
 .scheda .descrizionesx p, .scheda .descrizionedx p, .desc p {
 	margin-top: 0%;
 	padding-left: 0.5em;
-	font-family: Arial;
-	color: #333;
 }
+
+.desc p {
+	width:100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 5%;
+}
+
+
 
 
 
