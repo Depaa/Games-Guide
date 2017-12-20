@@ -142,7 +142,7 @@ create table `Giochi` (
 	`Genere3` varchar (20),
 	`PEGI` int (5),
 	`Valutazione` double,
-    `Disponibilita` varchar(30),
+    `Disponibilita` varchar(144),
     `Playstation3` tinyint (1),
 	`Playstation4` tinyint (1),
 	`Xbox360` tinyint (1),
@@ -151,34 +151,63 @@ create table `Giochi` (
 	`NintendoSwitch` tinyint (1),
 	`Windows` tinyint (1),
 	`Mac` tinyint (1),
+    `Descrizione` varchar(5000),
 	primary key ( `Nome`),
 	foreign key `Giochi1` (`Genere1`)  references `Genere` (`CodGenere`),
 	foreign key `Giochi2` (`Genere2`)  references `Genere` (`CodGenere`),
 	foreign key `Giochi3` (`Genere3`)  references `Genere` (`CodGenere`)
 )
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
-insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`,`Valutazione`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`,`Mac`)
+insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`,`Valutazione`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`)
        values 
        		
-       		('Need for Speed: Payback', '2017-11-10', 'Race', 'Action', null, 12, null,	'Ps4, XboxOne, Windows', 0,1,0,1,0,0,1,0),
+       		('Need for Speed: Payback', '2017-11-10', 'Race', 'Action', null, 12, null,	'Ps4, XboxOne, Windows', 0,1,0,1,0,0,1,0, 'Sullo sfondo della corruzione di Fortune Valley, il desiderio di vendetta porta la tua banda
+            a riunirsi per sconfiggere la Loggia, una spietata organizzazione che esercita il suo controllo sui casinò, i criminali e i poliziotti della città. In questo paradiso del gioco d''azzardo, la posta in palio è alta e la Loggia ha sempre le carte vincenti in mano. Affronta diversi eventi nei panni di Tyler, Mac e Jess. Guadagnati il
+            rispetto del sottobosco della Valley e gareggia nella sfida finale per sconfiggere la Loggia una volta per
+            tutte.'),
 			
-			('Assassin''s Creed: Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null, 'Ps3, Ps4, Xbox360, XboxOne, Windows',1,1,1,1,0,0,1,0),
+			('Assassin''s Creed: Brotherhood', '2010-11-16', 'RPG', 'Adventure', null, 18, null, 'Ps3, Ps4, Xbox360, XboxOne, Windows',1,1,1,1,0,0,1,0, 'Vivi e respira come Ezio, un leggendario Maestro Assassino, nella sua continua lotta contro il potente Ordine Templare. Dovrà viaggiare nella più grande città d''Italia, Roma, centro di potere, avidità e corruzione per colpire il cuore del nemico.
+            Sconfiggere i tiranni corrotti richiederà non solo la forza, ma la leadership, poiché Ezio comanda un''intera Fratellanza che si radunerà al suo fianco.
+            Solo lavorando insieme gli Assassini possono sconfiggere i loro nemici mortali. E per la prima volta, tramite il multigiocatore pluripremiato ti consentirà di scegliere tra una vasta gamma di personaggi unici, ognuno con le proprie armi e tecniche di assassinio! È ora di unirsi alla Fratellanza.'),
 			
-			('Call of Duty: World War II', '2017-11-03', 'FPS', 'Action', null, 18, null,'Ps4, XboxOne, Windows',0,1,0,1,0,0,1,0),
+			('Call of Duty: World War II', '2017-11-03', 'FPS', 'Action', null, 18, null,'Ps4, XboxOne, Windows',0,1,0,1,0,0,1,0, 'Un''esperienza mozzafiato che porterà una nuova generazione nella Seconda Guerra Mondiale. Sbarca in Normandia durante il fatidico D-Day e combatti in tutta Europa rivivendo leggendarie battaglie che hanno segnato il conflitto più sanguinoso della storia.
+            Scopri il classico combattimento di Call of Duty, i legami del cameratismo e il cuore crudele della guerra.'),
 			
-			('The Legend of Zelda: A Link between worlds', '2013-11-22', 'Adventure','RPG', null, 12, null, 'NDS',0,0,0,0,1,0,0,0),
+			('The Legend of Zelda: A Link between worlds', '2013-11-22', 'Adventure','RPG', null, 12, null, 'NDS',0,0,0,0,1,0,0,0, 'The Legend of Zelda: A Link Between Worlds introduce un set completamente nuovo di rompicapi e dungeon! Questa volta Link può anche muoversi sui muri come se fosse un dipinto.
+            Questa possibilità cambia completamente la tua prospettiva, permettendoti di pensare in una nuova dimensione e risolvere rompicapi prima impensabili.
+            L''ordine e il modo in cui ti cimenti con ciascun labirinto dipenderà completamente da te. Incontrerai anche un nuovo personaggio, Lavio, che rappresenta la chiave verso il successo: nella sua bottega potrai affittare o acquistare oggetti, come l''arpione, l''arco e il martello, che ti saranno utili nel corso dell''avventura.
+            Molti di questi oggetti saranno disponibili all''inizio del gioco e starà a te decidere quali affittare o acquistare, a seconda del labirinto che desideri affrontare!'),
 			
-			('Outlast II', '2017-04-25', 'Horror', 'Action', null, 18, null,'Ps4, XboxOne, Windows, Mac',0,1,0,1,0,0,1,1),
+			('Outlast II', '2017-04-25', 'Horror', 'Action', null, 18, null,'Ps4, XboxOne, Windows, Mac',0,1,0,1,0,0,1,1, 'In Outlast 2 fai la conoscenza di Sullivan Knoth e dei suoi seguaci, che si sono lasciati alle spalle il nostro mondo corrotto per fondare la cittadina di Temple Gate, nel cuore del deserto, lontana da qualsiasi segno di civiltà.
+            Knoth si sta preparando insieme al suo gregge alle tribolazioni della fine dei tempi e tu ti ci ritrovi dentro fino al collo.
+            Tu sei Blake Langermann, un cameraman che lavora con sua moglie Lynn. Siete dei giornalisti investigativi disposti a correre qualsiasi rischio e a scavare a fondo per svelare le storie che nessuno si azzarda a toccare.
+            Stai seguendo una scia di indizi iniziata con l''omicidio apparentemente impossibile di una donna incinta sconosciuta ed identificata semplicemente come Jane Doe. L''indagine ti ha condotto nel cuore del deserto dell''Arizona, in un''oscurità così profonda che nessuno potrebbe illuminare e in una corruzione così intensa che impazzire potrebbe essere l''unica cosa sensata da fare.'),
 			
-			('The Sims 3', '2009-06-02', 'Simulatore', null, null,13, null,'Ps3, Xbox360, XboxOne, NDS, Windows, Mac',1,0,1,1,1,0,1,1),
+			('The Sims 3', '2009-06-02', 'Simulatore', null, null,13, null,'Ps3, Xbox360, XboxOne, NDS, Windows, Mac',1,0,1,1,1,0,1,1, 'The Sims 3 è un capolavoro di simulazione che ti dà la possibilità di ipotizzare e vivere tutte le vite che ti pare. Crea tutti i personaggi che vuoi, ognuno diverso dall''altro in quanto a caratteristiche fisiche e psicologiche, regalagli una casa e un mondo in cui vivere.
+            E poi stai a vedere che succede. Con The Sims 3 non c''è nulla di prevedibile e nulla di impossibile.'),
 			
-			('Mortal Kombat X', '2015-04-07', 'Horror', 'Fighting', null,18, null,'Ps4, XboxOne, Windows',0,1,0,1,0,0,1,0),
+			('Mortal Kombat X', '2015-04-07', 'Horror', 'Fighting', null,18, null,'Ps4, XboxOne, Windows',0,1,0,1,0,0,1,0, 'Mortal Kombat X combina animazioni cinematografiche uniche a un nuovo stile di gioco.
+            Per la prima volta, potrai scegliere tra diverse varianti di ogni personaggio, che influenzeranno strategie e stili di combattimento.'),
 			
-			('FIFA 18', '2017-09-29', 'Sport', null, null, 3, null, 'Ps3, Ps4, Xbox360, XboxOne, NSwitch, Windows',1,1,1,1,0,1,1,0),
+			('FIFA 18', '2017-09-29', 'Sport', null, null, 3, null, 'Ps3, Ps4, Xbox360, XboxOne, NSwitch, Windows',1,1,1,1,0,1,1,0, 'Sei pronto per la più grande stagione di sempre? Grazie al motore Frostbite™, FIFA 18 attenua il confine tra il mondo reale e quello virtuale dando vita a eroi, squadre e atmosfere del gioco più bello del mondo.
+            Crea il tuo Ultimate Team nella modalità più giocata di FIFA scegliendo tra migliaia di calciatori. Scopri i nuovi obiettivi giornalieri, affronta la modalità Squad Battles per ricevere premi settimanali e osserva i migliori giocatori al mondo su Champions Channel!'),
 			
-			('Crash Bandicoot: N.Sane Trilogy', '2017-06-30', 'Platform', 'Action', 'Adventure', 7, null, 'Ps4',0,1,0,0,0,0,0,0),
+			('Crash Bandicoot: N.Sane Trilogy', '2017-06-30', 'Platform', 'Action', 'Adventure', 7, null, 'Ps4',0,1,0,0,0,0,0,0,'Il tuo marsupiale preferito, Crash Bandicoot, è tornato! Più forte e pronto a scatenarsi con N. Sane Trilogy game collection. Ora potrai provare Crash Bandicoot come mai prima d’ora in HD.
+            Ruota, salta, scatta e divertiti atttraverso le sfide e le avventure dei tre giochi da dove tutto è iniziato, Crash Bandicoot®, Crash Bandicoot® 2: Cortex Strikes Back e Crash Bandicoot®: Warped.
+            Rivivi i migliori "Momenti Crash" con la grafica completamente rimasterizzata in HD!
+            Crash Bandicoot: Dr. Neo Cortex ha in piano di conquistare il mondo, e vuole creare una stirpe di animali geneticamente modificati per raggiungere il suo obiettivo. Per creare il suo esercito in miniatura dovrà rapire più animali possibile.
+            La fidanzata di Crash Bandicoot fa parte delle sue vittime! Prendi il controllo di Crash, corri, salta e attraverso 30 livelli di azione intensa in 3 meravigliose isole Australiane.
+            Solo tu potrai aiutare Crash a salvare gli animali, la sua fidanzata e impedire a Dr. Cortex di portare a termine il suo piano malefico.
+            Crash Bandicoot 2, Cortex Strikes Back: Il malvagio Dr. Neo Cortex è tornato… ma questa volta a salvare il mondo? E per farlo dovrà chiedere l’aiuto del suo arci nemico Crash Bandicoot®?
+            Sarà questa una messinscena per attirare Crash nel prossimo folle esperimento di Cortex? Riuscirà Crash a difendersi da questa insidia?
+            Ambiente 3D free roaming molto più vasto, nuove animazioni e un roster di personaggi coloratissimi – pattina sul ghiaccio, cavalca orsi polari e guida jet-packs a gravità zero con Crash, nella nuova avventura.
+            Crash Bandicoot Warped: Eh si… è proprio tornato…. ed è prontissimo all’azione! In una nuova avventura a spasso nel tempo! Gameplay innovativo per la serie – vai sottacqua, nuota, guida motociclette, un piccolo T-Rex, e gira in free-roaming pilotando un aereo!
+            Gioca come Coco! Cavalcauna tigre sulla Grande Muraglia Cinese, esegui straordinarie acrobaziesu jetski! Metti alla prova le tue abilità con nuove mosse straordinarie, come Super-charge Body Slam, Super Slide, Salto doppio, Death-Tornado Spin e un Bazooka teleguidato.
+            Nuovi nemici da sconfiggere, come Big Boss, Uka Uka, N. Tropy, il minaccioso Dingodile e il ritorno di alcuni super famosi come N. Gin and Tiny. Più Azione. Più Divertimento. Più puzzle e livelli segreti.'),
 			
-			('Super Mario Odyssey', '2017-10-27', 'Adventure','Action', null, 10, null, 'NSwitch',0,0,0,0,0,1,0,0);
+			('Super Mario Odyssey', '2017-10-27', 'Adventure','Action', null, 10, null, 'NSwitch',0,0,0,0,0,1,0,0,'Mario approda su Nintendo Switch con un’avventura 3D senza precedenti!
+            Questo fantastico gioco in stile sandbox – il primo dai tempi degli amatissimi Super Mario 64 del 1996 e Super Mario Sunshine del 2002 – è pieno zeppo di segreti e sorprese! Mario può ora contare su tutta una serie di nuove mosse e abilità, come lanci o salti che sfruttano il cappello. Può persino impossessarsi di personaggi e oggetti, per possibilità di gameplay incredibili e mai sperimentate prima.
+            Questo titolo è il biglietto ufficiale per un’emozionante viaggio, tra mondi incredibili e lontani dal classico Regno dei Funghi!');
 
 /*
 
