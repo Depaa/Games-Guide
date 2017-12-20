@@ -208,7 +208,27 @@ insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`
 			('Super Mario Odyssey', '2017-10-27', 'Adventure','Action', null, 10, null, 'NSwitch',0,0,0,0,0,1,0,0,'Mario approda su Nintendo Switch con un’avventura 3D senza precedenti!
             Questo fantastico gioco in stile sandbox – il primo dai tempi degli amatissimi Super Mario 64 del 1996 e Super Mario Sunshine del 2002 – è pieno zeppo di segreti e sorprese! Mario può ora contare su tutta una serie di nuove mosse e abilità, come lanci o salti che sfruttano il cappello. Può persino impossessarsi di personaggi e oggetti, per possibilità di gameplay incredibili e mai sperimentate prima.
             Questo titolo è il biglietto ufficiale per un’emozionante viaggio, tra mondi incredibili e lontani dal classico Regno dei Funghi!');
+create table `Immagini` (
+	`NomeGioco` varchar (100) not null unique,
+    `MenuImg` varchar(20) not null,
+    `GiocoImg` varchar(20) not null,
+    primary key ( `NomeGioco`),
+    foreign key `Immagine` (`NomeGioco`)  references `Giochi` (`Nome`)
+)
+ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+insert into `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`)
+	values
+    ('Need for Speed: Payback', 'NFSPayback.jpg', 'NFSPayback0.jpg'),
+    ('Assassin''s Creed: Brotherhood', 'ACB.jpg', 'ACB0.jpg'),
+    ('Call of Duty: World War II', 'CODWWII.jpg', 'CODWII0.jpg'),
+    ('The Legend of Zelda: A Link between worlds', 'Zelda.jpg', 'Zelda0.jpg'),
+    ('Outlast II', 'outlast2.jpg', 'outlast20.jpg'),
+    ('The Sims 3', 'Thesims3.jpg', 'Thesims30.jpg'),
+    ('Mortal Kombat X', 'MKX.jpg', 'MKX0.jpg'),
+    ('FIFA 18','FIFA18.jpg', 'FIFA180.jpg'),
+    ('Crash Bandicoot: N.Sane Trilogy', 'CBT.jpg', 'CBT0.jpg'),
+    ('Super Mario Odyssey', 'SMO.jpg', 'SMO0.jpg');
 /*
 
 query:
