@@ -250,32 +250,145 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /*********************************FOOTER*********************************/
-
-
-/*********************************REGISTRAZIONE*********************************/
-.register-content {
+/* VIDEOGIOCHI */ 
+.videogiochi {
+	font-family: Arial;
+	color: #333;
 	margin-left: 10%;
 	margin-right: 10%;
+	float: left;
+	max-width: 80%;
 }
 
-.register-content label {
-	font-size: 120%;
-	font-weight: bold;
+.filtro {
+	width: 14%;
+	float: left;
+	top: 0;
+	background-color: #fff;
 }
 
-.register-content input[type=text], .register-content input[type=password] {
-    width: 60%;
-    padding: 1.5% 1.5% 1.5% 1.5%;
-    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
+.filtro h5 {
+	text-align: left;
+	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
+	padding-left: 15%;
 }
-
-.register-content .registratibtn {
-	background-color: #333;
-    color: white;
-    padding: 3% 1.5% 3% 1.5%;
-    margin: 1% 0;
-    border: none;
+.elenco {
+	display:block;
+    position: relative;
+	padding: 0% 0% 5% 20%; /*sposta le righe (cerchio + parole)*/
+    margin-bottom: 1%;
     cursor: pointer;
-    width: 50%;
-	color: white;
+    font-size: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.elenco input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+	display: block;
+    position: absolute;
+    top: 0.15em;  /*centra il cerchio allinea con le parole*/
+    left: 8%;
+    height: 0.7em;/* grandezze cerchio*/
+    width: 0.7em;
+    background-color: #ccc; /*colore normale*/
+    border-radius: 35%;
+}
+
+.elenco:hover input ~ .checkmark {
+    background-color: #eee;   /*colore quando vado sopra il cerchio*/
+}
+
+.elenco input:checked ~ .checkmark {
+    background-color: #333; /*colore quando clicco sul cerchio*/
+}
+
+.piattaforme {
+	margin-bottom: 0.7em;
+}
+.piattaforme h4 .generi h4{
+	padding-left: 8%;
+	padding-top: 10%;
+	margin-top: 0%;
+	font-size: 90%;
+}
+.generi {
+	border-top: 1px solid #333;
+}
+/*PARTE GIOCHI*/
+.giochi {
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
+	width: 86%;
+	position: relative;
+	float:left;
+	margin-top: 0%;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
+}
+.scheda {
+	width: 90%;
+	float: left;
+	margin-bottom: 0%;
+	margin-top: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+.scheda h3 {
+	
+}
+
+.immagine {
+	max-width: 20%;
+	margin-right: 0%;
+	float: left;
+	
+}
+
+.scheda a {
+	padding-left: 0.5em;
+	color: #333;
+	
+}
+.scheda a:hover {
+	color: blue;
+}
+
+.scheda .desc {
+	width: 80%;
+	padding-top: 0.5em;
+	float: left;
+}
+.scheda .desc .descrizionesx {
+	float:left;
+	width: 30%;
+	margin-top: 0%;
+}
+
+.scheda .desc .descrizionedx {
+	float: left;
+	width: 70%;
+	margin-top: 0%;
+}
+
+.scheda .descrizionesx p, .scheda .descrizionedx p, .desc p {
+	margin-top: 0%;
+	padding-left: 0.5em;
+}
+
+.desc p {
+	width:100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 5%;
+	text-align: justify;
 }
