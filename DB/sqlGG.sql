@@ -127,14 +127,14 @@ create table IF NOT EXISTS `Giochi` (
 	`PEGI` int (5),
 	`Valutazione` double,
     `Disponibilita` varchar(144),
-    `Playstation3` tinyint (1),
-	`Playstation4` tinyint (1),
-	`Xbox360` tinyint (1),
-	`XboxOne` tinyint (1),
-	`NintendoDS` tinyint (1),
-	`NintendoSwitch` tinyint (1),
-	`Windows` tinyint (1),
-	`Mac` tinyint (1),
+    `Playstation3` bool default null,
+	`Playstation4` bool default null,
+	`Xbox360` bool default null,
+	`XboxOne` bool default null,
+	`NintendoDS` bool default null,
+	`NintendoSwitch` bool default null,
+	`Windows` bool default null,
+	`Mac` bool default null,
     `Descrizione` varchar(5000),
 	primary key ( `Nome`),
 	foreign key `Giochi1` (`Genere1`)  references `Genere` (`CodGenere`),
@@ -197,25 +197,24 @@ insert into `Giochi` (`Nome`, `DataPub`, `Genere1`, `Genere2`, `Genere3`, `PEGI`
 DROP TABLE IF EXISTS `Immagini`;
 create table IF NOT EXISTS `Immagini` (
 	`NomeGioco` varchar (100) not null unique,
-    `MenuImg` varchar(20) not null,
-    `GiocoImg` varchar(20) not null,
-    primary key ( `NomeGioco`),
+    `ID`int(100) unsigned not null unique auto_increment,
+    primary key ( `ID`),
     foreign key `Immagine` (`NomeGioco`)  references `Giochi` (`Nome`)
 )
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-insert into `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`)
+insert into `Immagini` ( `NomeGioco`)
 	values
-    ('Need for Speed: Payback', 'NFSPayback.jpg', 'NFSPayback0.jpg'),
-    ('Assassin''s Creed: Brotherhood', 'ACB.jpg', 'ACB0.jpg'),
-    ('Call of Duty: World War II', 'CODWWII.jpg', 'CODWWII0.jpg'),
-    ('The Legend of Zelda: A Link between worlds', 'Zelda.jpg', 'Zelda0.jpg'),
-    ('Outlast II', 'outlast2.jpg', 'outlast20.jpg'),
-    ('The Sims 3', 'Thesims3.jpg', 'Thesims30.jpg'),
-    ('Mortal Kombat X', 'MKX.jpg', 'MKX0.jpg'),
-    ('FIFA 18','FIFA18.jpg', 'FIFA180.jpg'),
-    ('Crash Bandicoot: N.Sane Trilogy', 'CBT.jpg', 'CBT0.jpg'),
-    ('Super Mario Odyssey', 'SMO.jpg', 'SMO0.jpg');
+    ('Need for Speed: Payback'),
+    ('Assassin''s Creed: Brotherhood'),
+    ('Call of Duty: World War II'),
+    ('The Legend of Zelda: A Link between worlds'),
+    ('Outlast II'),
+    ('The Sims 3'),
+    ('Mortal Kombat X'),
+    ('FIFA 18'),
+    ('Crash Bandicoot: N.Sane Trilogy'),
+    ('Super Mario Odyssey');
     
     
 DROP TABLE IF EXISTS `CommentiRecensione`;
