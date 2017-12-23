@@ -1,4 +1,4 @@
-*  {
+* {
     box-sizing: border-box;
 }
 
@@ -295,14 +295,14 @@ label {
 }
 
 .lastnews {
-  width: 90%;
+  max-width: 90%;
   position: relative;
   margin-left: 5%;
-  margin-right: 5%;
 
 }
-.lastnews img {
-  width: 100%;
+
+.lastnewsimg img {
+  max-width: 100%;
 }
 
 .lastnewstext {
@@ -313,7 +313,7 @@ label {
   font-size: 120%;
   position: absolute;
   overflow: hidden;
-  bottom: 1%;
+  bottom: 0.7%;
   margin: 0%;
 }
 .lastnewstext h4 {
@@ -374,4 +374,65 @@ label {
   margin: 0;
   padding-top: 3%;
   font-size: 80%;
+}
+
+.pagnotizia {
+  margin: 0% 10% 0 10%;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  font-family: Arial;
+}
+
+.titolonotizia h1{
+  text-align: left;
+  font-size: 170%;
+  margin: 0;
+}
+
+.adminews h4{
+  color: #ccc;
+}
+
+.imgnotizia {
+  border-bottom: 3px solid #333;
+}
+
+.imgnotizia img{
+  width: 100%;
+  padding-bottom: 2%;
+}
+
+.testonotizia {
+  text-align: left;
+  border-bottom: 3px solid #333;
+}
+
+.inscommenti {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #ccc;
+}
+
+.inscommenti textarea {
+  width: 100%;
+  resize: none;
+}
+
+.commenti {
+  padding-top: 3%;
+}
+
+.commenti h5 {
+  margin: 0;
+  color: #ccc;
+}
+
+.commenti p {
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #ccc;
 }
