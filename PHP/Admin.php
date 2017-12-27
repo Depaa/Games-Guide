@@ -26,19 +26,19 @@
 		<div class="Agg">
 		<h3 id="AG"> AGGIUNGI GIOCO</h3>
 			<div class="aggiungi-content">
-                <form method="post" action="aggiungi.php">
+                <form method="post" action="aggiungi.php" enctype="multipart/form-data">
 					<div class="riga">
                         <h4>Nome Gioco</h4>
-                        <input type="text" name="gname" required/> 
+                        <input type="text" name="gname" value="Gioco" required/> 
                     </div>
 					<div class="riga">	
 						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="gdata" required/>
+                        <input type="text" name="gdata" value="2017-12-13" required/>
 					</div>
 					
 					<div class="riga">
                         <h4>Genere1</h4>
-                        <input type="text" name="ggenere1" required/>
+                        <input type="text" name="ggenere1" value="Action" required/>
 					</div>
 					<div class="riga">
 					   <h4>Genere2</h4>
@@ -50,11 +50,11 @@
 					</div>
 					<div class="riga">	
 						<h4>PEGI</h4>
-                        <input type="text" name="gpegi" required/>
+                        <input type="text" name="gpegi" value="12" required/>
 					</div>
 					<div class="riga">	
                         <h4>Piattaforme Disponibili (testo con virgola)</h4>
-                        <input type="text" name="gdisp" required/>
+                        <input type="text" name="gdisp" value="asdfsdfds" required/>
 					</div>	
 					<div class="riga" id="check">
                         <label class="elenco"> Xbox One
@@ -94,17 +94,17 @@
                         <h4>Descrizione</h4>
                         <textarea name="gdesc" rows="10" cols="50"></textarea> 
 					</div>
-					 <!--
+					 
 					<div class="riga">	
 						<h4>Immagine Menu</h4>
-                        <input type="file" name="gimg" required/>
+                        <input type="file" name="gimgmen" required/>
                     </div>
 					<div class="riga">	
 						<h4>Immagine Giochi</h4>
-                        <input type="file" name="gimg" required/>
-                    </div> -->
+                        <input type="file" name="gimgvid" id="gimgvid"/>
+                    </div> 
                        
-                        <button class="aggiungibtn" type="submit" name="confirm">Conferma</button>
+                        <button class="aggiungibtn" type="submit" name="submit">Conferma</button>
                 </form>
             </div>
 		</div>
