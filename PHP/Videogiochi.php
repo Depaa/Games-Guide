@@ -167,10 +167,10 @@
 					<form method="POST" action="login.php">
 						<div class="containerlogin">
 							<label>Username</label>
-							<input type="text" name="uname"/> <!--placeholder="Enter Username"-->
+							<input type="text" name="uname" value="admin"/> <!--placeholder="Enter Username"-->
 							<!--il placeholder non 衳upportato in html ma lo 衩n html5, quindi non valida-->
 							<label>Password</label>
-							<input type="password" name="psw"/><!--required--> <!--placeholder="Enter Password"-->
+							<input type="password" name="psw" value="admin"/><!--required--> <!--placeholder="Enter Password"-->
 							
 							<button class="logsigninbtn" type="submit" name="submitA" value="Log-In">Accedi</button>
 							
