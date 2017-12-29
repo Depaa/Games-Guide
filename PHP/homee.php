@@ -1,7 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 	<head>
 		<title>GamesGuide</title>
@@ -20,7 +18,7 @@
 	<body>
 		<div class="navbar">
 			<div class="dropdownlogo">
-				<a href="Home.php"><button class="dropbtnlogo">GAMES' GUIDE</button></a>
+				<a href="Homee.php"><button class="dropbtnlogo">GAMES\' GUIDE</button></a>
 			</div>
 			
 			<div class="dropdown">
@@ -76,7 +74,7 @@
 					<div class="polaroid">
 						<img src="IMG\NFSPayback.jpg" alt="NFSPayback"/>
 						<div class="polaroidText">
-							<p>NEED FOR SPEED PAYBACK: LA VENDETTA E' SERVITA
+							<p>NEED FOR SPEED PAYBACK: LA VENDETTA E\' SERVITA
 							</p>
 						</div>
 					</div>
@@ -100,7 +98,7 @@
 					<div class="polaroid">
 						<img src="IMG\GOW4.jpg" alt="GOW4"/>
 						<div class="polaroidText">
-							<p>GOD OF WAR: KRATOS IS BACK OMGOMGOMGOMGOMG NON VEDO L'ORA MI COMPRO UNA PS4 PER QUESTO GIOCO SICURO
+							<p>GOD OF WAR: KRATOS IS BACK OMGOMGOMGOMGOMG NON VEDO L\'ORA MI COMPRO UNA PS4 PER QUESTO GIOCO SICURO
 							</p>
 						</div>
 					</div>
@@ -108,7 +106,7 @@
 					<div class="polaroid">
 						<img src="IMG\ACOrigins2.0.jpg" alt="ACOrigins2.0"/>
 						<div class="polaroidText">
-							<p>ASSASSIN'S CREED: ORIGINS
+							<p>ASSASSIN\'S CREED: ORIGINS
 							</p>
 						</div>
 					</div>
@@ -150,28 +148,46 @@
 					</div>
 				</div>
 			</div>
-
+			
+<?php
+	//include_once 'init.php';
+	
+	//if(not_logged_in() === TRUE) {
+		echo'
 			<div class="dropdownlogin">
 				<button class="dropbtnlogin">Accedi<i class="fa fa-caret-down"></i></button>
 				<div class="dropdown-content-login"> 
-					<form method="POST" action="login.php">
-						<div class="containerlogin">
+					<div class="containerlogin">
+						<form method="POST" action="login.php">
 							<label>Username</label>
-							<input type="text" name="uname"/> <!--placeholder="Enter Username"-->
-							<!--il placeholder non 衳upportato in html ma lo 衩n html5, quindi non valida-->
+							<input type="text" name="uname" value="admin"/> 
 							<label>Password</label>
-							<input type="password" name="psw"/><!--required--> <!--placeholder="Enter Password"-->
+							<input type="password" name="psw" value="admin"/>
 							
 							<button class="logsigninbtn" type="submit" name="submitA">Accedi</button>
-							
-							<button class="logsigninbtn" type="submit" name="submitR">Registrati</button>
-						</div>
-					</form>
+						</form>
+						<a href="registrazione.php"><button class="logsigninbtn" type="submit" name="submitR">Registrati</button></a>
+					</div>
 				</div>
-			</div>
+			</div>';
+	//}
+	/*else {
+		$userdata = getUserDataByUserId($_SESSION['id']);
+		echo '
+			<div class="dropdownlogin">
+				<form method="POST" action="logout.php">
+					<button class="dropbtnlogin">'.$userdata['Nickname'].'<i class="fa fa-caret-down"></i></button>
+					<div class="dropdown-content-login"> 
+						<div class="containerlogin">
+							<label>Log Out</label>
+							<button class="logsigninbtn" type="submit" name="submitO">Log Out</button>
+						</div>
+					</div>
+				</form>
+			</div>';
+		}*/
+?>
 		</div>
-		
-
 		<div class="pagecontent">
 			<div class="slides-content">
 				<div class="mySlides">
@@ -184,7 +200,7 @@
 				<div class="mySlides">
 					<img src="IMG\GOW4.jpg" alt="XboxOneX"/>
 					<div class="textslide">
-						<h1>GOD OF WAR: KRATOS IS BACK OMGOMGOMGOMGOMG NON VEDO L'ORA MI COMPRO UNA PS4 PER QUESTO GIOCO SICURO</h1>
+						<h1>GOD OF WAR: KRATOS IS BACK OMGOMGOMGOMGOMG NON VEDO L\'ORA MI COMPRO UNA PS4 PER QUESTO GIOCO SICURO</h1>
 					</div>
 				</div>
 
@@ -208,7 +224,7 @@
 			<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
 			<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
 			<h1>XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA</h1>
-		</div>
+		</div> 
 		
 		
 			
@@ -239,4 +255,4 @@
 		</div>
 
 	</body>
-</html>
+</html> 
