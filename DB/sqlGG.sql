@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2017 at 03:10 PM
+-- Generation Time: Dec 29, 2017 at 10:24 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -29,31 +29,33 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
+  `id` int(5) NOT NULL,
   `Nickname` varchar(16) NOT NULL,
   `Password` varchar(16) NOT NULL,
   `Nome` varchar(20) NOT NULL,
   `Cognome` varchar(20) NOT NULL,
   `DataNascita` date NOT NULL,
   `Email` varchar(32) NOT NULL,
-  `Admin` tinyint(1) NOT NULL DEFAULT '0'
+  `Admin` tinyint(1) NOT NULL DEFAULT '0',
+  `Attivo` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Admin`) VALUES
-('admin', 'admin', 'admin', 'admin', '1995-10-01', 'admin@admin.admin', 1),
-('Peachka', 'ciaone', 'Lucia', 'Fenu', '1995-06-30', 'lucia.fenu95@gmail.com', 1),
-('Aiolos', '123qwerty789', 'Gianmarco', 'Pettenuzzo', '1995-08-20', 'gian82095@gmail.com', 1),
-('Gionny-Atlas', '0987654321', 'Francesco', 'Battistella', '1994-10-01', 'frabat@icloud.com', 1),
-('Depaa', 'asdfghjkl', 'Matteo', 'Depascale', '1995-08-20', 'depascale.matteo@gmail.com', 1),
-('user', 'user', 'user', 'user', '1995-01-01', 'user@user.user', 0),
-('Nikocister', 'Sassari', 'Nicola', 'Cisternino', '1995-01-12', 'nicocister95@gmail.com', 0),
-('Mmasier', 'Chubby', 'Marco', 'Masiero', '1996-09-09', 'marcmasi@icloud.com', 0),
-('Snordio', 'Chioggia4ever', 'Stefano', 'Nordio', '1995-06-15', 'steno996@gmail.com', 0),
-('Drakex94', 'helpme', 'Francesco', 'Sacchetto', '1994-12-19', 'frasack94@gmail.com', 0),
-('DarkWarrior', 'pecpecpec', 'Francesco', 'Pecile', '1996-12-09', 'frapec96@gmail.com', 0);
+INSERT INTO `account` (`id`, `Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Admin`, `Attivo`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', '1995-10-01', 'admin@admin.admin', 1, 0),
+(2, 'Peachka', 'ciaone', 'Lucia', 'Fenu', '1995-06-30', 'lucia.fenu95@gmail.com', 1, 0),
+(3, 'Aiolos', '123qwerty789', 'Gianmarco', 'Pettenuzzo', '1995-08-20', 'gian82095@gmail.com', 1, 0),
+(4, 'Gionny-Atlas', '0987654321', 'Francesco', 'Battistella', '1994-10-01', 'frabat@icloud.com', 1, 0),
+(5, 'Depaa', 'asdfghjkl', 'Matteo', 'Depascale', '1995-08-20', 'depascale.matteo@gmail.com', 1, 0),
+(6, 'user', 'user', 'user', 'user', '1995-01-01', 'user@user.user', 0, 0),
+(7, 'Nikocister', 'Sassari', 'Nicola', 'Cisternino', '1995-01-12', 'nicocister95@gmail.com', 0, 0),
+(8, 'Mmasier', 'Chubby', 'Marco', 'Masiero', '1996-09-09', 'marcmasi@icloud.com', 0, 0),
+(9, 'Snordio', 'Chioggia4ever', 'Stefano', 'Nordio', '1995-06-15', 'steno996@gmail.com', 0, 0),
+(10, 'Drakex94', 'helpme', 'Francesco', 'Sacchetto', '1994-12-19', 'frasack94@gmail.com', 0, 0),
+(11, 'DarkWarrior', 'pecpecpec', 'Francesco', 'Pecile', '1996-12-09', 'frapec96@gmail.com', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -176,7 +178,8 @@ INSERT INTO `immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) VALUES
 --
 
 CREATE TABLE `notizie` (
-  `DataPubblicazione` date NOT NULL,
+  `ID` int(4) NOT NULL,
+  `Data` date NOT NULL,
   `Titolo` varchar(144) NOT NULL,
   `AdminNick` varchar(16) NOT NULL,
   `Testo` varchar(8192) NOT NULL,
@@ -187,15 +190,16 @@ CREATE TABLE `notizie` (
   `Windows` tinyint(1) DEFAULT NULL,
   `Mac` tinyint(1) DEFAULT NULL,
   `Playstation3` tinyint(1) DEFAULT NULL,
-  `Playstation4` tinyint(1) DEFAULT NULL
+  `Playstation4` tinyint(1) DEFAULT NULL,
+  `MenuImg` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notizie`
 --
 
-INSERT INTO `notizie` (`DataPubblicazione`, `Titolo`, `AdminNick`, `Testo`, `XboxOne`, `Xbox360`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Playstation3`, `Playstation4`) VALUES
-('2017-11-30', 'XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA', 'Depaa', 'Nel corso di un\' intervista concessa a GamesGuide.com, Piers Harding-Rolls, Director of Research and Analysis Games presso IHS Markit, ha confermato che la compagnia di ricerche di mercato ha quasi raddoppiato le proprie previsioni di vendita di Xbox One X nel 2017.\r\n\"Il feedback sui pre-order per Xbox One X standard e la Project Scorpio Edition ci ha spinti a rivedere le nostre previsioni di vendita di Xbox One X nel 2017. La edizione limitata di Xbox One X si è rivelata una mossa vincente, riuscendo a veicolare una robusta quantità di macchine durante la settimana di lancio, nelle Regioni chiave. IHS Markit ha quindi incrementato le proprie previsioni da 500.000 a 900.000 unità\".\r\nAllo stesso modo, la compagnia crede che, al netto di questo possibile successo commerciale, non basterà Xbox One X per colmare il gap presente tra Microsoft e Sony, specialmente prendendo in considerazione lo andamento del mercato in Europa continentale.', 1, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `notizie` (`ID`, `Data`, `Titolo`, `AdminNick`, `Testo`, `XboxOne`, `Xbox360`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Playstation3`, `Playstation4`, `MenuImg`) VALUES
+(1, '2017-11-30', 'XBOX ONE X: IHS MARKIT HA QUASI RADDOPPIATO LE SUE PREVISIONI DI VENDITA', 'Depaa', 'Nel corso di un\' intervista concessa a GamesGuide.com, Piers Harding-Rolls, Director of Research and Analysis Games presso IHS Markit, ha confermato che la compagnia di ricerche di mercato ha quasi raddoppiato le proprie previsioni di vendita di Xbox One X nel 2017.\r\n\"Il feedback sui pre-order per Xbox One X standard e la Project Scorpio Edition ci ha spinti a rivedere le nostre previsioni di vendita di Xbox One X nel 2017. La edizione limitata di Xbox One X si è rivelata una mossa vincente, riuscendo a veicolare una robusta quantità di macchine durante la settimana di lancio, nelle Regioni chiave. IHS Markit ha quindi incrementato le proprie previsioni da 500.000 a 900.000 unità\".\r\nAllo stesso modo, la compagnia crede che, al netto di questo possibile successo commerciale, non basterà Xbox One X per colmare il gap presente tra Microsoft e Sony, specialmente prendendo in considerazione lo andamento del mercato in Europa continentale.', 1, 0, 0, 0, 0, 0, 0, 0, 'XboxOneX.jpg');
 
 -- --------------------------------------------------------
 
@@ -267,7 +271,7 @@ INSERT INTO `valutazione` (`Voto`, `NomeGioco`, `UserNick`) VALUES
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`Nickname`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Nickname` (`Nickname`),
   ADD UNIQUE KEY `Email` (`Email`);
 
@@ -306,9 +310,8 @@ ALTER TABLE `immagini`
 -- Indexes for table `notizie`
 --
 ALTER TABLE `notizie`
-  ADD PRIMARY KEY (`Titolo`),
-  ADD UNIQUE KEY `Titolo` (`Titolo`),
-  ADD KEY `Notizie` (`AdminNick`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Titolo` (`Titolo`);
 
 --
 -- Indexes for table `recensione`
@@ -329,6 +332,18 @@ ALTER TABLE `valutazione`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `notizie`
+--
+ALTER TABLE `notizie`
+  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `recensione`
