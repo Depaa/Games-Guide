@@ -1,0 +1,656 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+	/*menu fisso ma non va il dropdown*/
+	/*position: sticky; 
+	top: 0%;
+	z-index: 1;*/
+}
+
+/*********************************LOGO*********************************/
+.dropdownlogo {
+    float: left;
+    /*overflow: hidden;*/
+	margin-left:10%;
+}
+
+.dropdownlogo .dropbtnlogo {
+    font-size: 120%;    
+	border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em 0em;
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	max-width: 100%;
+}
+
+.dropbtnlogo a:link, .dropbtnlogo a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+.navbar .dropdownlogo:hover .dropbtnlogo {
+	cursor: pointer;
+}
+
+/*********************************NOTIZIE, RECENSIONI, VIDEOGIOCHI*********************************/
+.dropdown {
+    float: left;
+    /*overflow: hidden;*/
+}
+.dropdown .dropbtn {
+    font-size: 120%;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em;
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
+}
+
+.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
+    background-color: white;
+	color: black;
+}
+
+i.fa.fa-caret-down { /*metto padding a freccetta*/
+	padding-left: 0.5em;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white; /*do not use #f9f9f9*/ /*oscuro signore*/
+    width: 100%;
+    left: 0;
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
+    z-index: 1;
+	text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*creo le colonne che riempiranno tutta la pagina*/
+.column {
+    float: left;
+    width: 20%; /*5 colonne*/
+    padding: 0em 0em 0.5em 0em;
+    background-color: #ffffff;
+    height: 100%;
+	font-size: 120%;
+}
+
+.column a {
+    float: none;
+	text-align: center;
+    color: black;
+	margin-left: 0em;
+    padding: 0.25em 0em 0.25em 0em;
+    text-decoration: none;
+    display: block;
+	font-size: 100%;
+}
+
+.column a:hover {
+    background-color: #333;
+	color: white;
+}
+
+.polaroid img {
+	display: block;
+	max-width: 90%;
+	margin: auto;
+	margin-top: 7.5%;
+    display: flex;
+	/*immagini ridimensionate a mano, chiedere perchè non va bene*/
+	/*NOTA BENE: IMMAGINI
+		1920x1080
+	*/
+}
+
+.polaroid img:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);	/*per fare il contorno alle immagini*/
+}
+
+.polaroid {
+    float: left;
+    width: 20%;
+    padding: 0em;
+    background-color: #ffffff;
+    height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
+}
+
+.polaroidText {
+	text-align: center;
+	max-width: 90%;
+	margin: auto;
+	font-weight: bold;
+}
+
+/*********************************LOGIN*********************************/
+.dropdownlogin {
+    float: right;
+    /*overflow: hidden;*/
+	margin-right: 10%;
+}
+
+.dropdownlogin .dropbtnlogin {
+    font-size: 120%;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: .75em .75em .75em .75em;
+	font-weight: bold;
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
+	width: 100%;
+}
+
+.dropdown-content-login {
+	display: none;
+	position: absolute;
+    background-color: white;
+    width: 15%;
+    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
+    z-index: 1;
+	text-align: left;
+	margin: 0;
+}
+
+.dropdownlogin:hover .dropdown-content-login {
+    display: block;
+}
+
+.form { /*dentro la dropdown*/
+
+}
+
+.containerlogin {
+    padding: 1%;
+}
+
+.dropdown-content-login input[type=text], .dropdown-content-login input[type=password] {
+    width: 100%;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 0.5em 0em;	/*da sistemare*/
+    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
+}
+
+.containerlogin label {
+	font-weight: bold;
+	padding-left: 1%;
+}
+
+.logsigninbtn {
+    background-color: #333;
+    color: white;
+    padding: 3% 1.5% 3% 1.5%;
+    margin: 1% 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	color: white;
+}
+
+.span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/*********************************CONTENUTO HOME PAGE*********************************/
+/* Slideshow container */
+.pagecontent {
+	top:0;
+	border-left: 2px solid #333;
+	border-right: 2px solid #333;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.slides-content {
+	max-width: 100%;
+	position: relative;
+	padding-top: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	overflow: hidden;
+}
+
+.mySlides {
+	display:none;
+	position: relative;
+	margin: 0;
+}
+
+.mySlides img {
+	max-width: 100%;
+	margin-bottom: -1%; /*viene fuori il bordo sotto, va tolto*/
+}
+
+.mySlides .textslide {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+	color: #ffffff;
+	width: 100%;
+	padding: 0% 1% 0% 1%;
+	font-size: 100%;
+}
+
+/*********************************FOOTER*********************************/
+/* VIDEOGIOCHI */ 
+.videogiochi {
+	font-family: Arial;
+	color: #333;
+	margin-left: 10%;
+	margin-right: 10%;
+	float: left;
+	max-width: 80%;
+}
+
+.filtro {
+	width: 14%;
+	float: left;
+	top: 0;
+	background-color: #fff;
+}
+
+.filtro h5 {
+	text-align: left;
+	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
+	padding-left: 15%;
+}
+.elenco {
+	display:block;
+    position: relative;
+	padding: 0% 0% 5% 20%; /*sposta le righe (cerchio + parole)*/
+    margin-bottom: 1%;
+    cursor: pointer;
+    font-size: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.elenco input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+	display: block;
+    position: absolute;
+    top: 0.15em;  /*centra il cerchio allinea con le parole*/
+    left: 8%;
+    height: 0.7em;/* grandezze cerchio*/
+    width: 0.7em;
+    background-color: #ccc; /*colore normale*/
+    border-radius: 35%;
+}
+
+.elenco:hover input ~ .checkmark {
+    background-color: #eee;   /*colore quando vado sopra il cerchio*/
+}
+
+.elenco input:checked ~ .checkmark {
+    background-color: #333; /*colore quando clicco sul cerchio*/
+}
+
+.piattaforme {
+	margin-bottom: 0.7em;
+}
+.piattaforme h4 .generi h4{
+	padding-left: 8%;
+	padding-top: 10%;
+	margin-top: 0%;
+	font-size: 90%;
+}
+.generi {
+	border-top: 1px solid #333;
+}
+/*PARTE GIOCHI*/
+.giochi {
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
+	width: 86%;
+	position: relative;
+	float:left;
+	margin-top: 0%;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
+}
+.scheda {
+	width: 90%;
+	float: left;
+	margin-bottom: 0%;
+	margin-top: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+.scheda h3 {
+	
+}
+
+.immagine {
+	max-width: 20%;
+	margin-right: 0%;
+	float: left;
+	
+}
+
+.scheda a {
+	padding-left: 0.5em;
+	color: #333;
+	
+}
+.scheda a:hover {
+	color: blue;
+}
+
+.scheda .desc {
+	width: 80%;
+	padding-top: 0.5em;
+	float: left;
+}
+.scheda .desc .descrizionesx {
+	float:left;
+	width: 30%;
+	margin-top: 0%;
+}
+
+.scheda .desc .descrizionedx {
+	float: left;
+	width: 70%;
+	margin-top: 0%;
+}
+
+.scheda .descrizionesx p, .scheda .descrizionedx p, .desc p {
+	margin-top: 0%;
+	padding-left: 0.5em;
+}
+
+.desc p {
+	width:100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 5%;
+	text-align: justify;
+}
+/*********************************REGISTRAZIONE*********************************/
+.registrazione-contenuto {
+	margin-top: 0%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.riga {
+	text-align: center;
+}
+
+.riga h4 {
+   margin-top: 0%;
+   margin-bottom: 0%;
+}
+
+.registrazione-contenuto .registrazionebtn {
+	width: 100%;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: white;
+	font-size: 150%;
+	padding: 5% 5%;
+}
+
+.success-message, error-message {
+	font-size: 150%;
+}
+
+/*************************************************************************************/
+.News {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  float: left;
+}
+.filtro {
+	width: 10%;
+  padding-top: 3%;
+	float: left;
+}
+
+.filtro h5 {
+	text-align: left;
+	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
+	color: #333;
+	padding-left: 15%;
+	font-family: Arial;
+}
+.elenco {
+	display:block;
+    position: relative;
+	padding: 0% 0% 5% 20%; /*sposta le righe (cerchio + parole)*/
+    margin-bottom: 1%;
+    cursor: pointer;
+    font-size: 80%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	font-family: Arial;
+}
+
+.elenco input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+	display: block;
+    position: absolute;
+    top: 0.15em;  /*centra il cerchio allinea con le parole*/
+    left: 8%;
+    height: 0.7em;/* grandezze cerchio*/
+    width: 0.7em;
+    background-color: #ccc; /*colore normale*/
+    border-radius: 35%;
+}
+
+.elenco:hover input ~ .checkmark {
+    background-color: #eee;   /*colore quando vado sopra il cerchio*/
+}
+
+.elenco input:checked ~ .checkmark {
+    background-color: #333; /*colore quando clicco sul cerchio*/
+}
+
+.piattaforme {
+	margin-bottom: 0.7em;
+}
+.piattaforme h4 {
+	font-family: Arial;
+	padding-left: 8%;
+  margin-top: 0%;
+	color: #333;
+}
+.data {
+	border-top: 1px solid #333;
+}
+.data h4{
+	font-family: Arial;
+	padding-left: 8%;
+	padding-top: 10%;
+	margin-top: 0%;
+	color: #333;
+}
+
+.Notizia {
+  background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
+	width: 90%;
+	position: relative;
+	float:left;
+	padding-top: 3%;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
+}
+
+.lastnews {
+  max-width: 90%;
+  position: relative;
+  margin-left: 5%;
+
+}
+
+.lastnewsimg img {
+  max-width: 100%;
+}
+
+.lastnewstext {
+  width: 100%;
+  color: #fff;
+  font-family: Arial;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 120%;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0.7%;
+  margin: 0%;
+}
+.lastnewstext h4 {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 5%;
+}
+.lastnewstext p {
+  text-align: left;
+  font-size: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-left: 5%;
+}
+.notizie {
+  width: 90%;
+	float: left;
+	margin-bottom: 0%;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+
+			/******* COLONNA SINISTRA ****/
+
+
+.columnleft img {
+  width:  40%;
+  float: left;
+}
+
+
+			/******** COLONNA DESTRA ******/
+
+.columnright {
+  width: 60%;
+  height: auto;
+  float: left;
+}
+
+.titolonews {
+  text-align: left;
+  font-size: 160%;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+.titolonews a {
+  font-family: Arial;
+  font-weight: bold;
+  color: #333;
+}
+.titolonews p {
+  font-family: Arial;
+  color: #ccc;
+  margin: 0;
+  padding-top: 3%;
+  font-size: 80%;
+}
+
+.pagnotizia {
+  margin: 0% 10% 0 10%;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  font-family: Arial;
+}
+
+.titolonotizia h1{
+  text-align: left;
+  font-size: 170%;
+  margin: 0;
+}
+
+.adminews h4{
+  color: #ccc;
+}
+
+.imgnotizia {
+  border-bottom: 3px solid #333;
+}
+
+.imgnotizia img{
+  width: 100%;
+  padding-bottom: 2%;
+}
+
+.testonotizia {
+  text-align: left;
+  border-bottom: 3px solid #333;
+}
+
+.inscommenti {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #ccc;
+}
+
+.inscommenti textarea {
+  width: 100%;
+  resize: none;
+}
+
+.commenti {
+  padding-top: 3%;
+}
+
+.commenti h5 {
+  margin: 0;
+  color: #ccc;
+}
+
+.commenti p {
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #ccc;
+}
