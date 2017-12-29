@@ -3,16 +3,24 @@
 	
 	$error_message=0;
 	$success_message=0;
-	if(isset($_POST["submitR"])) {
-		/* Password Matching Validation */
-		foreach($_POST as $key=>$value) {
-			echo $_POST[$key] .'  a  ';
-			if(empty($_POST[$key])) {
-				$error_message = "All Fields are required";
-				break;
-			}
-		}
-		if($_POST['upsw'] != $_POST['confirmupsw'] && !isset($error_message)){ 
+	if(isset($_POST["submitR"])) {		
+		if(empty($_POST["unick"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["fname"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["lname"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["dnascita"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["email"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["upsw"]))
+			$error_message = "All Fields are required";
+		else if(empty($_POST["confirmupsw"]))
+			$error_message = "All Fields are required";
+		
+		
+		else if($_POST['upsw'] != $_POST['confirmupsw'] && !isset($error_message)){ 
 			$error_message = 'Passwords should be the same';
 		}
 
@@ -20,7 +28,7 @@
 		else if(!isset($error_message) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 			$error_message = "Invalid Email Address";
 		}
-		else if(!isset($error_message)){
+		else{
 			$query= "INSERT INTO `account` (`Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`) VALUES 
 			('$_POST[unick]', '$_POST[upsw]', '$_POST[fname]', '$_POST[lname]' , '$_POST[dnascita]', '$_POST[email]');";
 			
