@@ -395,8 +395,9 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 /*********************************REGISTRAZIONE*********************************/
 .registrazione-contenuto {
 	margin-top: 0%;
-	margin-left: 10%;
-	margin-right: 10%;
+	padding-top: 1%;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 .riga {
@@ -406,23 +407,29 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .riga h4 {
    margin-top: 0%;
    margin-bottom: 0%;
+   padding-top: 0.75%;
+   padding-bottom: 0.5%;
+   font-size: 130%;
 }
 
-.registrazione-contenuto .registrazionebtn {
-	width: 100%;
+.registrazionebtn {
+	margin-top: 1em;
+	width: 70%;
     background-color: #333;
     color: white;
     border: none;
     cursor: pointer;
     color: white;
 	font-size: 150%;
-	padding: 5% 5%;
+	padding: 0.5em 0.5em;
+	margin-left: 15%;
 }
 
-.success-message, error-message {
-	font-size: 150%;
+.riga input {
+	width: 70%;
+	text-align: center;
+	height: 3em;
 }
-
 /*************************************************************************************/
 .News {
   margin-left: 10%;
