@@ -279,7 +279,7 @@ echo '<div class="Notizia">';
 			else {
 				foreach($output1 as $campo => $row) {
 					
-					echo '<a href="NewsRews.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'"/></a>';
+					echo '<a href="RewsPage.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'"/></a>';
 					echo '<div class="lastnewsoverlay">';
 						echo '<div class="lastnewstext">';
 						echo '<h4>'.$row['Titolo'].'</h4>';
