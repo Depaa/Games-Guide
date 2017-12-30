@@ -300,13 +300,13 @@ echo '</div>';
 				foreach($output as $campo => $row) {
 					echo '<div class="notizie">';
 						echo '<div class="columnleft">';
-						echo '<a href="NewsRews.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'" class="imgrec"/></a>';
+						echo '<a href="RewsPage.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'" class="imgrec"/></a>';
 						echo '</div>';
 
 						echo '<div class="columnright">';
 							echo '<div class="testonews">';
 								echo '<div class="titolonews">';
-									echo '<a href="NewsRews.php?id='.$row['ID'].'" class="br">' .$row['Titolo']. '</a>';
+									echo '<a href="RewsPage.php?id='.$row['ID'].'" class="br">' .$row['Titolo']. '</a>';
 									echo '<div class="By-date-news">';
 										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
 									echo '</div>';
