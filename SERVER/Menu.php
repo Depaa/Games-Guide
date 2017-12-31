@@ -32,7 +32,7 @@
 
 		echo '<div class="navbar">';
 			echo '<div class="dropdownlogo">';
-				echo '<a href="Homee.php"><button class="dropbtnlogo">GAMES\' GUIDE</button></a>';
+				echo '<a href="indexx.php"><button class="dropbtnlogo">GAMES\' GUIDE</button></a>';
 			echo '</div>';
 			echo '<div class="dropdown">';
 				echo '<button class="dropbtn">Notizie<i class="fa fa-caret-down"></i></button>';
@@ -129,7 +129,7 @@
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
-			if (!isset($_SESSION['userSession'])) {	/*se non c'è stato un accesso prima*/
+			if (!isset($_SESSION['userSession'])) {	/*se non c'Ã¨ stato un accesso prima*/
 				echo '<div class="dropdownlogin">';
 					echo '<button class="dropbtnlogin">Accedi<i class="fa fa-caret-down"></i></button>';
 					echo '<div class="dropdown-content-login">';
