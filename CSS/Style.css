@@ -115,10 +115,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin: auto;
 	margin-top: 7.5%;
     display: flex;
-	/*immagini ridimensionate a mano, chiedere perchè non va bene*/
-	/*NOTA BENE: IMMAGINI
-		1920x1080
-	*/
 }
 
 .polaroid img:hover {
@@ -130,14 +126,24 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     width: 20%;
     padding: 0em;
     background-color: #ffffff;
-    height: auto;	/*da controllare come sistemare la %*/ /*prima era 100%*/
+    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 100%*/
 }
 
 .polaroidText {
 	text-align: center;
 	max-width: 90%;
-	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
 	font-weight: bold;
+}
+
+.polaroidText a:link, .polaroidText a:visited {
+	text-decoration: none;
+	color: #333;
+}
+
+.polaroidText:hover{
+	text-decoration: underline;
 }
 
 /*********************************LOGIN*********************************/
@@ -661,3 +667,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
   padding-bottom: 2%;
   border-bottom: 1px solid #ccc;
 }
+
+
+/*****************************************AGGIUNGI COSE***************************************************/
