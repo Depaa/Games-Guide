@@ -148,14 +148,14 @@ DROP TABLE IF EXISTS `Recensione`;
 CREATE TABLE IF NOT EXISTS `Recensione`
 (
 	`CodiceRecensione` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
-    `CodiceGioco` INT(4) DEFAULT NULL, /*ASPETTARE DI RIEMPIRE VIDEOGIOCO*/
+    `CodiceGioco` INT(4) DEFAULT NULL,
 	`AdminNick` VARCHAR(16) NOT NULL,
     `DataPubblicazione` DATETIME NOT NULL,
     `Titolo` VARCHAR(256) NOT NULL,
     `Contenuto` VARCHAR(4096) NOT NULL,
-    `ValGrafica` TINYINT(2) DEFAULT NULL, /*solo nella recensione*/
-    `ValStoria` TINYINT(2) DEFAULT NULL, /*solo nella recensione*/
-    `ValAudio` TINYINT(2) DEFAULT NULL, /*solo nella recensione*/
+    `ValGrafica` TINYINT(2) DEFAULT NULL, 
+    `ValStoria` TINYINT(2) DEFAULT NULL,
+    `ValAudio` TINYINT(2) DEFAULT NULL,
     
     FOREIGN KEY `Articolo`(`AdminNick`) REFERENCES `Admin`(`Nickname`),
     FOREIGN KEY `Articolo1`(`CodiceGioco`) REFERENCES `Videogioco`(`CodiceGioco`),
@@ -210,11 +210,12 @@ VALUES
 DROP TABLE IF EXISTS `Commento`;
 CREATE TABLE IF NOT EXISTS `Commento`
 (
+	`CodiceCommento` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
 	`UserNick` VARCHAR(16),
     `AdminNick` VARCHAR(16),
     `CodiceNotizia` INT(4),
     `CodiceRecensione` INT(4),
-    `DataPubblicazione` DATETIME,
+    `DataPubblicazione` DATETIME NOT NULL,
     `Contenuto` VARCHAR(256) NOT NULL,
 
 	FOREIGN KEY `Commento`(`UserNick`) REFERENCES `User`(`Nickname`),
@@ -222,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `Commento`
     FOREIGN KEY `Commento2`(`CodiceNotizia`) REFERENCES `Notizia`(`CodiceNotizia`),
     FOREIGN KEY `Commento3`(`CodiceRecensione`) REFERENCES `Recensione`(`CodiceRecensione`),
     
-    UNIQUE KEY(`UserNick`, `AdminNick`, `DataPubblicazione`) /*SAREBBE CHIAVE UNIVOCA PERCHE OGNI VOLTA O USER O ADMIN SONO NULLI*/
+    PRIMARY KEY(`CodiceCommento`)
 )
 
 ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -250,7 +251,7 @@ VALUES
 ('Aiolos', NULL, NULL, 6, '2018-01-04 20:20:45', 'capisco perchè è il miglior gioco'), 
 ('Peachka', NULL, 2, NULL, '2018-01-05 09:15:23', 'il più bel gioco che io abbia giocato'),
 (NULL, 'admin', 3, NULL, '2018-01-06 21:22:45', 'admin admin admin'),
-('Peachka', NULL, 11, NULL, '2018-01-10 19:45:32', 'augiri anche a voi');
+('Peachka', NULL, 11, NULL, '2018-01-10 19:45:32', 'auguri anche a voi');
 
 /********************************************************************* VALUTAZIONE *********************************************************************/
 DROP TABLE IF EXISTS `Valutazione`;
@@ -271,7 +272,7 @@ ENGINE=MyISAM DEFAULT CHARSET=latin1;
 DROP TABLE IF EXISTS `Videogioco`;
 CREATE TABLE IF NOT EXISTS `Videogioco`
 (
-	`CodiceGioco` INT(4) NOT NULL, /*AUTO_INCREMENT potrebbe essere un'ottima soluzione, dopo non serve nemmeno scriverlo nella tabella*/
+	`CodiceGioco` INT(4) NOT NULL,
     `Titolo` VARCHAR(128) NOT NULL,
     `Valutazione` INT(2) DEFAULT '0',	/*bisogna aggiornare la valutazione per questo ho messo default null*/
     `CodiceGenere1` INT(4) NOT NULL,
