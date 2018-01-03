@@ -107,6 +107,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .column a:hover {
     background-color: #333;
 	color: white;
+	/*-webkit-transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;
+    transition: 0.3s ease-in-out all;*/
 }
 
 .polaroid img {
@@ -668,5 +672,46 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
   border-bottom: 1px solid #ccc;
 }
 
+
+/*****************************************DELETE COSE***************************************************/
+.deletebtn {
+	margin-top: 1em;
+	width: 30%;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: white;
+	font-size: 120%;
+	margin-left: 0%;
+	overflow: hidden;
+}
+
+.deletebtnUL {
+	width: 20%;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: white;
+	font-size: 120%;
+	margin-left: 5%;
+	margin-bottom: 0.25em;
+	overflow: hidden;
+}
+
+.deletebtnVID {
+	width: 20%;
+	float: right;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    color: white;
+	font-size: 120%;
+	margin-left: 0%;
+	margin-bottom: 0.25em;
+	overflow: hidden;
+}
 
 /*****************************************AGGIUNGI COSE***************************************************/
