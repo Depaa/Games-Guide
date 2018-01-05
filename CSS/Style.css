@@ -23,6 +23,12 @@ body {
 	margin-left:10%;
 }
 
+@media screen and (max-width: 860px) {
+	.dropdownlogo {
+		margin-left:1%;
+	}
+}
+
 .dropdownlogo .dropbtnlogo {
     font-size: 120%;    
 	border: none;
@@ -62,6 +68,12 @@ body {
 .navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
     background-color: white;
 	color: black;
+}
+
+@media screen and (max-width: 860px) {
+	i.fa.fa-caret-down { 
+		display: none;
+	}
 }
 
 i.fa.fa-caret-down { /*metto padding a freccetta*/
@@ -161,6 +173,12 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     float: right;
     /*overflow: hidden;*/
 	margin-right: 10%;
+}
+
+@media screen and (max-width: 860px) {
+	.dropdownlogin {
+		margin-right: 1%;
+	}
 }
 
 .dropdownlogin .dropbtnlogin {
@@ -276,6 +294,14 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin-right: 10%;
 }
 
+@media screen and (max-width: 860px) {
+	.videogiochi {
+		margin-left: 1%;
+		margin-right: 0%;
+		width: 99%;
+	}
+}
+
 .filtro {
 	width: 12%;
 	float: left;
@@ -346,6 +372,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	margin-top: 0%;
+	
 	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
@@ -455,6 +482,13 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
+}
+@media screen and (max-width: 860px) {
+	.News {
+		margin-left: 1%;
+		margin-right: 0%;
+		width: 99%;
+	}
 }
 
 
@@ -671,7 +705,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 /*****************************************AGGIUNGI COSE***************************************************/
 .localA {
-	position: fixed;
 	float: left;
 	width: 20%;
 	font-family: Arial;
@@ -689,10 +722,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .opzioniA {
-	max-width: 70%;
+	max-width: 60%;
 	float: left;
+	margin-left: 5%;
 	margin-right: 10%;
-	margin-left: 30%;
 	font-family: Arial;
 	color: #333;
 	margin-top: 2%;
@@ -766,5 +799,3 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .backtotopbtn:hover {
 	background-color: rgba(0, 0, 0, 0.6);
 }
- 
- 
