@@ -2,9 +2,9 @@
 	session_start();
 	include_once "config.php";
 	
-	/*$queryADMIN="SELECT Nome FROM Videogiochi";
-	$rowADMIN = $conn->query($queryADMIN) or die("Errore nella query MySQL: ".$conn->error);*/
-	
+	$queryADMIN="SELECT Nickname FROM Account WHERE id=".$_SESSION['userSession']." ";
+	$risultatoADMIN = $conn->query($queryADMIN) or die("Errore nella query MySQL: ".$conn->error);
+	$nickADMIN = $risultatoADMIN->fetch_array();
 	$error_messageG=0;
 	$success_messageG=0;
 	if(isset($_POST['submitG'])) 
@@ -66,7 +66,6 @@
 				move_uploaded_file($_FILES["gimgvid"]["tmp_name"],$nuovo_nome_vid);
 				header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
 			}
-			$conn->close();
 		}
 	}
 	$error_messageN=0;
@@ -77,8 +76,7 @@
 			$error_messageN = "All Fields are required";
 		else if(empty($_POST["ntit"]))
 			$error_messageN = "All Fields are required";
-		else if(empty($_POST["nadmin"]))
-			$error_messageN = "All Fields are required";
+		
 		else if(empty($_POST["ntest"]))
 			$error_messageN = "All Fields are required";
 		else 
@@ -86,7 +84,7 @@
 			$nuovo_nome=basename($_FILES["nimg"]["name"]);
 		
 			$query= "INSERT INTO `notizie` (`Data`, `Titolo`, `AdminNick`, `Testo`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `MenuImg`)
-			values ('$_POST[ndata]', '$_POST[ntit]', '$_POST[nadmin]', '$_POST[ntest]' ,'". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "', '$nuovo_nome');";
+			values ('$_POST[ndata]', '$_POST[ntit]', '".$nickADMIN['Nickname']."', '$_POST[ntest]' ,'". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "', '$nuovo_nome');";
 		
 			$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 			if(!empty($output)) 
@@ -112,7 +110,7 @@
 				move_uploaded_file($_FILES["nimg"]["tmp_name"],$nuovo_nome);
 				header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
 			}
-			$conn->close();
+			
 		}
 	}
 	$error_messageR=0;
@@ -123,8 +121,7 @@
 			$error_messageR = "All Fields are required";
 		else if(empty($_POST["rtit"]))
 			$error_messageR = "All Fields are required";
-		else if(empty($_POST["radmin"]))
-			$error_messageR = "All Fields are required";
+
 		else if(empty($_POST["rdesc"]))
 			$error_messageR = "All Fields are required";
 		else if(empty($_POST["rname"]))
@@ -141,7 +138,7 @@
 			else
 			{				
 				$query= "INSERT INTO `recensione` (`NomeGioco`, `AdminNick`, `Titolo`, `Testo`, `Data`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`)
-				values ('$_POST[rname]', '$_POST[radmin]', '$_POST[rtit]', '$_POST[rdesc]' , '$_POST[rdata]', '". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "');";
+				values ('$_POST[rname]', '".$nickADMIN['Nickname']."', '$_POST[rtit]', '$_POST[rdesc]' , '$_POST[rdata]', '". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "');";
 		
 				$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 				if(!empty($output)) 
@@ -155,7 +152,7 @@
 				}	
 			}
 		}
-		$conn->close();
+		
 	}
 ?>
 
@@ -200,32 +197,32 @@
 					</div>
 					<?php } ?>
                         <h4>Nome Gioco</h4>
-                        <input type="text" name="gname" value="Gioco" /> 
+                        <input type="text" name="gname" value ="<?php if(isset($_POST['gname'])) echo $_POST['gname']; ?>" /> 
                     </div>
 					<div class="rigaA">	
-						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="gdata" value="2017-12-13"/>
+						<h4>Data Pubblicazione (aaaa-mm-gg)</h4>
+                        <input type="text" name="gdata" value ="<?php if(isset($_POST['gdata'])) echo $_POST['gdata']; ?>"/>
 					</div>
 					
 					<div class="rigaA">
                         <h4>Genere1</h4>
-                        <input type="text" name="ggenere1" value="Azione"/>
+                        <input type="text" name="ggenere1" value ="<?php if(isset($_POST['ggenere1'])) echo $_POST['ggenere1']; ?>"/>
 					</div>
 					<div class="rigaA">
 					   <h4>Genere2</h4>
-                        <input type="text" name="ggenere2"/>
+                        <input type="text" name="ggenere2" value ="<?php if(isset($_POST['ggenere2'])) echo $_POST['ggenere2']; ?>"/>
 					</div>
 					<div class="rigaA">
 						<h4>Genere3</h4>
-                        <input type="text" name="ggenere3"/>
+                        <input type="text" name="ggenere3" value ="<?php if(isset($_POST['ggenere3'])) echo $_POST['ggenere3']; ?>"/>
 					</div>
 					<div class="rigaA">	
 						<h4>PEGI</h4>
-                        <input type="text" name="gpegi" value="12"/>
+                        <input type="text" name="gpegi" value ="<?php if(isset($_POST['gpegi'])) echo $_POST['gpegi']; ?>"/>
 					</div>
 					<div class="rigaA">	
                         <h4>Piattaforme Disponibili (testo con virgola)</h4>
-                        <input type="text" name="gdisp" value="asdfsdfds"/>
+                        <input type="text" name="gdisp" value ="<?php if(isset($_POST['gdisp'])) echo $_POST['gdisp']; ?>"/>
 					</div>	
 					<div class="rigaA" id="checkA">
                         <label class="elencoA"> Xbox One
@@ -263,7 +260,7 @@
 					</div>
                     <div class="rigaA">
                         <h4>Descrizione</h4>
-                        <textarea name="gdesc" rows="10" cols="50"></textarea> 
+                        <textarea name="gdesc" rows="10" cols="50"><?php if(isset($_POST['gdesc'])) echo $_POST['gdesc']; ?></textarea> 
 					</div>
 					 
 					<div class="rigaA">	
@@ -296,17 +293,14 @@
 					<?php } ?>
 					<div class="rigaA">
                         <h4>Titolo News</h4>
-                        <input type="text" name="ntit" value="boh un titolo a caso bello lungo lungo cosi vediamo bene come si fa"/> 
+                        <input type="text" name="ntit" value ="<?php if(isset($_POST['ntit'])) echo $_POST['ntit']; ?>"/> 
                     </div>
 					<div class="rigaA">	
 						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="ndata" value="2017-12-13" />
+                        <input type="text" name="ndata" value ="<?php if(isset($_POST['ndata'])) echo $_POST['ndata']; ?>" />
 					</div>
 					
-					<div class="rigaA">
-                        <h4>Nick Admin</h4>
-                        <input type="text" name="nadmin" value="admin" />
-					</div>
+					
 					<div class="rigaA" id="checkA">
                         <label class="elencoA"> Xbox One
 							<input type="checkbox" name="xo">
@@ -343,7 +337,7 @@
 					</div>
                     <div class="rigaA">
                         <h4>Testo</h4>
-                        <textarea name="ntest" rows="10" cols="50"></textarea> 
+                        <textarea name="ntest" rows="10" cols="50"> <?php if(isset($_POST['ntest'])) echo $_POST['ntest']; ?></textarea> 
 					</div>
 					<div class="rigaA">	
 						<h4>Immagine News</h4>
@@ -369,19 +363,16 @@
 					<?php } ?>
 					<div class="rigaA">
                         <h4>Nome Gioco</h4>
-                        <input type="text" name="rname" value="Gioco" /> 
+                        <input type="text" name="rname" value ="<?php if(isset($_POST['rname'])) echo $_POST['rname']; ?>" /> 
                     </div>
-					<div class="rigaA">
-                        <h4>Admin Nick</h4>
-                        <input type="text" name="radmin" value="Gioco" /> 
-                    </div>
+					
 					<div class="rigaA">	
 						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="rdata" value="2017-12-13"/>
+                        <input type="text" name="rdata" value ="<?php if(isset($_POST['rdata'])) echo $_POST['rdata']; ?>"/>
 					</div>
 					<div class="rigaA">	
                         <h4>Titolo Recensione</h4>
-                        <input type="text" name="rtit" value="asdfsdfds" required/>
+                        <input type="text" name="rtit" value ="<?php if(isset($_POST['rtit'])) echo $_POST['rtit']; ?>"/>
 					</div>	
 					<div class="rigaA" id="checkA">
                         <label class="elencoA"> Xbox One
@@ -419,13 +410,15 @@
 					</div>
                     <div class="rigaA">
                         <h4>Testo Recensione</h4>
-                        <textarea name="rdesc" rows="10" cols="50"></textarea> 
+                        <textarea name="rdesc" rows="10" cols="50"><?php if(isset($_POST['rdesc'])) echo $_POST['rdesc']; ?></textarea> 
 					</div>
 						<button class="aggiungibtnA" type="submit" name="submitR">Conferma</button>
                 </form>
             </div>
 		
 	</div>
-	
+<?php
+	$conn->close();
+?>
 </body>
 </html>
