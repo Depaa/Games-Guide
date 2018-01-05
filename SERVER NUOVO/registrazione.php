@@ -7,42 +7,57 @@
 	}
 	$error_message=0;
 	$success_message=0;
-	if(isset($_POST["submitR"])) {		
+	
+	if(isset($_POST["submitR"])) {
+		$controllo_nick="SELECT Nickname FROM Account WHERE Nickname= '".$_POST['unick']. "'";
+		$controllo_mail = "SELECT Email FROM Account WHERE Email= '".$_POST['email']. "'";
+		$risultato_nick = $conn->query($controllo_nick) or die("Errore nella query MySQL: ".$conn->error);
+		$risultato_email = $conn->query($controllo_mail) or die("Errore nella query MySQL: ".$conn->error);
+		
+		
 		if(empty($_POST["unick"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["fname"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["lname"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["dnascita"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["email"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["upsw"]))
-			$error_message = "All Fields are required";
+			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["confirmupsw"]))
-			$error_message = "All Fields are required";
-		
-		
-		else if($_POST['upsw'] != $_POST['confirmupsw'] && !isset($error_message)){ 
-			$error_message = 'Passwords should be the same';
-		}
+			$error_message = "Tutti i campi sono richiesti";
 
-		/* Email Validation */
-		else if(!isset($error_message) && !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-			$error_message = "Invalid Email Address";
+		else if($_POST['upsw'] != $_POST['confirmupsw'] ){ 
+			$error_message = 'Le password non conincidono';
 		}
+		
+		else if (strlen($_POST['unick']) >10) {
+			$error_message = 'Il Nickname deve essere al massimo di 10 caratteri';
+		}
+		
+		else if ($risultato_nick->num_rows != 0) {
+			$error_message = 'Nickname gi&agrave; utilizzato';
+		}
+		
+		else if ($risultato_email->num_rows != 0)
+		{
+			$error_message = "Email gia usata";
+		}
+		/* Email Validation */
 		else{
 			$query= "INSERT INTO `account` (`Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`) VALUES 
-			('$_POST[unick]', '$_POST[upsw]', '$_POST[fname]', '$_POST[lname]' , '$_POST[dnascita]', '$_POST[email]');";
+			('$_POST[unick]', '$_POST[upsw]', '$_POST[fname]', '$_POST[lname]' , '".date("Y-m-d", strtotime($_POST['dnascita']))."', '$_POST[email]');";
 			
-			$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
+			$output = $conn->query($query) or die("Erroreeeeeeeee nella query MySQL: ".$conn->error);
 			if(!empty($output)) {
 				$error_message = "";
-				$success_message = "You have registered successfully!";	
+				$success_message = "Complimenti! Ti sei registrato con successo!";	
 				unset($_POST);
 			} else {
-				$success_message = "Problem in registration. Try Again!";	
+				$success_message = "Problemi con la registrazione :( Riprova.";	
 			}
 		}
 	}
@@ -91,7 +106,7 @@
 						<input type="text" name="lname" value="<?php if(isset($_POST['lname'])) echo $_POST['lname']; ?>"/>
 					</div>
 					<div class="riga">
-						<h4>Data di Nascita</h4>
+						<h4>Data di Nascita (gg-mm-aaaa)</h4>
 						<input type="text" name="dnascita" value="<?php if(isset($_POST['dnascita'])) echo $_POST['dnascita']; ?>"/>
 					</div>
 					<div class="riga">
