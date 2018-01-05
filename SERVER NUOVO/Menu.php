@@ -129,7 +129,7 @@
 				$query = $conn->query("SELECT * FROM account WHERE id=".$_SESSION['userSession']);
 				$rowA=$query->fetch_array();
 				echo '<div class="dropdownlogin">';
-					echo '<button class="dropbtnlogin">Ciao, '.$rowA['Nickname'].'<i class="fa fa-caret-down"></i></button>';
+					echo '<button class="dropbtnlogin">'.$rowA['Nickname'].'<i class="fa fa-caret-down"></i></button>';
 					echo '<div class="dropdown-content-login">';
 						echo '<div class="containerlogin">';
 							if($rowA['Admin']==1) { //se è admin allora può fare cose
