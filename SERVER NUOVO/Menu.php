@@ -73,7 +73,7 @@
 			echo '</div>';
 			
 			echo '<div class="dropdown">';
-				echo '<button class="dropbtn">Videogiochi<i class="fa fa-caret-down"></i></button>';
+				echo '<button class="dropbtn">Giochi<i class="fa fa-caret-down"></i></button>';
 				echo '<div class="dropdown-content">';
 					echo '<div class="column">';
 						echo '<h3>Playstation</h3>';
@@ -107,7 +107,7 @@
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
-			if (!isset($_SESSION['userSession'])) {	/*se non c'è stato un accesso prima*/
+			if (!isset($_SESSION['userSession'])) {	/*se non c'Ã¨ stato un accesso prima*/
 				echo '<div class="dropdownlogin">';
 					echo '<button class="dropbtnlogin">Accedi<i class="fa fa-caret-down"></i></button>';
 					echo '<div class="dropdown-content-login">';
@@ -132,7 +132,7 @@
 					echo '<button class="dropbtnlogin">Ciao, '.$rowA['Nickname'].'<i class="fa fa-caret-down"></i></button>';
 					echo '<div class="dropdown-content-login">';
 						echo '<div class="containerlogin">';
-							if($rowA['Admin']==1) { //se è admin allora può fare cose
+							if($rowA['Admin']==1) { //se Ã¨ admin allora puÃ² fare cose
 								echo '<label>Aggiungi schiavo</label>';
 								echo '<a href="Admin.php"><button class="logsigninbtn">Aggiungi</button></a>';
 							}
