@@ -113,6 +113,12 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     transition: 0.3s ease-in-out all;*/
 }
 
+.colonnatutti {
+	font-size: 150%;
+	height: 100%;
+	padding-top: 12%;
+}
+
 .polaroid img {
 	display: block;
 	max-width: 90%;
@@ -673,7 +679,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 
-/*****************************************DELETE COSE***************************************************/
+/*****************************************AGGIUNGI COSE***************************************************/
 .deletebtn {
 	margin-top: 1em;
 	width: 30%;
@@ -715,7 +721,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /*****************************************AGGIUNGI COSE***************************************************/
-/**********************************************ADMIN.php*/
 .localA {
 	position: fixed;
 	float: left;
@@ -792,7 +797,25 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 150%;
 	padding: 5% 5%;
 }
-#checkA .checkmark
-{
+#checkA .checkmark {
 	display:none;
 }
+
+/*BOTTONE ACCESSIBILITA'*/
+.backtotopbtn {
+	position: fixed;
+	bottom: 2em;
+	right: 3%;
+	text-decoration: none;
+	color: white;
+	background-color: #333;
+	font-size: 12px;
+	padding: 1em;
+	display: none;
+}
+
+.backtotopbtn:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+ 
+ 
