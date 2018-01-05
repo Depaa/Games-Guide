@@ -270,17 +270,18 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .videogiochi {
 	font-family: Arial;
 	color: #333;
+	float: left;
+	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	float: left;
-	max-width: 80%;
 }
 
 .filtro {
-	width: 14%;
+	width: 12%;
 	float: left;
 	top: 0;
 	background-color: #fff;
+	margin-right: 5%;
 }
 
 .filtro h5 {
@@ -341,7 +342,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .giochi {
 	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
-	width: 86%;
+	width: 83%;
 	position: relative;
 	float:left;
 	margin-top: 0%;
@@ -448,71 +449,15 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 /*************************************************************************************/
 .News {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
-  float: left;
-}
-.filtro {
-	width: 10%;
-  padding-top: 3%;
+	font-family: Arial;
+	color: #333;
 	float: left;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
-.filtro h5 {
-	text-align: left;
-	margin-bottom: 0.5em; /* spazio tra Classe e sottoclassi (ES tra xbox e one)*/
-	color: #333;
-	padding-left: 15%;
-	font-family: Arial;
-}
-.elenco {
-	display:block;
-    position: relative;
-	padding: 0% 0% 5% 20%; /*sposta le righe (cerchio + parole)*/
-    margin-bottom: 1%;
-    cursor: pointer;
-    font-size: 80%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	font-family: Arial;
-}
 
-.elenco input {
-    position: absolute;
-    opacity: 0;
-}
-
-.checkmark {
-	display: block;
-    position: absolute;
-    top: 0.15em;  /*centra il cerchio allinea con le parole*/
-    left: 8%;
-    height: 0.7em;/* grandezze cerchio*/
-    width: 0.7em;
-    background-color: #ccc; /*colore normale*/
-    border-radius: 35%;
-}
-
-.elenco:hover input ~ .checkmark {
-    background-color: #eee;   /*colore quando vado sopra il cerchio*/
-}
-
-.elenco input:checked ~ .checkmark {
-    background-color: #333; /*colore quando clicco sul cerchio*/
-}
-
-.piattaforme {
-	margin-bottom: 0.7em;
-}
-.piattaforme h4 {
-	font-family: Arial;
-	padding-left: 8%;
-  margin-top: 0%;
-	color: #333;
-}
 .data {
 	border-top: 1px solid #333;
 }
@@ -527,13 +472,15 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .Notizia {
   background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
-	width: 90%;
+	width: 83%;
 	position: relative;
 	float:left;
 	padding-top: 3%;
 	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
+
+
 
 .lastnews {
   max-width: 90%;
@@ -580,6 +527,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border: 3px solid #333;
 	padding: 2% 2% 2% 2%;
 }
+
+
 
 			/******* COLONNA SINISTRA ****/
 
