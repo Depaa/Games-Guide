@@ -29,7 +29,7 @@
 								echo '<p><a href="NewsPage.php?id='.$row['ID'].'">'.$row['Titolo'].'</a></p>';
 							echo '</div>';
 						echo '</div>';
-						}
+						} 
 					
 					echo '<div class="polaroid">';
 						echo '<a href="Notizie.php"><img src="IMG\alexaecho.jpg" alt="Notizie Pagina Principale"/></a>';
