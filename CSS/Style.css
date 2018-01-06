@@ -207,10 +207,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: block;
 }
 
-.form { /*dentro la dropdown*/
-
-}
-
 .containerlogin {
     padding: 1%;
 }
@@ -218,13 +214,14 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .dropdown-content-login input[type=text], .dropdown-content-login input[type=password] {
     width: 100%;
     padding: 3% 1.5% 3% 1.5%;
-    margin: 0.5em 0em;	/*da sistemare*/
+    margin: 0.5em 0em;
     display: inline-block; /*come un float, solo senza il clear nel div successivo*/
 }
 
-.containerlogin label {
+.containerlogin p {
 	font-weight: bold;
-	padding-left: 1%;
+	margin-top: 0%;
+	margin-bottom: 0%;
 }
 
 .logsigninbtn {
@@ -236,11 +233,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     cursor: pointer;
     width: 100%;
 	color: white;
-}
-
-.span.psw {
-    float: right;
-    padding-top: 16px;
 }
 
 /*********************************CONTENUTO HOME PAGE*********************************/
@@ -786,16 +778,51 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 /*BOTTONE ACCESSIBILITA'*/
 .backtotopbtn {
 	position: fixed;
-	bottom: 2em;
-	right: 3%;
+	bottom: 13%;
+	right: 1%;
 	text-decoration: none;
 	color: white;
 	background-color: #333;
-	font-size: 12px;
+	font-size: 120%;
 	padding: 1em;
 	display: none;
 }
 
 .backtotopbtn:hover {
 	background-color: rgba(0, 0, 0, 0.6);
+}
+
+/***************************************************** PAGING ******************************************************/
+.pagbtn {
+	font-size: 200%;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+}
+
+.pagbtn a {
+    color: black;
+    padding-right: 1%;
+	padding-left: 1%;
+    text-decoration: none;
+}
+.pagbtn a.activepag {
+    background-color: #333;
+    color: white;
+}
+
+
+
+/***************************************************** FOOTER ******************************************************/
+
+.footer {
+	margin-top: 2%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	border-top: 3px solid #333;
+	text-align: center;
+	color: white;
+	background-color: #333;
 }
