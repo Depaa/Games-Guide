@@ -7,15 +7,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 	<head>
 		<title>GamesGuide</title>
+		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link type="text/css" rel="stylesheet" href="CSS\Style.css" media="handheld, screen"/>
-		
-		<!--serve per mettere icone carine -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		
-		<!--<meta http-equiv="refresh" content="3" />-->
 		
 	</head>
 	
