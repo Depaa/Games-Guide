@@ -167,13 +167,13 @@
 			</div> 
 			
 <?php
-		echo '<div class="giochi">'; /*oppure /giochi/ */
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output->num_rows == 0)
-				echo '<p> Nessun gioco trovato </p>';
+				echo '<p> Nessun gioco trovato </p>';  //qua controllo 0results 
 			else {
+				echo '<div class="giochi">';
 				foreach($output as $campo => $row) {
 					echo '<div class="scheda">';
 						if (isset($_SESSION['userSession'])!="") {
@@ -189,38 +189,39 @@
 								echo '<p> Generi:</p>';
 								echo '<p> Disponibile per:</p>';
 								echo '<p> PEGI: </p>';
-							echo '</div>';
+							echo '</div>'; //chiudo descsx
 							
 							echo '<div class="descrizionedx">';
 								echo '<p>' .date('j M Y', strtotime($row['Data'])). '</p>';
 								echo '<p>' .$row['Genere1']. ' ' .$row['Genere2']. ' ' .$row['Genere3']. '</p>';
 								echo '<p>' .$row['Disponibilita']. '</p>';
 								echo '<p>' .$row['PEGI']. '</p>';
-							echo '</div>';
+							echo '</div>'; //chiudo descdx
 							echo '<a href="RewsPage.php?id='.$row['IDr'].'"> La nostra recensione del gioco </a>';
 							echo '<p>' .$row['Descrizione']. '</p>';
-						echo '</div>';
-					echo '</div>';
-				}
+						echo '</div>'; //chiudo desc
+					echo '</div>'; //chiudo scheda
+				} //chiuso for
+				$precPAG=$correntePAG;
+				$postPAG=$correntePAG;
+				if($correntePAG>1)
+					$precPAG=$correntePAG-1;
+				if($correntePAG+1<$totPAG)
+					$postPAG=$correntePAG+1;
+				echo '<div class="pagbtn">';
+					echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+					echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
+				echo '</div>'; //chiudo pagbtn
+				echo '</div>'; /* chiudo giochi*/
 			}
 		}
-		$precPAG=$correntePAG;
-			$postPAG=$correntePAG;
-			if($correntePAG>1)
-				$precPAG=$correntePAG-1;
-			if($correntePAG+1<$totPAG)
-				$postPAG=$correntePAG+1;
-			echo '<div class="pagbtn">';
-				echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-				echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-				echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
-			echo '</div>';
-			echo '</div>'; /*giochi*/
+		
 		
 			/*controlli più link per passare da una pagina all'altra*/
 			
 		
-		echo '</div>'; /*videogiochi*/
+		echo '</div>'; /* chiudo videogiochi*/
 	
 ?>
 		<div class="footer">
