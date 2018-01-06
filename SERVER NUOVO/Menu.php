@@ -34,7 +34,7 @@
 					echo '<div class="polaroid">';
 						echo '<a href="Notizie.php"><img src="IMG\alexaecho.jpg" alt="Notizie Pagina Principale"/></a>';
 						echo '<div class="polaroidText">';
-							echo '</p><a href="Notizie.php">SCOPRI TUTTE LE NOSTRE NOTIZIE</a></p>';
+							echo '<p><a href="Notizie.php">SCOPRI TUTTE LE NOSTRE NOTIZIE</a></p>';
 						echo '</div>';
 					echo '</div>';
 				}
@@ -100,10 +100,7 @@
 						echo '<a href="VideogiochiM.php?id=winmac">TUTTI</a>';
 					echo '</div>';
 					echo '<div class="column">';
-						//echo '<h3> </h3>';
-						//echo '<a href="Videogiochi.php"> </a>';
 						echo '<h3 class="colonnatutti"><a href="Videogiochi.php">TUTTI</a></h3>';
-						//echo '<a href="Videogiochi.php"> </a>';
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
@@ -112,13 +109,13 @@
 					echo '<button class="dropbtnlogin">Accedi<i class="fa fa-caret-down"></i></button>';
 					echo '<div class="dropdown-content-login">';
 						echo '<div class="containerlogin">';
-							echo '<form method="POST" action="">';
-								echo '<label>Username</label>';
-								echo '<input type="text" name="uname" value="admin"/>';
-								echo '<label>Password</label>';
-								echo '<input type="password" name="psw" value="admin"/>';
+							echo '<form method="post" action="">';
+								echo '<p><label>Username</label></p>';
+								echo '<p><input type="text" name="uname" value="admin"/></p>';
+								echo '<p><label>Password</label></p>';
+								echo '<p><input type="password" name="psw" value="admin"/></p>';
 								echo '<?php if(isset($msg)) {echo $msg;} ?>';
-								echo '<button class="logsigninbtn" type="submit" name="submitA">Accedi</button>';
+								echo '<p><button class="logsigninbtn" type="submit" name="submitA">Accedi</button></p>';
 							echo '</form>';
 							echo '<a href="registrazione.php"><button class="logsigninbtn">Registrati</button></a>';
 						echo '</div>';
