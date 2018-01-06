@@ -2,8 +2,41 @@
 	session_start();
 	include_once "config.php";
 	
+	$queryLIMITE="SELECT COUNT(*) AS Limite FROM Recensione";
+	$outputLIMITE = $conn->query($queryLIMITE) or die("Errore nella query MySQL: ".$conn->error);
+	$LIMITE = mysqli_fetch_assoc($outputLIMITE);
+	
+	$limitePAG=$LIMITE['Limite'];
+	
+	$maxPAG=3;
+	$minPAG=0;
+	
+	$correntePAG=0; //pagina corrente
+	
+	$totPAG=($limitePAG/$maxPAG);
+	if(isset($_GET['pag'])) {
+		$correntePAG=$_GET['pag'];
+		if($correntePAG>0 && $correntePAG<=$totPAG) {
+			$inizio=($correntePAG-1)*$maxPAG;
+			$fine=$maxPAG;	//$fine=$inizio+$maxPAG;
+		}
+		else {
+			if($correntePAG>$totPAG)
+				$correntePAG=$correntePAG-1;
+			else
+				$correntePAG=1;
+			$inizio=$minPAG;
+			$fine=$maxPAG;
+		}
+	}
+	else {
+		$correntePAG=1;
+		$inizio=$minPAG;
+		$fine=$maxPAG;
+	}
+	
 	$query1 = "SELECT Recensione.NomeGioco, IDr, AdminNick, Testo, Titolo, Data, MenuImg FROM Recensione JOIN Immagini ON Recensione.NomeGioco=Immagini.NomeGioco ORDER BY Data DESC LIMIT 1";
-	$query = "SELECT Recensione.NomeGioco, IDr, AdminNick, Testo, Titolo, Data, MenuImg FROM Recensione JOIN Immagini ON Recensione.NomeGioco=Immagini.NomeGioco ORDER BY Data DESC LIMIT 100 OFFSET 1";
+	$query = "SELECT Recensione.NomeGioco, IDr, AdminNick, Testo, Titolo, Data, MenuImg FROM Recensione JOIN Immagini ON Recensione.NomeGioco=Immagini.NomeGioco ORDER BY Data DESC LIMIT $fine OFFSET $inizio";
 	
 	$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 	$output1 = $conn->query($query1) or die("Errore nella query MySQL: ".$conn->error);
@@ -36,41 +69,41 @@
 						<h4> Piattaforme</h4>
 						<h5>Xbox</h5>
 						<label class="elenco"> Xbox One
-							<input type="checkbox" name="xo">
+							<input type="checkbox" name="xo"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">Xbox 360
-							<input type="checkbox" name="x3">
+							<input type="checkbox" name="x3"/>
 							<span class="checkmark"></span>
 						</label>
 
 						<h5>Playstation</h5>
 						<label class="elenco"> Playstation 4
-							<input type="checkbox"  name="p4">
+							<input type="checkbox"  name="p4"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco"> Playstation 3
-							<input type="checkbox" name="p3">
+							<input type="checkbox" name="p3"/>
 							<span class="checkmark"></span>
 						</label>
 
 						<h5>Nintendo</h5>
 						<label class="elenco"> Switch
-							<input type="checkbox" name="sw">
+							<input type="checkbox" name="sw"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">3DS
-							<input type="checkbox" name="ds">
+							<input type="checkbox" name="ds"/>
 							<span class="checkmark"></span>
 						</label>
 
 						<h5>PC</h5>
 						<label class="elenco"> Windows
-							<input type="checkbox" name="win">
+							<input type="checkbox" name="win"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">Mac
-							<input type="checkbox" name="mac">
+							<input type="checkbox" name="mac"/>
 							<span class="checkmark"></span>
 						</label>
 						<button class="filtrobtn" type="submit" name="submitRP">Conferma</button>
@@ -81,27 +114,27 @@
 					<div class="data">
 						<h4>Anno</h4>
 						<label class="elenco">2018
-							<input type="checkbox" name="2018">
+							<input type="checkbox" name="2018"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">2017
-							<input type="checkbox" name="2017">
+							<input type="checkbox" name="2017"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">2016
-							<input type="checkbox" name="2016">
+							<input type="checkbox" name="2016"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">2015
-							<input type="checkbox" name="2015">
+							<input type="checkbox" name="2015"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">2014
-							<input type="checkbox" name="2014">
+							<input type="checkbox" name="2014"/>
 							<span class="checkmark"></span>
 						</label>
 						<label class="elenco">2013
-							<input type="checkbox" name="2013">
+							<input type="checkbox" name="2013"/>
 							<span class="checkmark"></span>
 						</label>
 						<button class="filtrobtn" type="submit" name="submitRD">Conferma</button>
@@ -170,28 +203,50 @@ echo '<div class="Notizia">';
 			}
 		}
 ?>
-		
-			<a href="#" class="backtotopbtn">VAI SU</a>
-			<script>
-				$(document).ready(function() {
-					// Show or hide the sticky footer button
-					$(window).scroll(function() {
-						if ($(this).scrollTop() > 200) {
-							$('.backtotopbtn').fadeIn(200);
-						} else {
-							$('.backtotopbtn').fadeOut(200);
-						}
-					});
-					
-					// Animate the scroll to top
-					$('.backtotopbtn').click(function(event) {
-						event.preventDefault();
-						
-						$('html, body').animate({scrollTop: 0}, 300);
-					})
+			</div> 
+			
+		<a href="#" class="backtotopbtn">VAI SU</a>
+		<script>
+			$(document).ready(function() {
+				// Show or hide the sticky footer button
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 200) {
+						$('.backtotopbtn').fadeIn(200);
+					} else {
+						$('.backtotopbtn').fadeOut(200);
+					}
 				});
-			</script>
+				
+				// Animate the scroll to top
+				$('.backtotopbtn').click(function(event) {
+					event.preventDefault();
+					
+					$('html, body').animate({scrollTop: 0}, 300);
+				})
+			});
+		</script>
+		
 		</div> <!--chiudo news-->
+	
+<?php		
+		/*controlli più link per passare da una pagina all'altra*/
+		$precPAG=$correntePAG;
+		$postPAG=$correntePAG;
+		if($correntePAG>1)
+			$precPAG=$correntePAG-1;
+		if($correntePAG+1<$totPAG)
+			$postPAG=$correntePAG+1;
+		echo '<div class="pagbtn">';
+			echo '<a href="Recensione.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+			echo '<a href="Recensione.php?pag='.$postPAG.'"> &raquo;</a>';
+		echo '</div>';
+?>
+		
+	
+		<div class="footer">
+			<h4>Un belfooter qua ci mettimao</h4>
+		</div>
 		
 	</body>
 </html>
