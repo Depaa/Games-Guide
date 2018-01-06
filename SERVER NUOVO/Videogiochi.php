@@ -202,20 +202,22 @@
 				}
 			}
 		}
-		echo '</div>'; /*videogiochi*/
+			echo '</div>'; /*giochi*/
 		
-		/*controlli più link per passare da una pagina all'altra*/
-		$precPAG=$correntePAG;
-		$postPAG=$correntePAG;
-		if($correntePAG>1)
-			$precPAG=$correntePAG-1;
-		if($correntePAG+1<$totPAG)
-			$postPAG=$correntePAG+1;
-		echo '<div class="pagbtn">';
-			echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-			echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
-		echo '</div>';
+			/*controlli più link per passare da una pagina all'altra*/
+			$precPAG=$correntePAG;
+			$postPAG=$correntePAG;
+			if($correntePAG>1)
+				$precPAG=$correntePAG-1;
+			if($correntePAG+1<$totPAG)
+				$postPAG=$correntePAG+1;
+			echo '<div class="pagbtn">';
+				echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+				echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+				echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
+			echo '</div>';
+		
+		echo '</div>'; /*videogiochi*/
 	
 ?>
 		<div class="footer">
