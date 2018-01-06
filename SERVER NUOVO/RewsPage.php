@@ -36,7 +36,7 @@
 				values ('".$recensioneA['Titolo']."', '".date("Y-m-d"). "', '".date("h:i:s")."',  '$_POST[commento]', '". $nicknameA['NickName']."');";
 				
 				$outputINS= $conn->query($queryINS) or die("Erroreeeeeeeeeee nella query MySQL: ".$conn->error);
-				if(!empty($outputINS)) 
+				if(!empty($outputINS))  
 				{
 					$error_message = "";
 					header("Location: RewsPage.php?id='".$recensioneA['IDr']."' ");
