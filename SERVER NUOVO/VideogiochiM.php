@@ -90,7 +90,6 @@
 			}
 		}
 		echo '</div>'; /*giochi*/
-	echo '</div>'; /*videogiochi*/
-echo '</body>';
+	echo '</body>';
 echo '</html>';
 ?>
