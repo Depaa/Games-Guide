@@ -486,13 +486,19 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 /* VIDEOGIOCHIM */ 
 
 .giochiM {
+	margin-left: 10%;
+	margin-right: 10%;
 	font-family: Arial;
 	color: #333;
-	width: 100%;
+	width: 80%;
 	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
 	float:left;
+	
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
 }
+
 
 /*********************************REGISTRAZIONE*********************************/
 .registrazione-contenuto {
