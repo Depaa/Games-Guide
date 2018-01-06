@@ -121,7 +121,6 @@
 			$error_messageR = "All Fields are required";
 		else if(empty($_POST["rtit"]))
 			$error_messageR = "All Fields are required";
-
 		else if(empty($_POST["rdesc"]))
 			$error_messageR = "All Fields are required";
 		else if(empty($_POST["rname"]))
@@ -162,263 +161,263 @@
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="CSS\Style.css" media="handheld, screen"/>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-</head>
-<body>
-	<?php 
-			include 'Menu.php';
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link type="text/css" rel="stylesheet" href="CSS\Style.css" media="handheld, screen"/>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+			
+	</head>
+	<body>
+		<?php 
+				include 'Menu.php';
+		?>
+			
+		<div class="localA">
+			<p><a href="#AG">Aggiungi Gioco</a></p>
+			<p><a href="#AN">Aggiungi News</a></p>
+			<p><a href="#AR">Aggiungi Recensione</a></p>
+		</div>
+			
+		<div class="opzioniA">
+			<div class="AggA">
+			<h3 id="AG"> AGGIUNGI GIOCO</h3>
+				<div class="aggiungi-contentA">
+					<form method="post" action="" enctype="multipart/form-data">
+						<div class="rigaA">
+						<?php if($success_messageG) { ?>
+						<div class="rigaA">
+							<h4><?php if(isset($success_messageG)) echo $success_messageG; ?></h4>
+						</div>
+						<?php } ?>
+						<?php if($error_messageG) { ?>	
+						<div class="rigaA">
+							<h4><?php if(isset($error_messageG)) echo $error_messageG; ?></h4>
+						</div>
+						<?php } ?>
+							<h4>Nome Gioco</h4>
+							<input type="text" name="gname" value ="<?php if(isset($_POST['gname'])) echo $_POST['gname']; ?>" /> 
+						</div>
+						<div class="rigaA">	
+							<h4>Data Pubblicazione (aaaa-mm-gg)</h4>
+							<input type="text" name="gdata" value ="<?php if(isset($_POST['gdata'])) echo $_POST['gdata']; ?>"/>
+						</div>
+						
+						<div class="rigaA">
+							<h4>Genere1</h4>
+							<input type="text" name="ggenere1" value ="<?php if(isset($_POST['ggenere1'])) echo $_POST['ggenere1']; ?>"/>
+						</div>
+						<div class="rigaA">
+						   <h4>Genere2</h4>
+							<input type="text" name="ggenere2" value ="<?php if(isset($_POST['ggenere2'])) echo $_POST['ggenere2']; ?>"/>
+						</div>
+						<div class="rigaA">
+							<h4>Genere3</h4>
+							<input type="text" name="ggenere3" value ="<?php if(isset($_POST['ggenere3'])) echo $_POST['ggenere3']; ?>"/>
+						</div>
+						<div class="rigaA">	
+							<h4>PEGI</h4>
+							<input type="text" name="gpegi" value ="<?php if(isset($_POST['gpegi'])) echo $_POST['gpegi']; ?>"/>
+						</div>
+						<div class="rigaA">	
+							<h4>Piattaforme Disponibili (testo con virgola)</h4>
+							<input type="text" name="gdisp" value ="<?php if(isset($_POST['gdisp'])) echo $_POST['gdisp']; ?>"/>
+						</div>	
+						<div class="rigaA">
+							<label class="elencoA"> Xbox One
+								<input type="checkbox" name="xo"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Xbox 360
+								<input type="checkbox" name="x3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 4
+								<input type="checkbox"  name="p4"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 3
+								<input type="checkbox" name="p3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Switch
+								<input type="checkbox" name="sw"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">3DS
+								<input type="checkbox" name="ds"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Windows
+								<input type="checkbox" name="win"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Mac
+								<input type="checkbox" name="mac"/>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="rigaA">
+							<h4>Descrizione</h4>
+							<textarea name="gdesc" rows="10" cols="50"><?php if(isset($_POST['gdesc'])) echo $_POST['gdesc']; ?></textarea> 
+						</div>
+						 
+						<div class="rigaA">	
+							<h4>Immagine Menu</h4>
+							<input type="file" name="gimgmen"/>
+						</div>
+						<div class="rigaA">	
+							<h4>Immagine Giochi</h4>
+							<input type="file" name="gimgvid" id="gimgvid"/>
+						</div> 
+						   
+							<p><button class="aggiungibtnA" type="submit" name="submitG">Conferma</button></p>
+						
+					</form>
+				</div>
+			</div>
+			<div class="AggA">
+			<h3 id="AN"> AGGIUNGI NEWS</h3>
+				<div class="aggiungi-contentA">
+					<form method="post" action="" enctype="multipart/form-data">
+					<?php if($success_messageN) { ?>
+						<div class="rigaA">
+							<h4><?php if(isset($success_messageN)) echo $success_messageN?></h4>
+						</div>
+						<?php } ?>
+						<?php if($error_messageN) { ?>	
+						<div class="rigaA">
+							<h4><?php if(isset($error_messageN)) echo $error_messageN?></h4>
+						</div>
+						<?php } ?>
+						<div class="rigaA">
+							<h4>Titolo News</h4>
+							<input type="text" name="ntit" value ="<?php if(isset($_POST['ntit'])) echo $_POST['ntit']; ?>"/> 
+						</div>
+						<div class="rigaA">	
+							<h4>Data Pubblicazione</h4>
+							<input type="text" name="ndata" value ="<?php if(isset($_POST['ndata'])) echo $_POST['ndata']; ?>" />
+						</div>
+						
+						
+						<div class="rigaA">
+							<label class="elencoA"> Xbox One
+								<input type="checkbox" name="xo"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Xbox 360
+								<input type="checkbox" name="x3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 4
+								<input type="checkbox"  name="p4"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 3
+								<input type="checkbox" name="p3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Switch
+								<input type="checkbox" name="sw"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">3DS
+								<input type="checkbox" name="ds"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Windows
+								<input type="checkbox" name="win"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Mac
+								<input type="checkbox" name="mac"/>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="rigaA">
+							<h4>Testo</h4>
+							<textarea name="ntest" rows="10" cols="50"> <?php if(isset($_POST['ntest'])) echo $_POST['ntest']; ?></textarea> 
+						</div>
+						<div class="rigaA">	
+							<h4>Immagine News</h4>
+							<input type="file" name="nimg"/>
+						</div>                       
+							<p><button class="aggiungibtnA" type="submit" name="submitN">Conferma</button></p>
+					</form>
+				</div>
+			</div>
+			<div class="AggA">
+			<h3 id="AR"> AGGIUNGI RECENSIONE</h3>
+				<div class="aggiungi-contentA">
+					<form method="post" action="" enctype="multipart/form-data">
+					<?php if($success_messageR) { ?>
+						<div class="rigaA">
+							<h4><?php if(isset($success_messageR)) echo $success_messageR?></h4>
+						</div>
+						<?php } ?>
+						<?php if($error_messageR) { ?>	
+						<div class="rigaA">
+							<h4><?php if(isset($error_messageR)) echo $error_messageR?></h4>
+						</div>
+						<?php } ?>
+						<div class="rigaA">
+							<h4>Nome Gioco</h4>
+							<input type="text" name="rname" value ="<?php if(isset($_POST['rname'])) echo $_POST['rname']; ?>" /> 
+						</div>
+						
+						<div class="rigaA">	
+							<h4>Data Pubblicazione</h4>
+							<input type="text" name="rdata" value ="<?php if(isset($_POST['rdata'])) echo $_POST['rdata']; ?>"/>
+						</div>
+						<div class="rigaA">	
+							<h4>Titolo Recensione</h4>
+							<input type="text" name="rtit" value ="<?php if(isset($_POST['rtit'])) echo $_POST['rtit']; ?>"/>
+						</div>	
+						<div class="rigaA">
+							<label class="elencoA"> Xbox One
+								<input type="checkbox" name="xo"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Xbox 360
+								<input type="checkbox" name="x3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 4
+								<input type="checkbox"  name="p4"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Playstation 3
+								<input type="checkbox" name="p3"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Switch
+								<input type="checkbox" name="sw"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">3DS
+								<input type="checkbox" name="ds"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA"> Windows
+								<input type="checkbox" name="win"/>
+								<span class="checkmark"></span>
+							</label>
+							<label class="elencoA">Mac
+								<input type="checkbox" name="mac"/>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class="rigaA">
+							<h4>Testo Recensione</h4>
+							<textarea name="rdesc" rows="10" cols="50"><?php if(isset($_POST['rdesc'])) echo $_POST['rdesc']; ?></textarea> 
+						</div>
+							<p><button class="aggiungibtnA" type="submit" name="submitR">Conferma</button></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	<?php
+		$conn->close();
 	?>
-		
-	<div class="localA">
-		<p><a href="#AG">Aggiungi Gioco</a></p>
-		<p><a href="#AN">Aggiungi News</a></p>
-		<p><a href="#AR">Aggiungi Recensione</a></p>
-	</div>
-		
-	<div class="opzioniA">
-		<div class="AggA">
-		<h3 id="AG"> AGGIUNGI GIOCO</h3>
-			<div class="aggiungi-contentA">
-                <form method="post" action="" enctype="multipart/form-data">
-					<div class="rigaA">
-					<?php if($success_messageG) { ?>
-					<div class="rigaA">
-						<h4><?php if(isset($success_messageG)) echo $success_messageG; ?></h4>
-					</div>
-					<?php } ?>
-					<?php if($error_messageG) { ?>	
-					<div class="rigaA">
-						<h4><?php if(isset($error_messageG)) echo $error_messageG; ?></h4>
-					</div>
-					<?php } ?>
-                        <h4>Nome Gioco</h4>
-                        <input type="text" name="gname" value ="<?php if(isset($_POST['gname'])) echo $_POST['gname']; ?>" /> 
-                    </div>
-					<div class="rigaA">	
-						<h4>Data Pubblicazione (aaaa-mm-gg)</h4>
-                        <input type="text" name="gdata" value ="<?php if(isset($_POST['gdata'])) echo $_POST['gdata']; ?>"/>
-					</div>
-					
-					<div class="rigaA">
-                        <h4>Genere1</h4>
-                        <input type="text" name="ggenere1" value ="<?php if(isset($_POST['ggenere1'])) echo $_POST['ggenere1']; ?>"/>
-					</div>
-					<div class="rigaA">
-					   <h4>Genere2</h4>
-                        <input type="text" name="ggenere2" value ="<?php if(isset($_POST['ggenere2'])) echo $_POST['ggenere2']; ?>"/>
-					</div>
-					<div class="rigaA">
-						<h4>Genere3</h4>
-                        <input type="text" name="ggenere3" value ="<?php if(isset($_POST['ggenere3'])) echo $_POST['ggenere3']; ?>"/>
-					</div>
-					<div class="rigaA">	
-						<h4>PEGI</h4>
-                        <input type="text" name="gpegi" value ="<?php if(isset($_POST['gpegi'])) echo $_POST['gpegi']; ?>"/>
-					</div>
-					<div class="rigaA">	
-                        <h4>Piattaforme Disponibili (testo con virgola)</h4>
-                        <input type="text" name="gdisp" value ="<?php if(isset($_POST['gdisp'])) echo $_POST['gdisp']; ?>"/>
-					</div>	
-					<div class="rigaA" id="checkA">
-                        <label class="elencoA"> Xbox One
-							<input type="checkbox" name="xo">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Xbox 360
-							<input type="checkbox" name="x3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 4
-							<input type="checkbox"  name="p4">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 3
-							<input type="checkbox" name="p3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Switch
-							<input type="checkbox" name="sw">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">3DS
-							<input type="checkbox" name="ds">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Windows
-							<input type="checkbox" name="win">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Mac
-							<input type="checkbox" name="mac">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-                    <div class="rigaA">
-                        <h4>Descrizione</h4>
-                        <textarea name="gdesc" rows="10" cols="50"><?php if(isset($_POST['gdesc'])) echo $_POST['gdesc']; ?></textarea> 
-					</div>
-					 
-					<div class="rigaA">	
-						<h4>Immagine Menu</h4>
-                        <input type="file" name="gimgmen"/>
-                    </div>
-					<div class="rigaA">	
-						<h4>Immagine Giochi</h4>
-                        <input type="file" name="gimgvid" id="gimgvid"/>
-                    </div> 
-                       
-                        <button class="aggiungibtnA" type="submit" name="submitG">Conferma</button>
-					
-                </form>
-            </div>
-		</div>
-		<div class="AggA">
-		<h3 id="AN"> AGGIUNGI NEWS</h3>
-			<div class="aggiungi-contentA">
-                <form method="post" action="" enctype="multipart/form-data">
-				<?php if($success_messageN) { ?>
-					<div class="rigaA">
-						<h4><?php if(isset($success_messageN)) echo $success_messageN?></h4>
-					</div>
-					<?php } ?>
-					<?php if($error_messageN) { ?>	
-					<div class="rigaA">
-						<h4><?php if(isset($error_messageN)) echo $error_messageN?></h4>
-					</div>
-					<?php } ?>
-					<div class="rigaA">
-                        <h4>Titolo News</h4>
-                        <input type="text" name="ntit" value ="<?php if(isset($_POST['ntit'])) echo $_POST['ntit']; ?>"/> 
-                    </div>
-					<div class="rigaA">	
-						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="ndata" value ="<?php if(isset($_POST['ndata'])) echo $_POST['ndata']; ?>" />
-					</div>
-					
-					
-					<div class="rigaA" id="checkA">
-                        <label class="elencoA"> Xbox One
-							<input type="checkbox" name="xo">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Xbox 360
-							<input type="checkbox" name="x3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 4
-							<input type="checkbox"  name="p4">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 3
-							<input type="checkbox" name="p3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Switch
-							<input type="checkbox" name="sw">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">3DS
-							<input type="checkbox" name="ds">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Windows
-							<input type="checkbox" name="win">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Mac
-							<input type="checkbox" name="mac">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-                    <div class="rigaA">
-                        <h4>Testo</h4>
-                        <textarea name="ntest" rows="10" cols="50"> <?php if(isset($_POST['ntest'])) echo $_POST['ntest']; ?></textarea> 
-					</div>
-					<div class="rigaA">	
-						<h4>Immagine News</h4>
-                        <input type="file" name="nimg"/>
-                    </div>                       
-                        <button class="aggiungibtnA" type="submit" name="submitN">Conferma</button>
-                </form>
-            </div>
-		</div>
-		<div class="AggA">
-		<h3 id="AR"> AGGIUNGI RECENSIONE</h3>
-			<div class="aggiungi-contentA">
-                <form method="post" action="" enctype="multipart/form-data">
-				<?php if($success_messageR) { ?>
-					<div class="rigaA">
-						<h4><?php if(isset($success_messageR)) echo $success_messageR?></h4>
-					</div>
-					<?php } ?>
-					<?php if($error_messageR) { ?>	
-					<div class="rigaA">
-						<h4><?php if(isset($error_messageR)) echo $error_messageR?></h4>
-					</div>
-					<?php } ?>
-					<div class="rigaA">
-                        <h4>Nome Gioco</h4>
-                        <input type="text" name="rname" value ="<?php if(isset($_POST['rname'])) echo $_POST['rname']; ?>" /> 
-                    </div>
-					
-					<div class="rigaA">	
-						<h4>Data Pubblicazione</h4>
-                        <input type="text" name="rdata" value ="<?php if(isset($_POST['rdata'])) echo $_POST['rdata']; ?>"/>
-					</div>
-					<div class="rigaA">	
-                        <h4>Titolo Recensione</h4>
-                        <input type="text" name="rtit" value ="<?php if(isset($_POST['rtit'])) echo $_POST['rtit']; ?>"/>
-					</div>	
-					<div class="rigaA" id="checkA">
-                        <label class="elencoA"> Xbox One
-							<input type="checkbox" name="xo">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Xbox 360
-							<input type="checkbox" name="x3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 4
-							<input type="checkbox"  name="p4">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Playstation 3
-							<input type="checkbox" name="p3">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Switch
-							<input type="checkbox" name="sw">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">3DS
-							<input type="checkbox" name="ds">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA"> Windows
-							<input type="checkbox" name="win">
-							<span class="checkmark"></span>
-						</label>
-						<label class="elencoA">Mac
-							<input type="checkbox" name="mac">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-                    <div class="rigaA">
-                        <h4>Testo Recensione</h4>
-                        <textarea name="rdesc" rows="10" cols="50"><?php if(isset($_POST['rdesc'])) echo $_POST['rdesc']; ?></textarea> 
-					</div>
-						<button class="aggiungibtnA" type="submit" name="submitR">Conferma</button>
-                </form>
-            </div>
-		
-	</div>
-<?php
-	$conn->close();
-?>
-</body>
+	</body>
 </html>
