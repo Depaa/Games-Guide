@@ -70,58 +70,58 @@
 <?php 
 	include 'Menu.php';
 	echo '<div class="pagnotizia">';
-	if(!$output) 
-		echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
-	else {
-		foreach($output as $campo => $row) {
-			echo '<div class="titolonotizia">
-				<h1>'.$row['Titolo'].'</h1>
-			</div>
-			<div class="adminews">
-				<h4>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</h4>
-			</div>
-			<div class="imgnotizia">
-				<img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'"/>
-			</div>
-			<div class="testonotizia">
-					<p> ' .$row['Testo']. ' </p>
-			</div>
-			';
+		if(!$output) 
+			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
+		else {
+			foreach($output as $campo => $row) {
+				echo '<div class="titolonotizia">
+					<h1>'.$row['Titolo'].'</h1>
+				</div>
+				<div class="adminews">
+					<h4>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</h4>
+				</div>
+				<div class="imgnotizia">
+					<img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'"/>
+				</div>
+				<div class="testonotizia">
+						<p> ' .$row['Testo']. ' </p>
+				</div>
+				';
+			}
 		}
-	}
-	if (!$output2)
-		echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
-	else
-	{
-		echo '<div class="inscommenti">
-			<form method="post" action="" enctype="multipart/form-data">
-			Commento:
-			<textarea name="commento" input type="text" rows="10" cols="100"></textarea>
-			<button class="deletebtn" type="submit" name="comment"> Commenta </button>';
-			
-			if($error_message) { 	
-			echo'<div class="riga"> ';
-				echo '<h4>'; if(isset($error_message)) {echo $error_message;}
-				echo '</h4>';
-			echo '</div>';
-			} 
-			echo'</form>
-		</div>';
-		foreach($output2 as $campo => $row2) 
+		if (!$output2)
+			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
+		else
 		{
-			echo '<div class="commenti">';
-				echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
-				if (isset($_SESSION['userSession'])!="") {
-					if($rowA['Admin']==1) {
-						echo '<a href="deletethings.php?id='.$recensioneA['IDr'].'&idc='.$row2['IDc'].'&table=Recensione"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
-					}
-				}
-				echo '</h5>';
-				echo'<p>'.$row2['Commento'].' </p>';
+			echo '<div class="inscommenti">
+				<form method="post" action="" enctype="multipart/form-data">
+				Commento:
+				<textarea name="commento" rows="10" cols="100"></textarea>
+				<p><button class="deletebtn" type="submit" name="comment"> Commenta </button></p>';
+				
+				if($error_message) { 	
+				echo'<div class="riga"> ';
+					echo '<h4>'; if(isset($error_message)) {echo $error_message;}
+					echo '</h4>';
 				echo '</div>';
+				} 
+				echo'</form>
+			</div>';
+			foreach($output2 as $campo => $row2) 
+			{
+				echo '<div class="commenti">';
+					echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
+					if (isset($_SESSION['userSession'])!="") {
+						if($rowA['Admin']==1) {
+							echo '<a href="deletethings.php?id='.$recensioneA['IDr'].'&idc='.$row2['IDc'].'&table=Recensione"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
+						}
+					}
+					echo '</h5>';
+					echo'<p>'.$row2['Commento'].' </p>';
+					echo '</div>';
+			}
 		}
-	}
-	echo '</div> ';
+		echo '</div> ';
 ?>
 	</body>
 </html>
