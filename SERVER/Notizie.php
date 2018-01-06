@@ -204,12 +204,7 @@
 				}
 			}
 		}
-?>
-		</div>
-	</div>
-		
-<?php
-	/*controlli più link per passare da una pagina all'altra*/
+		/*controlli piÃ¹ link per passare da una pagina all'altra*/
 		$precPAG=$correntePAG;
 		$postPAG=$correntePAG;
 		if($correntePAG>1)
@@ -221,6 +216,12 @@
 			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
 			echo '<a href="Notizie.php?pag='.$postPAG.'"> &raquo;</a>';
 		echo '</div>';	
+?>
+		</div>
+	</div>
+		
+<?php
+	
 ?>
 		
 		<div class="footer">
