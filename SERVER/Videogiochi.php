@@ -204,10 +204,7 @@
 				}
 			}
 		}
-			echo '</div>'; /*giochi*/
-		
-			/*controlli pi˘ link per passare da una pagina all'altra*/
-			$precPAG=$correntePAG;
+		$precPAG=$correntePAG;
 			$postPAG=$correntePAG;
 			if($correntePAG>1)
 				$precPAG=$correntePAG-1;
@@ -218,6 +215,10 @@
 				echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
 				echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
 			echo '</div>';
+			echo '</div>'; /*giochi*/
+		
+			/*controlli pi√π link per passare da una pagina all'altra*/
+			
 		
 		echo '</div>'; /*videogiochi*/
 	
