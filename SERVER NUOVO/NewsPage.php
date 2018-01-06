@@ -70,7 +70,6 @@
 			include 'Menu.php';
 		?>
 <?php
-/*SELECT ID, AdminNick, Testo, Titolo, Data, MenuImg FROM Notizie*/
 		echo '<div class="pagnotizia">';
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
@@ -95,38 +94,34 @@
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else
 		{
-				echo '<div class="inscommenti">
-					<form method="post" action="" enctype="multipart/form-data">
-					Commento:
-					<textarea name="commento" input type="text" rows="10" cols="100"></textarea>
-					<button class="deletebtn" type="submit" name="comment"> Commenta </button>';
-					
-					 if($error_message) { 	
-					echo'<div class="riga">
-					 <h4>'; if(isset($error_message)) {echo $error_message;}
-					echo '</h4>
-					</div>';
-					} 
-					echo'</form>
-				</div>';
+			echo '<div class="inscommenti">
+				<form method="post" action="" enctype="multipart/form-data">
+				<p>Commento: </p>
+				<textarea name="commento" rows="10" cols="100"></textarea>
+				<p><button class="deletebtn" type="submit" name="comment"> Commenta </button></p>';
 				
-				foreach($output2 as $campo => $row2) 
-				{
-					echo '<div class="commenti">';
-					
-						echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
-						if (isset($_SESSION['userSession'])!="") {
+				 if($error_message) { 	
+				echo'<div class="riga">
+				 <h4>'; if(isset($error_message)) {echo $error_message;}
+				echo '</h4>
+				</div>';
+				} 
+				echo'</form>
+			</div>';
+			
+			foreach($output2 as $campo => $row2) 
+			{
+				echo '<div class="commenti">';
+					echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
+					if (isset($_SESSION['userSession'])!="") {
 						if($rowA['Admin']==1) {
 							echo '<a href="deletethings.php?id='.$notizieA['ID'].'&idc='.$row2['IDc'].'&table=CommentiNotizie"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
 						}
 					}
-						echo '</h5>';
-						
-						echo'<p>'.$row2['Commento'].' </p>';
-						
-					echo '</div>';
-					
-				}
+					echo '</h5>';
+					echo'<p>'.$row2['Commento'].' </p>';
+				echo '</div>';
+			}
 		}
 		echo '</div> ';
 ?>
