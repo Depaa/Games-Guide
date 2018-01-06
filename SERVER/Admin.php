@@ -9,6 +9,20 @@
 	$success_messageG=0;
 	if(isset($_POST['submitG'])) 
 	{
+		$controllo_nome= "SELECT Nome FROM Videogiochi WHERE Nome= '".$_POST['gname']. "'";
+		$risultato_nome= $conn->query($controllo_nome) or die("Errore nella query MySQL: ".$conn->error);
+		
+		$controllo_nome2= "SELECT NomeGioco FROM Immagini WHERE NomeGioco= '".$_POST['gname']. "'";
+		$risultato_nome2= $conn->query($controllo_nome2) or die("Errore nella query MySQL: ".$conn->error);
+		
+		$controllo_G1= "SELECT Nome FROM Genere WHERE Nome= '".$_POST['ggenere1']. "'";
+		$risultato_G1= $conn->query($controllo_G1) or die("Errore nella query MySQL: ".$conn->error);
+		
+		$controllo_G2= "SELECT Nome FROM Genere WHERE Nome= '".$_POST['ggenere2']. "'";
+		$risultato_G2= $conn->query($controllo_G2) or die("Errore nella query MySQL: ".$conn->error);
+		
+		$controllo_G3= "SELECT Nome FROM Genere WHERE Nome= '".$_POST['ggenere3']. "'";
+		$risultato_G3= $conn->query($controllo_G3) or die("Errore nella query MySQL: ".$conn->error);
 		
 		if(empty($_POST["gname"]))
 			$error_messageG = "All Fields are required";
@@ -22,8 +36,23 @@
 			$error_messageG = "All Fields are required";
 		else if(empty($_POST["gdesc"]))
 			$error_messageG = "All Fields are required";
-		/*else if(!filter_var($_POST["gname"], FILTER_VALIDATE_EMAIL)) //va finito 
-			$error_messageG = "Gioco Duplicato";*/
+		else if ($risultato_nome->num_rows != 0) {
+			$error_messageG = 'Nome gioco gi&agrave; utilizzato';
+		}
+		else if ($risultato_nome2->num_rows != 0) {
+			$error_messageG = 'Nome gioco gi&agrave; utilizzato in tabella Immagini';
+		}
+		else if ($risultato_G1->num_rows == 0) {
+			$error_messageG = 'Nome genere1 non esiste';
+		}
+		else if (!empty($_POST["ggenere2"]) && ($risultato_G2->num_rows == 0)) {
+			$error_messageG = 'Nome genere2 non esiste';
+		}
+		else if (!empty($_POST["ggenere3"]) && ($risultato_G3->num_rows == 0)) {
+			$error_messageG = 'Nome genere3 non esiste';
+		}
+		
+		
 		else {
 			$query= "INSERT INTO `Videogiochi` (`Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`, `PEGI`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`)
 			values  ('$_POST[gname]', '$_POST[gdata]', '$_POST[ggenere1]', '$_POST[ggenere2]' , '$_POST[ggenere3]', '$_POST[gpegi]', '$_POST[gdisp]', '". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])). "', '$_POST[gdesc]');";
@@ -32,7 +61,7 @@
 			$nuovo_nome_vid= "game-" .basename($_FILES["gimgvid"]["name"]);
 		
 		
-			$query2="insert into `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) 
+			$query2="INSERT INTO `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) 
 			values ('$_POST[gname]', '$nuovo_nome', '$nuovo_nome_vid');";
 			$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 			if(!empty($output)) 
@@ -68,6 +97,8 @@
 			}
 		}
 	}
+	$error_messageN=0;
+	$success_messageN=0;
 	$error_messageN=0;
 	$success_messageN=0;
 	if(isset($_POST['submitN']))
