@@ -29,7 +29,6 @@
 			$error_message = "Tutti i campi sono richiesti";
 		else if(empty($_POST["confirmupsw"]))
 			$error_message = "Tutti i campi sono richiesti";
-
 		else if($_POST['upsw'] != $_POST['confirmupsw'] ){ 
 			$error_message = 'Le password non conincidono';
 		}
@@ -42,12 +41,10 @@
 			$error_message = 'Nickname gi&agrave; utilizzato';
 		}
 		
-		else if ($risultato_email->num_rows != 0)
-		{
+		else if ($risultato_email->num_rows != 0) {
 			$error_message = "Email gia usata";
 		}
-		/* Email Validation */
-		else{
+		else {
 			$query= "INSERT INTO `account` (`Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`) VALUES 
 			('$_POST[unick]', '$_POST[upsw]', '$_POST[fname]', '$_POST[lname]' , '".date("Y-m-d", strtotime($_POST['dnascita']))."', '$_POST[email]');";
 			
@@ -68,14 +65,8 @@
 	<head>
 		<title>GamesGuide</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link type="text/css" rel="stylesheet" href="CSS\Style.css" media="handheld, screen"/>
-		
-		<!--serve per mettere icone carine -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-		
-		<!--<meta http-equiv="refresh" content="3" />-->
 		
 	</head>
 	
@@ -125,11 +116,10 @@
 						<h4>Conferma Password</h4>
 						<input type="password" name="confirmupsw" value=""/>
 					</div>
-					<button class="registrazionebtn" type="submit" name="submitR">REGISTRATI</button>
+					<p><button class="registrazionebtn" type="submit" name="submitR">REGISTRATI</button></p>
 				</form>
 			</div>
 		</div>
 		
 	</body>
 </html>
-
