@@ -238,9 +238,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
 .pagecontent {
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
 	top:0;
-	border-left: 2px solid #333;
-	border-right: 2px solid #333;
+	border-left: 3px solid #333;
+	border-right: 3px solid #333;
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -248,9 +250,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .slides-content {
 	max-width: 100%;
 	position: relative;
-	padding-top: 10%;
+	padding-top: 5%;
 	margin-left: 10%;
 	margin-right: 10%;
+	padding-bottom: 5%;
 	overflow: hidden;
 }
 
@@ -262,7 +265,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .mySlides img {
 	max-width: 100%;
-	margin-bottom: -1%; /*viene fuori il bordo sotto, va tolto*/
+	margin-bottom: -5px; /*viene fuori il bordo sotto, va tolto*/
 }
 
 .mySlides .textslide {
@@ -272,7 +275,60 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: #ffffff;
 	width: 100%;
 	padding: 0% 1% 0% 1%;
-	font-size: 100%;
+	font-size: 90%;
+}
+
+@media screen and (max-width: 860px) {
+	.mySlides .textslide {
+		font-size: 60%;
+	}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 0.5em;
+	margin-top: -2em;
+	color: white;
+	font-weight: bold;
+	font-size: 200%;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	background-color: #333;
+}
+
+/* metto a dx il bottone next */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: white;
+  color: #333;
+}
+
+/* The dots/bullets/indicators */
+.dottod {
+	text-align: center;
+}
+.dot {
+	cursor: pointer;
+	height: 2em;
+	width: 2em;
+	margin: 1em 0.25em;
+	background-color: #333;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
 }
 
 /*********************************FOOTER*********************************/
@@ -466,7 +522,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 	height: 3em;
 }
-/*************************************************************************************/
+/****************************************** NOTIZIE *******************************************/
 .News {
 	font-family: Arial;
 	color: #333;
@@ -496,7 +552,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .Notizia {
-  background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
 	width: 83%;
 	position: relative;
@@ -654,7 +710,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 
-/*****************************************AGGIUNGI COSE***************************************************/
+/*****************************************DELETE COSE***************************************************/
 .deletebtn {
 	margin-top: 1em;
 	width: 30%;
@@ -794,6 +850,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 /***************************************************** PAGING ******************************************************/
 .pagbtn {
+	margin-top: 1%;
+	margin-bottom: 1%;
 	font-size: 200%;
 	font-weight: bold;
 	color: #333;
@@ -811,12 +869,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     color: white;
 }
 
-
-
 /***************************************************** FOOTER ******************************************************/
 
 .footer {
-	margin-top: 2%;
+	clear: both;
+	margin-top: 0%;
 	margin-left: 0;
 	margin-right: 0;
 	padding-top: 0.5%;
@@ -826,3 +883,4 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 	background-color: #333;
 }
+
