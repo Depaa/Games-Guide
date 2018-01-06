@@ -146,14 +146,15 @@
 		</div> 
 		
 <?php
-	echo '<div class="Notizia">';
-		echo '<div class="lastnews">';
+	
 			if(!$output1) 
 				echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 			else {
 				if($output1->num_rows == 0)
-					echo '<p> Nessuna notizia trovato </p>';
+					echo '<p> Nessuna notizia trovata </p>';
 				else {
+					echo '<div class="Notizia">';
+					echo '<div class="lastnews">';
 					foreach($output1 as $campo => $row) {
 						echo '<div class="lastnewsimg">';
 						echo '<a href="NewsPage.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['Titolo'].'"/></a>';
@@ -178,44 +179,43 @@
 				echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output->num_rows == 0)
-				echo '<p> Nessuna notizia trovato </p>';
+				echo '';
 			else {
 				foreach($output as $campo => $row) {
 					echo '<div class="notizie">';
 						echo '<div class="columnleft">';
 						echo '<a href="NewsPage.php?id='.$row['ID'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['Titolo'].'" class="imgrec"/></a>';
-						echo '</div>';
+						echo '</div>'; // chiudo col left
 						echo '<div class="columnright">';
 							echo '<div class="testonews">';
 								echo '<div class="titolonews">';
 									echo '<a href="NewsPage.php?id='.$row['ID'].'" class="br">' .$row['Titolo']. '</a>';
 									echo '<div class="By-date-news">';
 										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
-									echo '</div>';
+									echo '</div>'; /*chiudo bydate*/
 									if (isset($_SESSION['userSession'])!="") {
 										if($rowA['Admin']==1) {
 											echo '<a href="deletethings.php?id='.$row['ID'].'&table=Notizie"><button class="deletebtn" type="submit" name="submitE">Elimina</button></a>';
 										}
 									}
-								echo '</div>';
-							echo '</div>';
-						echo '</div>';
-					echo '</div>';
-				}
+								echo '</div>'; /*chiudo titolo*/
+							echo '</div>'; /*chiudo testo */
+						echo '</div>'; /*chiudo col dx*/
+					echo '</div>';/*chiudo notizie*/
+				} //chiudo for
+				$precPAG=$correntePAG;
+				$postPAG=$correntePAG;
+				if($correntePAG>1)
+					$precPAG=$correntePAG-1;
+				if($correntePAG+1<$totPAG)
+					$postPAG=$correntePAG+1;
+				echo '<div class="pagbtn">';
+					echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+					echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$postPAG.'"> &raquo;</a>';
+				echo '</div>';
 			}
 		}
-		/*controlli più link per passare da una pagina all'altra*/
-		$precPAG=$correntePAG;
-		$postPAG=$correntePAG;
-		if($correntePAG>1)
-			$precPAG=$correntePAG-1;
-		if($correntePAG+1<$totPAG)
-			$postPAG=$correntePAG+1;
-		echo '<div class="pagbtn">';
-			echo '<a href="Notizie.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-			echo '<a href="Notizie.php?pag='.$postPAG.'"> &raquo;</a>';
-		echo '</div>';	
 ?>
 		</div>
 	</div>
