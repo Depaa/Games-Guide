@@ -850,12 +850,15 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 /***************************************************** PAGING ******************************************************/
 .pagbtn {
-	margin-top: 1%;
-	margin-bottom: 1%;
+	width: 100%;
+	position: relative;
+	float:left;
 	font-size: 200%;
 	font-weight: bold;
-	color: #333;
 	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	
 }
 
 .pagbtn a {
@@ -883,4 +886,3 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 	background-color: #333;
 }
-
