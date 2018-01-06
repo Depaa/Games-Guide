@@ -144,15 +144,16 @@
 
 <?php
 
-echo '<div class="Notizia">';
-	echo '<div class="lastnews">';
+
 		if(!$output1) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output1->num_rows == 0)
-				echo '<p> Nessuna notizia trovato </p>';
+				echo '<p> Nessuna recensione trovata </p>';
 			else {
 				foreach($output1 as $campo => $row) {
+					echo '<div class="Notizia">';
+					echo '<div class="lastnews">';
 					echo '<div class="lastnewsimg">';
 					echo '<a href="RewsPage.php?id='.$row['IDr'].'"><img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'"/></a>';
 					echo '</div>';
@@ -176,7 +177,7 @@ echo '<div class="Notizia">';
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output->num_rows == 0)
-				echo '<p> Nessuna notizia trovato </p>';
+				echo '';
 			else {
 				foreach($output as $campo => $row) {
 					echo '<div class="notizie">';
@@ -200,19 +201,20 @@ echo '<div class="Notizia">';
 						echo '</div>'; /*chiudo columnright*/
 					echo '</div>'; /*chiudo notizie*/
 				}
+				$precPAG=$correntePAG;
+				$postPAG=$correntePAG;
+				if($correntePAG>1)
+					$precPAG=$correntePAG-1;
+				if($correntePAG+1<$totPAG)
+					$postPAG=$correntePAG+1;
+				echo '<div class="pagbtn">';
+					echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+					echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
+				echo '</div>';
 			}
 		}
-		$precPAG=$correntePAG;
-			$postPAG=$correntePAG;
-			if($correntePAG>1)
-				$precPAG=$correntePAG-1;
-			if($correntePAG+1<$totPAG)
-				$postPAG=$correntePAG+1;
-			echo '<div class="pagbtn">';
-				echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-				echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-				echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
-			echo '</div>';
+		
 ?>
 			</div> 
 			
