@@ -331,7 +331,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	background-color: #717171;
 }
 
-/*********************************FOOTER*********************************/
 /* VIDEOGIOCHI */ 
 .videogiochi {
 	font-family: Arial;
@@ -484,6 +483,17 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin-top: 5%;
 	text-align: justify;
 }
+/* VIDEOGIOCHIM */ 
+
+.giochiM {
+	font-family: Arial;
+	color: #333;
+	width: 100%;
+	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;
+	float:left;
+}
+
 /*********************************REGISTRAZIONE*********************************/
 .registrazione-contenuto {
 	margin-top: 0%;
@@ -886,3 +896,4 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 	background-color: #333;
 }
+
