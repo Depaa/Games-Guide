@@ -29,7 +29,7 @@
 								echo '<p><a href="NewsPage.php?id='.$row['ID'].'">'.$row['Titolo'].'</a></p>';
 							echo '</div>';
 						echo '</div>';
-						} 
+						}
 					
 					echo '<div class="polaroid">';
 						echo '<a href="Notizie.php"><img src="IMG\alexaecho.jpg" alt="Notizie Pagina Principale"/></a>';
@@ -110,9 +110,9 @@
 					echo '<div class="dropdown-content-login">';
 						echo '<div class="containerlogin">';
 							echo '<form method="post" action="">';
-								echo '<p><label>Username</label></p>';
+								echo '<p>Username</p>';
 								echo '<p><input type="text" name="uname" value="admin"/></p>';
-								echo '<p><label>Password</label></p>';
+								echo '<p>Password</p>';
 								echo '<p><input type="password" name="psw" value="admin"/></p>';
 								echo '<?php if(isset($msg)) {echo $msg;} ?>';
 								echo '<p><button class="logsigninbtn" type="submit" name="submitA">Accedi</button></p>';
@@ -130,10 +130,10 @@
 					echo '<div class="dropdown-content-login">';
 						echo '<div class="containerlogin">';
 							if($rowA['Admin']==1) { //se è admin allora può fare cose
-								echo '<label>Aggiungi schiavo</label>';
+								echo '<p>Aggiungi Contenuti</p>';
 								echo '<a href="Admin.php"><button class="logsigninbtn">Aggiungi</button></a>';
 							}
-							echo '<label>Vattene</label>';
+							echo '<p>Esci</p>';
 							echo '<a href="logout.php?logout"><button class="logsigninbtn">Esci</button></a>';
 						echo '</div>';
 					echo '</div>';
