@@ -208,9 +208,9 @@
 				if($correntePAG+1<$totPAG)
 					$postPAG=$correntePAG+1;
 				echo '<div class="pagbtn">';
-					echo '<a href="Videogiochi.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-					echo '<a href="Videogiochi.php?pag='.$postPAG.'"> &raquo;</a>';
+			echo '<a href="Recensione.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+			echo '<a href="Recensione.php?pag='.$postPAG.'"> &raquo;</a>';
 				echo '</div>';
 			}
 		}
