@@ -481,7 +481,7 @@ END
 DELIMITER ;
 
 /********************************************************************* TRIGGER *********************************************************************/
-
+-- elimina i commenti di un utente dopo che questo è stato cancellato
 DROP TRIGGER IF EXISTS EliminaCommentiUser; 
 DELIMITER |
 CREATE TRIGGER  EliminaCommentiUser AFTER DELETE ON User 
@@ -493,7 +493,7 @@ CREATE TRIGGER  EliminaCommentiUser AFTER DELETE ON User
 | 
 DELIMITER ;
 
-
+-- aggiorna la valutazione del videogioco dopo che è stata inserita una nuova valutazione
 DROP TRIGGER IF EXISTS AggiornamentoVoto;
 DELIMITER |
 CREATE TRIGGER  AggiornamentoVoto AFTER INSERT ON Valutazione
@@ -507,6 +507,7 @@ CREATE TRIGGER  AggiornamentoVoto AFTER INSERT ON Valutazione
 |
 DELIMITER ;
 
+-- controlla se il nuovo voto inserito è corretto, sennò rimanda un messaggio di errore
 DROP TRIGGER IF EXISTS ControllaVotoInserito; 
 DELIMITER |
 CREATE TRIGGER  ControllaVotoInserito BEFORE INSERT ON Valutazione 
