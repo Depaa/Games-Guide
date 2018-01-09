@@ -1,5 +1,5 @@
 /********************************************************************* SITO WEB *********************************************************************/
-DROP TABLE IF EXISTS `SitoWeb`;
+DROP TABLE IF EXISTS `SitoWeb`; /*messa giusto per, si può togliere*/
 CREATE TABLE IF NOT EXISTS `SitoWeb`
 (
 	`URL` CHAR(18) NOT NULL UNIQUE,
@@ -73,6 +73,57 @@ VALUES
 ('Peachka', 'ciaone', 'lucia.fenu95@gmail.com', 'Lucia', 'Fenu', '1995-06-30', '2017-12-30', 'FNELCU95H70B745B', 'Cagliari', 'muri bianchi', '39'),
 ('user123', 'user', 'user123@user.user', 'user', 'user', '2001-01-01', '2017-12-01', '123USR01R01C743Q', 'Userlandia', 'Usernistrazione', '10');
 
+/********************************************************************* GENERE *********************************************************************/
+DROP TABLE IF EXISTS `Genere`;
+CREATE TABLE IF NOT EXISTS `Genere`
+(
+	`CodiceGenere` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
+    `Nome` VARCHAR(32) NOT NULL, 
+    
+    PRIMARY KEY(`CodiceGenere`)
+)
+
+ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO `Genere`(`Nome`)
+VALUES
+('Avventura'),
+('Azione'),
+('Sport'),
+('Simulazione'),
+('Strategia'),
+('Musicale'),
+('Ruolo'),
+('Sparatutto'),
+('Picchiaduro'),
+('FPS'),
+('Piattaforma'),
+('Horror');
+
+/********************************************************************* PIATTAFORMA *********************************************************************/
+DROP TABLE IF EXISTS `Piattaforma`;
+CREATE TABLE IF NOT EXISTS `Piattaforma`
+(
+	`CodicePiattaforma` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
+    `Nome` VARCHAR(20) NOT NULL,
+    
+    PRIMARY KEY(`CodicePiattaforma`)
+)
+
+ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO `Piattaforma`(`Nome`)
+VALUES 
+('Xbox One'),
+('Playstation 4'),
+('Nintendo Switch'),
+('Xbox 360'),
+('Playstation 3'),
+('Nintendo DS'),
+('PC'),
+('Andriod'),
+('iOS');
+
 /********************************************************************* NOTIZIA *********************************************************************/
 DROP TABLE IF EXISTS `Notizia`;
 CREATE TABLE IF NOT EXISTS `Notizia`
@@ -95,7 +146,7 @@ ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 INSERT INTO `Notizia`(`AdminNick`, `CodiceGioco`, `DataPubblicazione`, `Titolo`, `Contenuto`, `CodicePiattaforma`)
 VALUES
-('Maxutanu', NULL, '2017-11-21 19:30:10', 'Presentata Xbox One X', 
+('Depaa', NULL, '2017-11-21 19:30:10', 'Presentata Xbox One X', 
 'Xbox One X è, anzitutto, un piccolo miracolo di ingegneria e progettazione.',
 1),
 ('Drakex94', 6, '2017-11-29 15:05:08', 'BREATH OF THE WILD PREMIATO COME GIOCO DELL''ANNO', 
@@ -110,10 +161,10 @@ NULL),
 ('Depaa', NULL, '2017-12-04 06:47:33', 'DUE SVILUPPATORI LASCIANO GUERRILLA', 
 'Due sviluppatori che hanno contribuito alla realizzazione di Horizon: Zero Dawn.', 
 NULL),
-('Maxutanu', NULL, '2017-12-05 16:11:58', 'Level-5 grande progetto per 20° anniversario', 
+('Drakex94', NULL, '2017-12-05 16:11:58', 'Level-5 grande progetto per 20° anniversario', 
 'Il noto sviluppatore Level-5 avrebbe alcuni grandi piani per festeggiare il loro 20°.', 
 NULL),
-('Maxutanu', 5, '2017-12-06 05:30:10', 'Doppio aggiornamento per Overwatch: Live e PTR', 
+('Depaa', 5, '2017-12-06 05:30:10', 'Doppio aggiornamento per Overwatch: Live e PTR', 
 'Ieri sera sono state rilasciate due patch per Overwatch.', 
 NULL),
 ('Depaa', NULL, '2017-12-07 23:18:11', 'Prenota Dragon Ball FighterZ', 
@@ -122,7 +173,7 @@ NULL),
 ('Drakex94', NULL, '2017-12-10 19:30:10', 'Uscità presto il nuovo God of War', 
 'Sony Interactive Entertainment ha pubblicato un video di God of War.', 
 2),
-('Depaa', NULL, '2018-12-15 15:05:08', 'I Nintendo Switch saranno gratuiti', 
+('Depaa', NULL, '2018-01-15 15:05:08', 'I Nintendo Switch saranno gratuiti', 
 'Si parlava di una partenza dell''abbonamento a pagamento nel 2018.', 
 3), 
 ('Depaa', NULL, '2017-12-30 07:18:52', 'Auguri di buone feste dalla redazione', 
@@ -131,10 +182,10 @@ NULL),
 ('Drakex94', NULL, '2017-12-31 07:18:52', 'Gran Turismo Sport, server USA online', 
 'Nel corso delle vacanze di Natale alcuni problemi.', 
 2),
-('Maxutanu', NULL, '2018-01-01 00:00:58', 'Switch: Nintendo ha rimosso NES Golf', 
+('Depaa', NULL, '2018-01-01 00:00:58', 'Switch: Nintendo ha rimosso NES Golf', 
 'Come già saprete, diverso tempo fa era stata scoperta la presenza di un emulatore NES.', 
 3),
-('Maxutanu', NULL, '2018-01-02 11:08:08', 'AMD Radeon Adrenalin Edition 17.12.2', 
+('Drakex94', NULL, '2018-01-02 11:08:08', 'AMD Radeon Adrenalin Edition 17.12.2', 
 'AMD ha pubblicato una nuova versione dei driver per le schede video dotate delle sue GPU.', 
 NULL),
  ('admin', 3, '2018-01-05 07:15:58', 'Concorso Super Mario Odyssey', 
@@ -205,10 +256,7 @@ VALUES
 8, 5, 7), 
 ('Maxutanu', 9, '2018-01-06 19:30:10', 'Recensione FIFA 18', 
 'La modalità che maggiormente ne ha beneficiato in FIFA 18 è Il Viaggio.', 
-6, 7, 8),
-('Depaa', 5, '2018-01-01 11:38:12', 'Recensione di Overwatch parte II', 
-'Qua parliamo un pò del multiplayer.',
-8, 8, 9);
+6, 7, 8);
 
 /********************************************************************* COMMENTO *********************************************************************/
 DROP TABLE IF EXISTS `Commento`;
@@ -258,7 +306,8 @@ VALUES
 ('Aiolos', NULL, NULL, 6, '2018-01-04 20:20:45', 'capisco perchè è il miglior gioco'), 
 ('Peachka', NULL, 2, NULL, '2018-01-05 09:15:23', 'il più bel gioco che io abbia giocato'),
 (NULL, 'admin', 3, NULL, '2018-01-06 21:22:45', 'admin admin admin'),
-('Peachka', NULL, 11, NULL, '2018-01-10 19:45:32', 'auguri anche a voi');
+('Peachka', NULL, 11, NULL, '2018-01-10 19:45:32', 'auguri anche a voi'),
+('Peachka', NULL, NULL, 13, '2018-01-11 21:25:30', 'sempre bello lo sport');
 
 /********************************************************************* VALUTAZIONE *********************************************************************/
 DROP TABLE IF EXISTS `Valutazione`;
@@ -389,185 +438,155 @@ VALUES
 (15, 'The Evil Within 2', '2017-10-19', NULL, 1, 1, 12, NULL, 'Bethesda Softworks', 18),
 (15, 'The Evil Within 2', '2017-10-19', NULL, 2, 1, 12, NULL, 'Bethesda Softworks', 18),
 (15, 'The Evil Within 2', '2017-10-19', NULL, 7, 1, 12, NULL, 'Bethesda Softworks', 18);
-/********************************************************************* GENERE *********************************************************************/
-DROP TABLE IF EXISTS `Genere`;
-CREATE TABLE IF NOT EXISTS `Genere`
-(
-	`CodiceGenere` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
-    `Nome` VARCHAR(32) NOT NULL, 
-    
-    PRIMARY KEY(`CodiceGenere`)
-)
 
-ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-INSERT INTO `Genere`(`Nome`)
-VALUES
-('Avventura'), /*1*/
-('Azione'),/*2*/
-('Sport'),/*3*/
-('Simulazione'),/*4*/
-('Strategia'),/*5*/
-('Musicale'),/*6*/
-('Ruolo'),/*7*/
-('Sparatutto'),/*8*/
-('Picchiaduro'),/*9*/
-('FPS'),/*10*/
-('Piattaforma'),/*11*/
-('Horror');/*12*/
-
-/********************************************************************* PIATTAFORMA *********************************************************************/
-DROP TABLE IF EXISTS `Piattaforma`;
-CREATE TABLE IF NOT EXISTS `Piattaforma`
-(
-	`CodicePiattaforma` INT(4) NOT NULL UNIQUE AUTO_INCREMENT,
-    `Nome` VARCHAR(20) NOT NULL,
-    
-    PRIMARY KEY(`CodicePiattaforma`)
-)
-
-ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-INSERT INTO `Piattaforma`(`Nome`)
-VALUES 
-('Xbox One'), /*1*/
-('Playstation 4'),/*2*/
-('Nintendo Switch'),/*3*/ 
-('Xbox 360'),/*4*/ 
-('Playstation 3'),/*5*/ 
-('Nintendo DS'),/*6*/
-('PC'),/*7*/
-('Andriod'),/*8*/
-('iOS');/*9*/ 
+/********************************************************************* SINTASSI OK *********************************************************************/
 
 /********************************************************************* FUNZIONI *********************************************************************/
--- Restituisce il numero totale di commenti di un user
-DROP FUNCTION IF EXISTS `CommentiUser`; 
-DELIMITER | 
-CREATE FUNCTION `CommentiUser`(Username VARCHAR(16)) RETURNS INT(4) 
-BEGIN 
-	DECLARE TotaleCommenti INT;
-    
-    SELECT COUNT(*) 
-    INTO TotaleCommenti 
-    FROM Commento
-    WHERE Commento.UserNick=Username;
-	
-    RETURN TotaleCommenti;
-END 
-|
-DELIMITER ;
-
 -- Restituisce un booleano per una ricerca su un gioco per un genere e per una piattaforma
 DROP FUNCTION IF EXISTS `DisponibilitaGioco`; 
 DELIMITER | 
 CREATE FUNCTION `DisponibilitaGioco`(CodiceGenere INT(4), CodicePiatta INT(4)) RETURNS BOOL 
 BEGIN 
-	DECLARE Esiste BOOL;
-    DECLARE NumeroRighe INT;
-    
-    SELECT COUNT(*) 
-    INTO NumeroRighe 
-    FROM Videogioco
-    WHERE Videogioco.CodicePiattaforma=CodicePiatta AND (CodiceGenere1=CodiceGenere OR CodiceGenere2=CodiceGenere OR CodiceGenere3=CodiceGenere);
-	
-    IF NumeroRighe=0 THEN SET Esiste=0;
-    ELSE SET Esiste=1;
-    END IF;
-    
-    RETURN Esiste;
-END 
-|
+DECLARE Esiste BOOL; 
+DECLARE NumeroRighe INT; 
+SELECT COUNT(*) 
+INTO NumeroRighe 
+FROM Videogioco 
+WHERE Videogioco.CodicePiattaforma=CodicePiatta AND (CodiceGenere1=CodiceGenere OR CodiceGenere2=CodiceGenere OR CodiceGenere3=CodiceGenere); 
+IF NumeroRighe=0 THEN SET Esiste=0; 
+ELSE SET Esiste=1; 
+END IF; 
+RETURN Esiste; 
+END|
+DELIMITER ;
+
+-- Restituisce il numero totale di commenti di un user
+DROP FUNCTION IF EXISTS `CommentiUser`; 
+DELIMITER | 
+CREATE FUNCTION `CommentiUser`(Username VARCHAR(16)) RETURNS INT(4) 
+BEGIN 
+DECLARE TotaleCommenti INT; 
+SELECT COUNT(*) 
+INTO TotaleCommenti 
+FROM Commento 
+WHERE Commento.UserNick=Username; 
+RETURN TotaleCommenti; 
+END|
 DELIMITER ;
 
 /********************************************************************* TRIGGER *********************************************************************/
 -- elimina i commenti di un utente dopo che questo è stato cancellato
-DROP TRIGGER IF EXISTS EliminaCommentiUser; 
+DROP TRIGGER IF EXISTS `EliminaCommentiUser`; 
 DELIMITER |
-CREATE TRIGGER  EliminaCommentiUser AFTER DELETE ON User 
-	FOR EACH ROW 
-	BEGIN 
-		DELETE FROM Commento 
-        WHERE Commento.UserNick=User.Nickname; 
-	END 
-| 
-DELIMITER ;
-
--- aggiorna la valutazione del videogioco dopo che è stata inserita una nuova valutazione
-DROP TRIGGER IF EXISTS AggiornamentoVoto;
-DELIMITER |
-CREATE TRIGGER  AggiornamentoVoto AFTER INSERT ON Valutazione
-	FOR EACH ROW
-	BEGIN
-		UPDATE Videogioco, Valutazione 
-        SET Valutazione = 
-			(SELECT AVG(Valutazione.Voto) FROM Valutazione WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco)
-		WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco;
-	END
-|
+CREATE TRIGGER  `EliminaCommentiUser` BEFORE DELETE ON `User`
+FOR EACH ROW 
+BEGIN 
+DELETE FROM Commento 
+WHERE Commento.UserNick=OLD.Nickname; 
+END|
 DELIMITER ;
 
 -- controlla se il nuovo voto inserito è corretto, sennò rimanda un messaggio di errore
 DROP TRIGGER IF EXISTS ControllaVotoInserito; 
 DELIMITER |
 CREATE TRIGGER  ControllaVotoInserito BEFORE INSERT ON Valutazione 
-	FOR EACH ROW
-	BEGIN 
-		IF NEW.Voto>10 OR NEW.Voto<1 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Voto dev''essere compreso tra 1 e 10';
-        END IF;
-	END 
-| 
+FOR EACH ROW 
+BEGIN 
+IF (NEW.Voto>10 OR NEW.Voto<1) THEN 
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Voto deve essere compreso tra 1 e 10"; 
+END IF; 
+END| 
 DELIMITER ;
 
+-- aggiorna la valutazione del videogioco dopo che è stata inserita una nuova valutazione
+DROP TRIGGER IF EXISTS AggiornamentoVoto; 
+DELIMITER |
+CREATE TRIGGER  AggiornamentoVoto AFTER INSERT ON Valutazione 
+FOR EACH ROW 
+BEGIN 
+UPDATE Videogioco, Valutazione 
+SET Valutazione = 
+(SELECT AVG(Valutazione.Voto) FROM Valutazione WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco) 
+WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco; 
+END| 
+DELIMITER ;
 
 /********************************************************************* QUERY *********************************************************************/
 -- Query che restituisce tutte i Videogiochi per i quali non è ancora stata pubblicata una Recensione.
 SELECT DISTINCT Videogioco.CodiceGioco, Videogioco.Titolo 
 FROM Videogioco 
-WHERE Videogioco.Titolo NOT IN (SELECT DISTINCT Videogioco.Titolo 
-								FROM Videogioco JOIN Recensione ON Recensione.CodiceGioco=Videogioco.CodiceGioco); 
-                                
--- COME SOPRA, E' OK MA SE TOGLI IL DISTINCT VA A TROIE
-SELECT DISTINCT Videogioco.CodiceGioco, Videogioco.Titolo AS RecensioneMancante 
-FROM Recensione JOIN Videogioco 
 WHERE Videogioco.Titolo NOT IN (
-	SELECT DISTINCT Videogioco.Titolo 
-	FROM Recensione JOIN Videogioco ON Recensione.CodiceGioco=Videogioco.CodiceGioco);
+SELECT DISTINCT Videogioco.Titolo 
+FROM Videogioco JOIN Recensione ON Recensione.CodiceGioco=Videogioco.CodiceGioco); 
+                                
 
--- Query che restituisce gli ultimi 5 commenti dell'utente che ha fatto più cOMMENTI HO CREATO LA FUNZIONE CONTROLLARE MANCA                    
-SELECT Commento.DataPubblicazione, Commento.UserNick, Commento.Contenuto AS Commento 
-FROM Commento JOIN User ON Commento.UserNick=User.Nickname 
-WHERE UserNick='Nikocister' /*se c'è un altro modo allora sarebbe da fare*/
-ORDER BY DataPubblicazione DESC 
-LIMIT 5; 
+-- Query che restituisce gli utenti che hanno fatto più commenti
+SELECT UserNick, TotaleCommenti 
+FROM (
+SELECT UserNick, COUNT(*) TotaleCommenti /*seleziono tutti i commenti con il numero*/
+FROM Commento 
+WHERE UserNick IS NOT NULL 
+GROUP BY UserNick ) AS ACommento 
+WHERE TotaleCommenti = ( 
+SELECT MAX(TotaleCommenti) 
+FROM ( 
+SELECT UserNick, COUNT(*) TotaleCommenti /*seleziono tutti i commenti con il numero più alto*/
+FROM Commento 
+WHERE UserNick IS NOT NULL 
+GROUP BY UserNick ) AS BCommento 
+);
 
 -- Query che restituisce il titolo dei giochi che sono esclusiva di una particolare piattaforma
 SELECT DISTINCT Titolo, Piattaforma.Nome AS Esclusiva 
 FROM Videogioco JOIN Piattaforma ON Videogioco.CodicePiattaforma=Piattaforma.CodicePiattaforma 
 WHERE Videogioco.Titolo NOT IN ( 
-	SELECT DISTINCT A1.Titolo 
-	FROM Videogioco A1, Videogioco A2 
-	WHERE A1.Titolo=A2.Titolo AND A1.CodicePiattaforma!=A2.CodicePiattaforma);
+SELECT DISTINCT A1.Titolo 
+FROM Videogioco A1, Videogioco A2 
+WHERE A1.Titolo=A2.Titolo AND A1.CodicePiattaforma!=A2.CodicePiattaforma );
 
 
 -- Query che restituisce il titolo dei giochi che sono stati pubblicati dalla stessa casa editrice
 SELECT DISTINCT V1.Titolo, V1.CasaEditrice 
 FROM Videogioco V1, Videogioco V2 
 WHERE V1.CasaEditrice=V2.CasaEditrice AND V1.Titolo!=V2.Titolo 
-ORDER BY V1.CasaEditrice;
+ORDER BY V1.CasaEditrice; 
 
--- Query che restituisce la classifica dei 5 giochi, valutati dall'utente, con la valutazione più alta
-Select DISTINCT Titolo, Valutazione 
+-- Query che restituisce la classifica dei 5 giochi del 2017, valutati dall'utente, con la valutazione più alta
+SELECT DISTINCT Titolo, Valutazione 
 FROM Videogioco 
+WHERE YEAR(DataUscita)=2017 AND Valutazione IS NOT NULL 
 ORDER BY Valutazione DESC 
-LIMIT 5;
+LIMIT 5; 
 
 -- Query che restituisce la classifica delle prime recensioni con la media dei tre voti dell'admin più alta
+SELECT DISTINCT V.Titolo, (ValGrafica+ValStoria+ValAudio)/3 AS MediaValutazione 
+FROM Recensione AS R JOIN Videogioco AS V ON R.CodiceGioco=V.CodiceGioco 
+ORDER BY MediaValutazione DESC 
+LIMIT 5;
+
+-- Query che restituisce le Notizie del 2018 fatte da un Admin su una particolare piattaforma
+SELECT N.AdminNick, N.DataPubblicazione, P.Nome NomePiattaforma, N.Titolo 
+FROM Notizia AS N JOIN Piattaforma AS P ON N.CodicePiattaforma=P.CodicePiattaforma 
+WHERE YEAR(DataPubblicazione)=2018 
+ORDER BY DataPubblicazione DESC;
+
+-- VIEW che corrisponde alla tabella degli admin che hanno pubblicato solamente recensioni
+DROP VIEW IF EXISTS AdminRecensione;
+CREATE VIEW AdminRecensione AS 
+SELECT R.AdminNick, R.CodiceRecensione, R.Titolo 
+FROM Recensione R 
+WHERE R.AdminNick NOT IN ( SELECT AdminNick FROM Notizia) 
+ORDER BY AdminNick, CodiceRecensione; 
+
+-- Query che visualizza i commenti nelle recensioni che fanno parte della VIEW AdminRecensione
+SELECT V.Titolo, C.UserNick, C.Contenuto 
+FROM AdminRecensione AS V JOIN Commento AS C 
+WHERE V.CodiceRecensione=C.CodiceRecensione; 
 
 
 /*
+-- fatto titoli&testi troppo lunghi, lasciati come commento, non credo siano aggiornati con il database
+
 DROP TABLE IF EXISTS `Recensione`;
 CREATE TABLE IF NOT EXISTS `Recensione`
 (
