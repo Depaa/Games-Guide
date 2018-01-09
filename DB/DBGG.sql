@@ -1,3 +1,15 @@
+/*
+
+IMPORTANTE, DOPO AVER CARICATO LE TABELLE, UTILIZZARE QUESTO CODICE 
+
+UPDATE Videogioco, Valutazione 
+SET Valutazione = 
+(SELECT AVG(Valutazione.Voto) FROM Valutazione WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco) 
+WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco; 
+
+GRAZIE
+
+*/
 /********************************************************************* SITO WEB *********************************************************************/
 DROP TABLE IF EXISTS `SitoWeb`; /*messa giusto per, si può togliere*/
 CREATE TABLE IF NOT EXISTS `SitoWeb`
