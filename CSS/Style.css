@@ -235,6 +235,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 }
 
+
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
 .pagecontent {
@@ -253,6 +254,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	padding-top: 5%;
 	margin-left: 10%;
 	margin-right: 10%;
+	width: 80%;
 	padding-bottom: 5%;
 	overflow: hidden;
 }
@@ -355,6 +357,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	top: 0;
 	background-color: #fff;
 	margin-right: 5%;
+	padding-bottom: 5%;
 }
 
 .filtro h5 {
@@ -380,7 +383,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     opacity: 0;
 }
 
-.checkmark {
+.elenco .checkmark {
 	display: block;
     position: absolute;
     top: 0.15em;  /*centra il cerchio allinea con le parole*/
@@ -488,17 +491,16 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .giochiM {
 	margin-left: 10%;
 	margin-right: 10%;
+	
 	font-family: Arial;
 	color: #333;
 	width: 80%;
 	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
 	float:left;
-	
 	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
-
 
 /*********************************REGISTRAZIONE*********************************/
 .registrazione-contenuto {
@@ -822,11 +824,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 }
 
-#checkA {
-	padding-left: 8%;
-	padding-right: 8%;
-	
-}
+
 
 .rigaA h4 {
    margin-top: 0%;
@@ -843,7 +841,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 150%;
 	padding: 5% 5%;
 }
-#checkA .checkmark {
+.elencoA .checkmark {
 	display:none;
 }
 
@@ -901,5 +899,5 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 	color: white;
 	background-color: #333;
-}
 
+}
