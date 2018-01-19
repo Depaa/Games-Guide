@@ -1,30 +1,3 @@
-/*
-
-IMPORTANTE, DOPO AVER CARICATO LE TABELLE, UTILIZZARE QUESTO CODICE 
-
-UPDATE Videogioco, Valutazione 
-SET Valutazione = 
-(SELECT AVG(Valutazione.Voto) FROM Valutazione WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco) 
-WHERE Videogioco.CodiceGioco=Valutazione.CodiceGioco; 
-
-GRAZIE
-
-*/
-/********************************************************************* SITO WEB *********************************************************************/
-DROP TABLE IF EXISTS `SitoWeb`; /*messa giusto per, si può togliere*/
-CREATE TABLE IF NOT EXISTS `SitoWeb`
-(
-	`URL` CHAR(18) NOT NULL UNIQUE,
-    `Nome` CHAR(10) NOT NULL,
-    
-    PRIMARY KEY(`URL`)
-)
-ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-INSERT INTO `SitoWeb`(`URL`, `Nome`)
-VALUES 
-('www.gamesguide.com', 'GamesGuide');
-
 /********************************************************************* ADMIN *********************************************************************/
 DROP TABLE IF EXISTS `Admin`;
 CREATE TABLE IF NOT EXISTS `Admin`
@@ -401,57 +374,57 @@ ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 INSERT INTO `Videogioco`(`CodiceGioco`, `Titolo`, `DataUscita`, `Valutazione`, `CodicePiattaforma`, `CodiceGenere1`, `CodiceGenere2`, `CodiceGenere3`, `CasaEditrice`, `PEGI`)
 VALUES
-(1, 'Assassin''s Creed: Origins', '2017-10-27', NULL, 1, 1, 2, NULL, 'Ubisoft', 18),
-(1, 'Assassin''s Creed: Origins', '2017-10-27', NULL, 2, 1, 2, NULL, 'Ubisoft', 18),
-(1, 'Assassin''s Creed: Origins', '2017-10-27', NULL, 7, 1, 2, NULL, 'Ubisoft', 18),
-(2, 'Call of Duty: WWII', '2017-11-03', NULL, 1, 8, 10, NULL, 'Activision', 18),
-(2, 'Call of Duty: WWII', '2017-11-03', NULL, 2, 8, 10, NULL, 'Activision', 18),
-(2, 'Call of Duty: WWII', '2017-11-03', NULL, 7, 8, 10, NULL, 'Activision', 18),
-(3, 'Super Mario Odyssey', '2017-10-27', NULL, 3, 11, NULL, NULL, 'Nintendo', 7),
-(4, 'Wolfenstein II: The New Colossus', '2017-10-27', NULL, 1, 8, 10, NULL, 'Bethesda Softworks', 18),
-(4, 'Wolfenstein II: The New Colossus', '2017-10-27', NULL, 2, 8, 10, NULL, 'Bethesda Softworks', 18),
-(4, 'Wolfenstein II: The New Colossus', '2017-10-27', NULL, 7, 8, 10, NULL, 'Bethesda Softworks', 18),
-(5, 'Overwatch', '2016-05-24', NULL, 1, 8, 10, NULL, 'Activision Blizzard', 12),
-(5, 'Overwatch', '2016-05-24', NULL, 2, 8, 10, NULL, 'Activision Blizzard', 12),
-(5, 'Overwatch', '2016-05-24', NULL, 7, 8, 10, NULL, 'Activision Blizzard', 12),
-(6, 'The Legend of Zelda: Breath of the Wild', '2017-03-03', NULL, 3, 1, 2, NULL, 'Nintendo', 12),
-(7, 'Grepolis', '2010-08-08', NULL, 8, 5, NULL, NULL, 'InnoGames', 16),
-(7, 'Grepolis', '2010-08-08', NULL, 9, 5, NULL, NULL, 'InnoGames', 16),
-(7, 'Grepolis', '2010-08-08', NULL, 7, 5, NULL, NULL, 'InnoGames', 16),
-(8, 'Call of Duty: Black Ops III', '2015-11-06', NULL, 1, 8, 10, NULL, 'Treyarch', 18),
-(8, 'Call of Duty: Black Ops III', '2015-11-06', NULL, 2, 8, 10, NULL, 'Treyarch', 18),
-(8, 'Call of Duty: Black Ops III', '2015-11-06', NULL, 4, 8, 10, NULL, 'Treyarch', 18),
-(8, 'Call of Duty: Black Ops III', '2015-11-06', NULL, 5, 8, 10, NULL, 'Treyarch', 18),
-(8, 'Call of Duty: Black Ops III', '2015-11-06', NULL, 7, 8, 10, NULL, 'Treyarch', 18),
-(9, 'FIFA 18', '2017-09-29', NULL, 1, 3, NULL, NULL, 'Electionic Arts', 3),
-(9, 'FIFA 18', '2017-09-29', NULL, 2, 3, NULL, NULL, 'Electionic Arts', 3),
-(9, 'FIFA 18', '2017-09-29', NULL, 3, 3, NULL, NULL, 'Electionic Arts', 3),
-(9, 'FIFA 18', '2017-09-29', NULL, 4, 3, NULL, NULL, 'Electionic Arts', 3),
-(9, 'FIFA 18', '2017-09-29', NULL, 5, 3, NULL, NULL, 'Electionic Arts', 3),
-(9, 'FIFA 18', '2017-09-29', NULL, 7, 3, NULL, NULL, 'Electionic Arts', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 1, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 2, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 3, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 4, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 5, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 7, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 8, 6, NULL, NULL, 'Ubisoft', 3),
-(10, 'Just Dance 2018', '2017-10-24', NULL, 9, 6, NULL, NULL, 'Ubisoft', 3),
-(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', NULL, 4, 3, 9, NULL, 'THQ', 16),
-(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', NULL, 5, 3, 9, NULL, 'THQ', 16),
-(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', NULL, 6, 3, 9, NULL, 'THQ', 16),
-(12, 'Dark Souls III', '2016-03-24', NULL, 1, 2, 7, NULL, 'Bandai Namco', 16),
-(12, 'Dark Souls III', '2016-03-24', NULL, 2, 2, 7, NULL, 'Bandai Namco', 16),
-(12, 'Dark Souls III', '2016-03-24', NULL, 7, 2, 7, NULL, 'Bandai Namco', 16),
-(13, 'Assetto Corsa', '2014-12-19', NULL, 1, 4, 3, NULL, 'Kunos Simulazioni', 3),
-(13, 'Assetto Corsa', '2014-12-19', NULL, 2, 4, 3, NULL, 'Kunos Simulazioni', 3),
-(13, 'Assetto Corsa', '2014-12-19', NULL, 7, 4, 3, NULL, 'Kunos Simulazioni', 3),
+(1, 'Assassin''s Creed: Origins', '2017-10-27', 8.00, 1, 1, 2, NULL, 'Ubisoft', 18),
+(1, 'Assassin''s Creed: Origins', '2017-10-27', 8.00, 2, 1, 2, NULL, 'Ubisoft', 18),
+(1, 'Assassin''s Creed: Origins', '2017-10-27', 8.00, 7, 1, 2, NULL, 'Ubisoft', 18),
+(2, 'Call of Duty: WWII', '2017-11-03', 3.75, 1, 8, 10, NULL, 'Activision', 18),
+(2, 'Call of Duty: WWII', '2017-11-03', 3.75, 2, 8, 10, NULL, 'Activision', 18),
+(2, 'Call of Duty: WWII', '2017-11-03', 3.75, 7, 8, 10, NULL, 'Activision', 18),
+(3, 'Super Mario Odyssey', '2017-10-27', 7.33, 3, 11, NULL, NULL, 'Nintendo', 7),
+(4, 'Wolfenstein II: The New Colossus', '2017-10-27', 8.00, 1, 8, 10, NULL, 'Bethesda Softworks', 18),
+(4, 'Wolfenstein II: The New Colossus', '2017-10-27', 8.00, 2, 8, 10, NULL, 'Bethesda Softworks', 18),
+(4, 'Wolfenstein II: The New Colossus', '2017-10-27', 8.00, 7, 8, 10, NULL, 'Bethesda Softworks', 18),
+(5, 'Overwatch', '2016-05-24', 5.00, 1, 8, 10, NULL, 'Activision Blizzard', 12),
+(5, 'Overwatch', '2016-05-24', 5.00, 2, 8, 10, NULL, 'Activision Blizzard', 12),
+(5, 'Overwatch', '2016-05-24', 5.00, 7, 8, 10, NULL, 'Activision Blizzard', 12),
+(6, 'The Legend of Zelda: Breath of the Wild', '2017-03-03', 8.50, 3, 1, 2, NULL, 'Nintendo', 12),
+(7, 'Grepolis', '2010-08-08', 3.33, 8, 5, NULL, NULL, 'InnoGames', 16),
+(7, 'Grepolis', '2010-08-08', 3.33, 9, 5, NULL, NULL, 'InnoGames', 16),
+(7, 'Grepolis', '2010-08-08', 3.33, 7, 5, NULL, NULL, 'InnoGames', 16),
+(8, 'Call of Duty: Black Ops III', '2015-11-06', 7.00, 1, 8, 10, NULL, 'Treyarch', 18),
+(8, 'Call of Duty: Black Ops III', '2015-11-06', 7.00, 2, 8, 10, NULL, 'Treyarch', 18),
+(8, 'Call of Duty: Black Ops III', '2015-11-06', 7.00, 4, 8, 10, NULL, 'Treyarch', 18),
+(8, 'Call of Duty: Black Ops III', '2015-11-06', 7.00, 5, 8, 10, NULL, 'Treyarch', 18),
+(8, 'Call of Duty: Black Ops III', '2015-11-06', 7.00, 7, 8, 10, NULL, 'Treyarch', 18),
+(9, 'FIFA 18', '2017-09-29', 6.5, 1, 3, NULL, NULL, 'Electionic Arts', 3),
+(9, 'FIFA 18', '2017-09-29', 6.5, 2, 3, NULL, NULL, 'Electionic Arts', 3),
+(9, 'FIFA 18', '2017-09-29', 6.5, 3, 3, NULL, NULL, 'Electionic Arts', 3),
+(9, 'FIFA 18', '2017-09-29', 6.5, 4, 3, NULL, NULL, 'Electionic Arts', 3),
+(9, 'FIFA 18', '2017-09-29', 6.5, 5, 3, NULL, NULL, 'Electionic Arts', 3),
+(9, 'FIFA 18', '2017-09-29', 6.5, 7, 3, NULL, NULL, 'Electionic Arts', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 1, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 2, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 3, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 4, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 5, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 7, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 8, 6, NULL, NULL, 'Ubisoft', 3),
+(10, 'Just Dance 2018', '2017-10-24', 6.25, 9, 6, NULL, NULL, 'Ubisoft', 3),
+(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', 2.50, 4, 3, 9, NULL, 'THQ', 16),
+(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', 2.50, 5, 3, 9, NULL, 'THQ', 16),
+(11, 'WWE Smackdown! vs Raw 2009', '2008-11-09', 2.50, 6, 3, 9, NULL, 'THQ', 16),
+(12, 'Dark Souls III', '2016-03-24', 6.00, 1, 2, 7, NULL, 'Bandai Namco', 16),
+(12, 'Dark Souls III', '2016-03-24', 6.00, 2, 2, 7, NULL, 'Bandai Namco', 16),
+(12, 'Dark Souls III', '2016-03-24', 6.00, 7, 2, 7, NULL, 'Bandai Namco', 16),
+(13, 'Assetto Corsa', '2014-12-19', 6.50, 1, 4, 3, NULL, 'Kunos Simulazioni', 3),
+(13, 'Assetto Corsa', '2014-12-19', 6.50, 2, 4, 3, NULL, 'Kunos Simulazioni', 3),
+(13, 'Assetto Corsa', '2014-12-19', 6.50, 7, 4, 3, NULL, 'Kunos Simulazioni', 3),
 (14, 'Horizon Zero Dawn', '2017-02-28', NULL, 2, 1, 2, NULL, 'Guerrilla Games', 16),
 (15, 'The Evil Within 2', '2017-10-19', NULL, 1, 1, 12, NULL, 'Bethesda Softworks', 18),
 (15, 'The Evil Within 2', '2017-10-19', NULL, 2, 1, 12, NULL, 'Bethesda Softworks', 18),
 (15, 'The Evil Within 2', '2017-10-19', NULL, 7, 1, 12, NULL, 'Bethesda Softworks', 18);
 
-/********************************************************************* SINTASSI OK *********************************************************************/
+/********************************************************************* FUNZIONANO TUTTI *********************************************************************/
 
 /********************************************************************* FUNZIONI *********************************************************************/
 -- Restituisce un booleano per una ricerca su un gioco per un genere e per una piattaforma
@@ -464,7 +437,8 @@ DECLARE NumeroRighe INT;
 SELECT COUNT(*) 
 INTO NumeroRighe 
 FROM Videogioco 
-WHERE Videogioco.CodicePiattaforma=CodicePiatta AND (CodiceGenere1=CodiceGenere OR CodiceGenere2=CodiceGenere OR CodiceGenere3=CodiceGenere); 
+WHERE Videogioco.CodicePiattaforma=CodicePiatta AND (CodiceGenere1=CodiceGenere OR CodiceGenere2=CodiceGenere OR CodiceGenere3=CodiceGenere) 
+GROUP BY Videogioco.CodiceGioco;
 IF NumeroRighe=0 THEN SET Esiste=0; 
 ELSE SET Esiste=1; 
 END IF; 
@@ -481,7 +455,8 @@ DECLARE TotaleCommenti INT;
 SELECT COUNT(*) 
 INTO TotaleCommenti 
 FROM Commento 
-WHERE Commento.UserNick=Username; 
+WHERE Commento.UserNick=Username 
+GROUP BY UserNick;
 RETURN TotaleCommenti; 
 END|
 DELIMITER ;
@@ -510,7 +485,7 @@ END IF;
 END| 
 DELIMITER ;
 
--- aggiorna la valutazione del videogioco dopo che è stata inserita una nuova valutazione
+-- Aggiorna la valutazione del videogioco dopo che è stata inserita una nuova valutazione
 DROP TRIGGER IF EXISTS AggiornamentoVoto; 
 DELIMITER |
 CREATE TRIGGER  AggiornamentoVoto AFTER INSERT ON Valutazione 
@@ -525,9 +500,9 @@ DELIMITER ;
 
 /********************************************************************* QUERY *********************************************************************/
 -- Query che restituisce tutte i Videogiochi per i quali non è ancora stata pubblicata una Recensione.
-SELECT DISTINCT Videogioco.CodiceGioco, Videogioco.Titolo 
-FROM Videogioco 
-WHERE Videogioco.Titolo NOT IN (
+SELECT DISTINCT V.CodiceGioco, V.Titolo 
+FROM Videogioco V 
+WHERE V.Titolo NOT IN (
 SELECT DISTINCT Videogioco.Titolo 
 FROM Videogioco JOIN Recensione ON Recensione.CodiceGioco=Videogioco.CodiceGioco); 
                                 
@@ -582,7 +557,7 @@ FROM Notizia AS N JOIN Piattaforma AS P ON N.CodicePiattaforma=P.CodicePiattafor
 WHERE YEAR(DataPubblicazione)=2018 
 ORDER BY DataPubblicazione DESC;
 
--- VIEW che corrisponde alla tabella degli admin che hanno pubblicato solamente recensioni
+-- VIEW che corrisponde alla tabella di admin che hanno pubblicato solamente recensioni
 DROP VIEW IF EXISTS AdminRecensione;
 CREATE VIEW AdminRecensione AS 
 SELECT R.AdminNick, R.CodiceRecensione, R.Titolo 
