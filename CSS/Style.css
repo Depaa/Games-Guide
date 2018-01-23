@@ -2,8 +2,10 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
 .navbar {
@@ -15,7 +17,11 @@ body {
 	top: 0%;
 	z-index: 1;*/
 }
-
+@media screen and (min-width:621px) {
+	.sandwich {
+		display: none;
+	}
+}
 /*********************************LOGO*********************************/
 .dropdownlogo {
     float: left;
@@ -235,12 +241,9 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 }
 
-
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
 .pagecontent {
-	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;
 	top:0;
 	border-left: 3px solid #333;
 	border-right: 3px solid #333;
@@ -254,7 +257,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	padding-top: 5%;
 	margin-left: 10%;
 	margin-right: 10%;
-	width: 80%;
 	padding-bottom: 5%;
 	overflow: hidden;
 }
@@ -357,7 +359,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	top: 0;
 	background-color: #fff;
 	margin-right: 5%;
-	padding-bottom: 5%;
 }
 
 .filtro h5 {
@@ -383,7 +384,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     opacity: 0;
 }
 
-.elenco .checkmark {
+.checkmark {
 	display: block;
     position: absolute;
     top: 0.15em;  /*centra il cerchio allinea con le parole*/
@@ -426,6 +427,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
+
 .scheda {
 	width: 90%;
 	float: left;
@@ -433,71 +435,69 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin-top: 10%;
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: #fff;
-	border: 3px solid #333;
+	background-color: #ffffff;
+	border: 3px solid #333333;
 	padding: 2% 2% 2% 2%;
 }
-.scheda h3 {
-	
-}
 
-.immagine {
+.immagine1 {
 	max-width: 20%;
 	margin-right: 0%;
 	float: left;
-	
 }
 
-.scheda a {
+@media screen and (min-width:621px){
+	.immagine2 {
+		display: none;
+	}
+}
+.descrec {
+	float: left;
+	margin-top: 0.5em;
+}
+.descrec a {
+	margin-left: 0.5em;
+	color: #333333;
+}
+.descrec a:hover {
+	color: #0000ff;
+}
+@media screen and (min-width:621px){
+	.desc {
+		width: 80%;
+		float: left;
+	}
+}
+.descrizionesx {
+	float: left;
+	width: 40%;
+}
+
+.descrizionedx {
+	float: left;
+	width: 60%;
+}
+
+.descrizionesx p, .descrizionedx p {
 	padding-left: 0.5em;
-	color: #333;
-	
+	margin-top: 0.5em;
 }
-.scheda a:hover {
-	color: blue;
-}
-
-.scheda .desc {
-	width: 80%;
-	padding-top: 0.5em;
+.descgi {
 	float: left;
-}
-.scheda .desc .descrizionesx {
-	float:left;
-	width: 30%;
-	margin-top: 0%;
+	margin: 0.5em 0.5em 0 0.5em;
 }
 
-.scheda .desc .descrizionedx {
-	float: left;
-	width: 70%;
-	margin-top: 0%;
-}
-
-.scheda .descrizionesx p, .scheda .descrizionedx p, .desc p {
-	margin-top: 0%;
-	padding-left: 0.5em;
-}
-
-.desc p {
-	width:100%;
-	float: left;
-	overflow: hidden;
-	margin-top: 5%;
-	text-align: justify;
-}
 /* VIDEOGIOCHIM */ 
 
 .giochiM {
-	margin-left: 10%;
-	margin-right: 10%;
-	
 	font-family: Arial;
 	color: #333;
 	width: 80%;
 	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
 	background-attachment: fixed;
 	float:left;
+	margin-left: 10%;
+	margin-right: 10%;
 	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
@@ -824,7 +824,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 }
 
-
+#checkA {
+	padding-left: 8%;
+	padding-right: 8%;
+	
+}
 
 .rigaA h4 {
    margin-top: 0%;
@@ -841,7 +845,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 150%;
 	padding: 5% 5%;
 }
-.elencoA .checkmark {
+.checkmark {
 	display:none;
 }
 
@@ -890,14 +894,13 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .footer {
 	clear: both;
-	margin-top: 0%;
-	margin-left: 0;
-	margin-right: 0;
-	padding-top: 0.5%;
-	padding-bottom: 0.5%;
-	border-top: 3px solid #333;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
 	text-align: center;
 	color: white;
 	background-color: #333;
-
 }
