@@ -1,0 +1,276 @@
+@page {
+	size: A4;
+}
+
+/*********HOMEPAGE**********/
+
+.navbar, .dropdownlogo, .dropdown, .dropdown-content, .polaroid, .dropdownlogin {
+	
+	display: none ;
+}
+
+a.prev, a.next, .dottod, .dot, .dot active {
+	display: none;
+}
+
+.slides-content {
+
+	max-width: 100%;
+	position: relative;
+	padding-top: 15%;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+	
+	
+}
+
+.mySlides img {
+	max-width:100%;
+	
+}
+
+.textslide {
+	position: relative;
+	padding: 2%;
+	font-size: 90%;
+}
+
+/************* NOTIZIE, REC*****************/
+
+.filtro, .lastnews, .pagbtn, .backtotopbtn{
+	display: none;
+}
+
+.Notizia {
+	padding-left: 3%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	
+}
+.notizie {
+  width: 90%;
+	float: left;
+	margin-bottom: 0%;
+	margin-top: 5%;
+	
+	
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+
+.columnleft img {
+  width:  40%;
+  float: left;
+}
+
+
+			/******** COLONNA DESTRA ******/
+
+.columnright {
+  width: 60%;
+  height: auto;
+  float: left;
+}
+
+.titolonews {
+  text-align: left;
+  font-size: 100%;
+  padding-top: 3%;
+  padding-left: 5%;
+}
+
+
+ .titolonews a {
+ color: black;
+}
+ 
+ 
+/******* Dentro notizia E REC***/
+
+.pagnotizia {
+  margin: 0% 10% 0 10%;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  
+  font-family: Arial;
+}
+
+.titolonotizia h1{
+  text-align: left;
+  font-size: 170%;
+  margin: 0;
+}
+
+.adminews h4{
+  color: #ccc;
+}
+
+.imgnotizia {
+	display: none;
+}
+
+.imgnotizia img{
+  width: 100%;
+  padding-bottom: 2%;
+}
+
+.testonotizia {
+  text-align: left;
+
+}
+
+.inscommenti {
+ display: none;
+}
+
+.commenti {
+  padding-top: 3%;
+}
+
+.commenti h5 {
+  margin: 0;
+  color: #ccc;
+}
+
+.commenti p {
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 2%;
+ 
+}
+
+
+/******** VIDEOGIOCHI *****/
+
+.videogiochi {
+	padding-left: 3%;
+	padding-top: 1%;
+	padding-bottom: 3%;
+	
+}
+
+.giochi {
+	
+	width: 100%;
+	position: relative;
+	float:left;
+	margin-top: 0%;
+	margin-right: 5%;
+
+	
+	
+}
+.scheda {
+	width: 90%;
+
+	float: left;
+	margin-bottom: 10%;
+	margin-top: 5%;
+	margin-left: 1%;
+	margin-right: 3%;
+	
+	border: 3px solid #333;
+	padding: 2% 2% 2% 2%;
+}
+
+
+.immagine {
+	max-width: 20%;
+	margin-right: 0%;
+	float: left;
+
+}
+
+.scheda a {
+	padding-left: 0.5em;
+	color: black;
+	
+}
+.scheda .desc {
+	width: 80%;
+	padding-top: 0.5em;
+
+	float: left;
+}
+.scheda .desc .descrizionesx {
+	float:left;
+	width: 30%;
+	margin-top: 0%;
+}
+
+.scheda .desc .descrizionedx {
+	float: left;
+	width: 70%;
+	margin-top: 0%;
+}
+
+.scheda .descrizionesx p, .scheda .descrizionedx p, .desc p {
+	margin-top: 0%;
+	padding-left: 0.5em;
+}
+
+.desc p {
+	width:100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 5%;
+	text-align: justify;
+}
+
+/******* agg gioco ****/
+
+.localA, .aggiungibtnA, .backtotopbtn {
+	display: none;
+}
+.opzioniA {
+	max-width:90%;
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-family: Arial;
+	
+	margin-top: 2%;
+}
+.opzioniA h3 {
+	text-align: center;
+}
+.rigaA {
+	text-align: center;
+}
+
+
+
+.rigaA h4 {
+   margin-top: 0%;
+   margin-bottom: 0%;
+}
+
+
+
+.AggA {
+	float: left;
+	border: 3px solid #333;
+	margin-bottom: 5%;
+}
+.aggiungi-contentA input, .aggiungi-contentA textarea{
+    width: 80%;
+    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.aggiungi-contentA textarea {
+	text-align:left;
+}
+
+.elencoA input {
+	width: auto;
+}
+ .elencoA .checkmark {
+	display:none;
+}
+
+
+
