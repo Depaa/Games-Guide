@@ -9,7 +9,7 @@
 	
 	$notizieA= $output->fetch_array();
 	
-	$query_commenti= "SELECT IDc, Commentinotizie.Data, Commentinotizie.Ora, Commento, NickName FROM Commentinotizie JOIN Notizie ON Commentinotizie.Titolonotizia=Notizie.Titolo WHERE Notizie.ID=$id ORDER BY Data, Ora DESC";
+	$query_commenti= "SELECT IDc, Commentinotizie.Data, Commentinotizie.Ora, Commento, NickName FROM Commentinotizie JOIN Notizie ON Commentinotizie.Titolonotizia=Notizie.Titolo WHERE Notizie.ID=$id ORDER BY Data DESC, Ora DESC";
 	$output2= $conn->query($query_commenti) or die("Errore nella query MySQL: ".$conn->error);
 	
 	
@@ -33,7 +33,7 @@
 				$nicknameA= $outputNICK->fetch_array();
 				
 				$queryINS= "INSERT INTO `Commentinotizie` (`TitoloNotizia`, `Data`, `Ora`, `Commento`, `NickName`) 
-				values ('".$notizieA['Titolo']."', '".date("Y-m-d"). "', '".date("h:i:s")."', '$_POST[commento]', '". $nicknameA['NickName']."');";
+				values ('".$notizieA['Titolo']."', '".date("Y-m-d"). "', '".date("H:i:s")."', '$_POST[commento]', '". $nicknameA['NickName']."');";
 				$outputINS= $conn->query($queryINS) or die("Errore nella query MySQL: ".$conn->error);
 				if(!empty($outputINS)) 
 				{
