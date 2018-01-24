@@ -824,12 +824,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 }
 
-#checkA {
-	padding-left: 8%;
-	padding-right: 8%;
-	
-}
-
 .rigaA h4 {
    margin-top: 0%;
    margin-bottom: 0%;
@@ -845,7 +839,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 150%;
 	padding: 5% 5%;
 }
-.checkmark {
+.checkmarkA {
 	display:none;
 }
 
