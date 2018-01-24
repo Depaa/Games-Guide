@@ -265,35 +265,35 @@
 						<div class="rigaA">
 							<label class="elencoA"> Xbox One
 								<input type="checkbox" name="xo"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Xbox 360
 								<input type="checkbox" name="x3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 4
 								<input type="checkbox"  name="p4"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 3
 								<input type="checkbox" name="p3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Switch
 								<input type="checkbox" name="sw"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">3DS
 								<input type="checkbox" name="ds"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Windows
 								<input type="checkbox" name="win"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Mac
 								<input type="checkbox" name="mac"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 						</div>
 						<div class="rigaA">
@@ -310,7 +310,7 @@
 							<input type="file" name="gimgvid" id="gimgvid"/>
 						</div> 
 						   
-							<p><button class="aggiungibtnA" type="submit" name="submitG">Conferma</button></p>
+							<button class="aggiungibtnA" type="submit" name="submitG">Conferma</button>
 						
 					</form>
 				</div>
@@ -342,35 +342,35 @@
 						<div class="rigaA">
 							<label class="elencoA"> Xbox One
 								<input type="checkbox" name="xo"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Xbox 360
 								<input type="checkbox" name="x3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 4
 								<input type="checkbox"  name="p4"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 3
 								<input type="checkbox" name="p3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Switch
 								<input type="checkbox" name="sw"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">3DS
 								<input type="checkbox" name="ds"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Windows
 								<input type="checkbox" name="win"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Mac
 								<input type="checkbox" name="mac"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 						</div>
 						<div class="rigaA">
@@ -381,7 +381,7 @@
 							<h4>Immagine News</h4>
 							<input type="file" name="nimg"/>
 						</div>                       
-							<p><button class="aggiungibtnA" type="submit" name="submitN">Conferma</button></p>
+							<button class="aggiungibtnA" type="submit" name="submitN">Conferma</button>
 					</form>
 				</div>
 			</div>
@@ -415,42 +415,42 @@
 						<div class="rigaA">
 							<label class="elencoA"> Xbox One
 								<input type="checkbox" name="xo"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Xbox 360
 								<input type="checkbox" name="x3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 4
 								<input type="checkbox"  name="p4"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Playstation 3
 								<input type="checkbox" name="p3"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Switch
 								<input type="checkbox" name="sw"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">3DS
 								<input type="checkbox" name="ds"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA"> Windows
 								<input type="checkbox" name="win"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 							<label class="elencoA">Mac
 								<input type="checkbox" name="mac"/>
-								<span class="checkmark"></span>
+								<span class="checkmarkA"></span>
 							</label>
 						</div>
 						<div class="rigaA">
 							<h4>Testo Recensione</h4>
 							<textarea name="rdesc" rows="10" cols="50"><?php if(isset($_POST['rdesc'])) echo $_POST['rdesc']; ?></textarea> 
 						</div>
-							<p><button class="aggiungibtnA" type="submit" name="submitR">Conferma</button></p>
+							<button class="aggiungibtnA" type="submit" name="submitR">Conferma</button>
 					</form>
 				</div>
 			</div>
