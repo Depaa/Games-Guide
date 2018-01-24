@@ -9,7 +9,7 @@
 	
 	$recensioneA= $output->fetch_array();
 	
-	$query_commenti= "SELECT IDc, Commentirecensione.Data, Ora, Commento, NickName FROM Commentirecensione JOIN Recensione WHERE Commentirecensione.Titolorecensione=Recensione.Titolo AND Recensione.IDr=$id ORDER BY Data, Ora DESC";
+	$query_commenti= "SELECT IDc, Commentirecensione.Data, Ora, Commento, NickName FROM Commentirecensione JOIN Recensione WHERE Commentirecensione.Titolorecensione=Recensione.Titolo AND Recensione.IDr=$id ORDER BY Data DESC, Ora DESC";
 	$output2= $conn->query($query_commenti) or die("Errore nella query MySQL: ".$conn->error);
 	
 	
@@ -33,7 +33,7 @@
 				$nicknameA= $outputNICK->fetch_array();
 				
 				$queryINS= "INSERT INTO `Commentirecensione` (`TitoloRecensione`, `Data`, `Ora`, `Commento`, `NickName`) 
-				values ('".$recensioneA['Titolo']."', '".date("Y-m-d"). "', '".date("h:i:s")."',  '$_POST[commento]', '". $nicknameA['NickName']."');";
+				values ('".$recensioneA['Titolo']."', '".date("Y-m-d"). "', '".date("H:i:s")."',  '$_POST[commento]', '". $nicknameA['NickName']."');";
 				
 				$outputINS= $conn->query($queryINS) or die("Erroreeeeeeeeeee nella query MySQL: ".$conn->error);
 				if(!empty($outputINS)) 
