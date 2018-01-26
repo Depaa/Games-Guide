@@ -2,17 +2,18 @@
 	session_start();
 	include_once "config.php";
 	
-	$queryLIMITE="SELECT COUNT(*) AS Limite FROM Recensione";
+	$queryLIMITE="SELECT * FROM Recensione";
 	$outputLIMITE = $conn->query($queryLIMITE) or die("Errore nella query MySQL: ".$conn->error);
-	$LIMITE = mysqli_fetch_assoc($outputLIMITE);
-	$limitePAG=$LIMITE['Limite'];
-	$maxPAG=3;
+	$limitePAG = mysqli_num_rows($outputLIMITE);
+	
+	$maxPAG=5;
 	$minPAG=0;
+	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=($limitePAG/$maxPAG);
-	if($totPAG<1)
-		$totPAG=1;
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	//if($totPAG<1)
+		//$totPAG=1;
 	
 	if(isset($_GET['pag'])) {
 		$correntePAG=$_GET['pag'];
@@ -36,6 +37,8 @@
 	}
 	
 	$query1 = "SELECT Recensione.NomeGioco, IDr, AdminNick, Testo, Titolo, Data, MenuImg FROM Recensione JOIN Immagini ON Recensione.NomeGioco=Immagini.NomeGioco ORDER BY Data DESC LIMIT 1";
+	
+	$inizio=$inizio+1;
 	$query = "SELECT Recensione.NomeGioco, IDr, AdminNick, Testo, Titolo, Data, MenuImg FROM Recensione JOIN Immagini ON Recensione.NomeGioco=Immagini.NomeGioco ORDER BY Data DESC LIMIT $fine OFFSET $inizio";
 	
 	$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
@@ -206,16 +209,18 @@
 						echo '</div>'; /*chiudo columnright*/
 					echo '</div>'; /*chiudo notizie*/
 				}
-				$precPAG=$correntePAG;
+				$prePAG=$correntePAG;
 				$postPAG=$correntePAG;
 				if($correntePAG>1)
-					$precPAG=$correntePAG-1;
-				if($correntePAG+1<$totPAG)
+					$prePAG=$correntePAG-1;
+				if($correntePAG+1<=$totPAG)
 					$postPAG=$correntePAG+1;
 				echo '<div class="pagbtn">';
-			echo '<a href="Recensione.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-			echo '<a href="Recensione.php?pag='.$postPAG.'"> &raquo;</a>';
+					if($correntePAG>1) //nascondo il paging della prima pagina se siamo all'inizio
+						echo '<a href="Recensione.php?pag='.$prePAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+					if($correntePAG<$totPAG) //nascondo il paging dell'ultima pagina se siamo alla fine
+						echo '<a href="Recensione.php?pag='.$postPAG.'"> &raquo;</a>';
 				echo '</div>';
 			}
 		}
