@@ -2,20 +2,18 @@
 	session_start();
 	include_once "config.php";
 	
-	$queryLIMITE="SELECT COUNT(*) AS Limite FROM Recensione";
+	$queryLIMITE="SELECT * FROM Notizie";
 	$outputLIMITE = $conn->query($queryLIMITE) or die("Errore nella query MySQL: ".$conn->error);
-	$LIMITE = mysqli_fetch_assoc($outputLIMITE);
-	
-	$limitePAG=$LIMITE['Limite'];
-	
-	$maxPAG=3;
+	$limitePAG = mysqli_num_rows($outputLIMITE);
+		
+	$maxPAG=5;
 	$minPAG=0;
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=($limitePAG/$maxPAG);
-	if($totPAG<1)
-		$totPAG=1;
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	//if($totPAG<1)
+		//$totPAG=1;
 	
 	if(isset($_GET['pag'])) {
 		$correntePAG=$_GET['pag'];
@@ -37,9 +35,11 @@
 		$inizio=$minPAG;
 		$fine=$maxPAG;
 	}
+		
+	$query1 = "SELECT ID, AdminNick, Testo, Titolo, Data, MenuImg FROM Notizie ORDER BY Data DESC LIMIT 1"; //solo la prima immagine
 	
-	$query1 = "SELECT ID, AdminNick, Testo, Titolo, Data, MenuImg FROM Notizie ORDER BY Data DESC LIMIT 1";
-	$query = "SELECT ID, AdminNick, Testo, Titolo, Data, MenuImg FROM Notizie ORDER BY Data DESC LIMIT $fine OFFSET $inizio";
+	$inizio=$inizio+1;
+	$query = "SELECT ID, AdminNick, Testo, Titolo, Data, MenuImg FROM Notizie ORDER BY Data DESC LIMIT $fine OFFSET $inizio"; //solo la seconda immagine
 	
 	$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 	$output1 = $conn->query($query1) or die("Errore nella query MySQL: ".$conn->error);
@@ -210,16 +210,18 @@
 						echo '</div>'; /*chiudo col dx*/
 					echo '</div>';/*chiudo notizie*/
 				} //chiudo for
-				$precPAG=$correntePAG;
+				$prePAG=$correntePAG;
 				$postPAG=$correntePAG;
 				if($correntePAG>1)
-					$precPAG=$correntePAG-1;
-				if($correntePAG+1<$totPAG)
+					$prePAG=$correntePAG-1;
+				if($correntePAG+1<=$totPAG)
 					$postPAG=$correntePAG+1;
 				echo '<div class="pagbtn">';
-				echo '<a href="Notizie.php?pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-			echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-			echo '<a href="Notizie.php?pag='.$postPAG.'"> &raquo;</a>';
+					if($correntePAG>1) //nascondo il paging della prima pagina se siamo all'inizio
+						echo '<a href="Notizie.php?pag='.$prePAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+					echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+					if($correntePAG<$totPAG) //nascondo il paging dell'ultima pagina se siamo alla fine
+						echo '<a href="Notizie.php?pag='.$postPAG.'"> &raquo;</a>';
 				echo '</div>';
 			}
 		}
