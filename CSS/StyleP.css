@@ -4,7 +4,8 @@
 
 /*********HOMEPAGE**********/
 
-.navbar, .dropdownlogo, .dropdown, .dropdown-content, .polaroid, .dropdownlogin, .footer {
+.navbar, .dropdownlogo, .dropdown, .dropdown-content, .polaroid, .dropdownlogin, .footer, .sandwich, .hamburger, .menu, .backtotopbtn {
+	
 	
 	display: none ;
 }
