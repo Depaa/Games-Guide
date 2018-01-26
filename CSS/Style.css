@@ -888,13 +888,25 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .footer {
 	clear: both;
-	position: absolute;
+	/*position: absolute;*/
 	bottom: 0;
 	right: 0;
 	left: 0;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 	text-align: center;
 	color: white;
 	background-color: #333;
+}
+
+.footer p {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin: 0.25em;
+}
+
+.logoF {
+	width: 75px;
+	border-radius: 30%;
+	margin-right: 10px;
 }
