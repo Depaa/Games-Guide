@@ -359,7 +359,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	float: left;
 	top: 0;
 	background-color: #fff;
-	border-right: 3px solid #333;
+	
 }
 
 .filtro h5 {
@@ -424,7 +424,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	margin-top: 0%;
-	
+	border-left: 3px solid #333;
 }
 
 .scheda {
