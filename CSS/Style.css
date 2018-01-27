@@ -418,8 +418,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 /*PARTE GIOCHI*/
 .giochi {
-	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;
+	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;*/
 	width: 83%;
 	position: relative;
 	float:left;
@@ -492,8 +492,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-family: Arial;
 	color: #333;
 	width: 80%;
-	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;
+	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;*/
 	float:left;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -569,8 +569,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .Notizia {
-	background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;
+	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
+	background-attachment: fixed;*/
 	width: 83%;
 	position: relative;
 	float:left;
