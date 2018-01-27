@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `account`
 --
 
-CREATE TABLE `account` (
+CREATE TABLE `Account` (
   `id` int(5) NOT NULL,
   `Nickname` varchar(10) NOT NULL,
   `Password` varchar(16) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `account` (
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`id`, `Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Admin`) VALUES
+INSERT INTO `Account` (`id`, `Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Admin`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', '1995-10-01', 'admin@admin.admin', 1),
 (2, 'Peachka', 'ciaone', 'Lucia', 'Fenu', '1995-06-30', 'lucia.fenu95@gmail.com', 1),
 (3, 'Aiolos', '123qwerty789', 'Gianmarco', 'Pettenuzzo', '1995-08-20', 'gian82095@gmail.com', 1),
@@ -63,7 +63,7 @@ INSERT INTO `account` (`id`, `Nickname`, `Password`, `Nome`, `Cognome`, `DataNas
 -- Table structure for table `commentinotizie`
 --
 
-CREATE TABLE `commentinotizie` (
+CREATE TABLE `Commentinotizie` (
   `IDc` int(5) NOT NULL,
   `TitoloNotizia` varchar(144) NOT NULL,
   `Data` date NOT NULL,
@@ -88,7 +88,7 @@ INSERT INTO `Commentinotizie` (`IDc`, `TitoloNotizia`, `Data`, `Ora`, `Commento`
 -- Table structure for table `commentirecensione`
 --
 
-CREATE TABLE `commentirecensione` (
+CREATE TABLE `Commentirecensione` (
   `IDc` int(5) NOT NULL,
   `TitoloRecensione` varchar(144) NOT NULL,
   `Data` date NOT NULL,
@@ -116,7 +116,7 @@ INSERT INTO `Commentirecensione` (`IDc`, `TitoloRecensione`, `Data`, `Ora`, `Com
 -- Table structure for table `genere`
 --
 
-CREATE TABLE `genere` (
+CREATE TABLE `Genere` (
   `CodiceGenere` int(4) NOT NULL,
   `Nome` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -125,7 +125,7 @@ CREATE TABLE `genere` (
 -- Dumping data for table `genere`
 --
 
-INSERT INTO `genere` (`CodiceGenere`, `Nome`) VALUES
+INSERT INTO `Genere` (`CodiceGenere`, `Nome`) VALUES
 (1, 'Avventura'),
 (2, 'Azione'),
 (3, 'Sport'),
@@ -145,7 +145,7 @@ INSERT INTO `genere` (`CodiceGenere`, `Nome`) VALUES
 -- Table structure for table `immagini`
 --
 
-CREATE TABLE `immagini` (
+CREATE TABLE `Immagini` (
   `NomeGioco` varchar(100) NOT NULL,
   `MenuImg` varchar(64) NOT NULL,
   `GiocoImg` varchar(64) NOT NULL
@@ -155,7 +155,7 @@ CREATE TABLE `immagini` (
 -- Dumping data for table `immagini`
 --
 
-INSERT INTO `immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) VALUES
+INSERT INTO `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) VALUES
 ('Assassin&rsquo;s Creed: Origins', 'ACO.jpg', 'ACO0.jpg'),
 ('Call of Duty: World War II', 'CODWWII.jpg', 'CODWWII0.jpg'),
 ('Crash Bandicoot: N.Sane Trilogy', 'CBT.jpg', 'CBT0.jpg'),
@@ -172,7 +172,7 @@ INSERT INTO `immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) VALUES
 -- Table structure for table `notizie`
 --
 
-CREATE TABLE `notizie` (
+CREATE TABLE `Notizie` (
   `ID` int(4) NOT NULL,
   `Data` date NOT NULL,
   `Titolo` varchar(144) NOT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE `notizie` (
 -- Dumping data for table `notizie`
 --
 
-INSERT INTO `notizie` (`ID`, `Data`, `Titolo`, `AdminNick`, `Testo`, `XboxOne`, `Xbox360`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Playstation3`, `Playstation4`, `MenuImg`) VALUES
+INSERT INTO `Notizie` (`ID`, `Data`, `Titolo`, `AdminNick`, `Testo`, `XboxOne`, `Xbox360`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Playstation3`, `Playstation4`, `MenuImg`) VALUES
 (1, '2017-11-30', 'Presentata Xbox One X ', 'Depaa', '<span lang=\"en\">Xbox One</span> X &egrave;, anzitutto, un piccolo miracolo di ingegneria e progettazione. La <span lang=\"en\">console</span> se ne esce dalla scatola pronta a stupire l&rsquo;utente grazie alle dimensioni estremamente contenute, addirittura pi&ugrave; ridotte della candida &ldquo;sorellina minore&rdquo;. Il <span lang=\"en\">form factor</span> &egrave; simile a quello di <span lang=\"en\">Xbox One</span> S: essenziale, pulito, squadrato, ma decisamente pi&ugrave; elegante rispetto a quello della versione <span lang=\"en\">&ldquo;fat&rdquo;</span>. Il blocco centrale della macchina ne sovrasta uno pi&ugrave; piccolo, mettendo in risalto il vano del disco.\r\n  Spariscono le forature della parte superiore, anche per via di una revisione integrale del sistema di raffreddamento (che adesso sfrutta la dissipazione a camera di vapore).\r\n  Le superfici nere, leggermente satinate, sono piacevolissime alla vista, e la compattezza dell&rsquo;assemblaggio rende la macchina un piccolo gioiello da esporre fieramente in salotto.\r\n  Che <span lang=\"en\">Microsoft</span> sia riuscita ad infilare il suo &ldquo;mostro di potenza&rsquo; in uno <span lang=\"en\">chassis</span> cos&igrave; piccolo, insomma, &egrave; un risultato pi&ugrave; che ammirevole, frutto di un processo di ingegnerizzazione veramente incredibile. Qui non si tratta, badate bene, solo di una marcata attenzione per l&rsquo;ottimizzazione degli spazi e la &ldquo;miniaturizzazione&rdquo;, bens&igrave; di uno studio meticoloso del posizionamento di ogni componente, attento ad ogni aspetto: potenza, gestione termica, riduzione del rumore, stile.\r\n  <span lang=\"en\">Xbox One</span> X, insomma, si presenta fin da subito come un prodotto premium, ideato per quei giocatori che non vogliono scendere a compromessi su nessun fronte: neppure sul quello estetico e progettuale.', 1, 0, 0, 0, 0, 0, 0, 0, 'XboxOneX.jpg'),
 (2, '2017-12-06', 'The Legend Of Zelda: Breath Of The Wild. Premiato come gioco dell&rsquo;anno!', 'Peachka', ' Nuovo importante riconoscimento per <span lang=\"en\">The Legend Of</span> Zelda: <span lang=\"en\">Breath Of The Wild</span>.: questa volta &egrave; <span lang=\"en\">GameSpot USA</span> a premiare l&rsquo;ultima avventura di <span lang=\"en\">Link</span> con il prestigioso premio di <span lang=\"en\">Game of the Year</span>, riservato al miglior gioco dell&rsquo;anno.\r\n  Per la redazione di <span lang=\"en\">GameSpot USA, Breath of the Wild </span>&egrave; il miglior gioco degli ultimi dodici mesi, nonch&egrave; uno dei migliori titoli di sempre, grazie a un <span lang=\"en\">gameplay</span> di assoluto livello, a una narrazione ineccepibile e ad una direzione artistica di alto profilo.\r\n  <span lang=\"en\">The Legend Of</span> Zelda: <span lang=\"en\">Breath Of The Wild</span> &egrave; il videogioco pi&ugrave; premiato del 2017, nonch&egrave; il titolo con la media pi&ugrave; alta dell&rsquo;anno su Metacritic, a testimonianza dell&rsquo;ottima accoglienza ricevuta da parte della stampa specializzata. \r\n  Il gioco &egrave;; stato eletto <span lang=\"en\">Game of the Year</span> ai <span lang=\"en\">The Game Awards</span> dell&rsquo;8 dicembre scorso, riconoscimento importante, inoltre anche <span lang=\"en\">Polygon</span> ha inserito <span lang=\"en\">Zelda Breath of the Wild</span> nella Top 50 dell§&rsquo;anno che sta pr terminare.\r\n  Un grande successo per Nintendo e per <span lang=\"ja\">Eiji Aonuma</span>, il <span lang=\"en\">producer</span> della serie ha affermato recentemente che i lavori sul prossimo gioco di Zelda, sono gi&agrave; iniziati, sebbene sia ancora troppo presto per iniziare a parlarne. \r\n  Non ci resta dunque che attendere di saperne di pi&ugrave; sul nuovo capitolo della saga.', 0, 0, 0, 1, 0, 0, 0, 0, 'ZBWN.jpg'),
 (3, '2017-12-05', 'Uscir&agrave; presto il nuovo God of War', 'Depaa', ' <span lang=\"en\">Sony Interactive Entertainment</span> ha pubblicato un video di <span lang=\"en\">God of War</span> dedicato ad Atreus, il figlio di Kratos, svelando nuovi dettagli e retroscena sulla storia del personaggio. \r\n  In assenza del padre, Atreus ha continuato a vivere insieme alla madre mentre affinava le proprie abilit&agrave; con l&rsquo;arco, preparandosi cos&igrave; a diventare quel piccolo guerriero che avremo modo di conoscere durante la nuova avventura di Kratos. \r\n  Tra le altre cose, apprendiamo che Atreus sar&agrave; in grado di ascoltare le voci degli animali nella propria testa, caratteristica che con ogni probabilit&agrave; trover&agrave; diverse applicazioni interessanti anche a livello di <span lang=\"en\">gameplay</span>.\r\n  Nell&rsquo;attesa che il nuovo <span lang=\"en\">God of War</span> venga pubblicato in esclusiva su <span lang=\"en\">PlayStation</span> 4 nel corso del 2018, vi riproponiamo gli ultimi <span lang=\"en\">screenshot</span> del gioco mostrati nella giornata di ieri. ', 0, 0, 0, 0, 0, 0, 0, 1, 'GO00W4.jpg'),
@@ -209,7 +209,7 @@ INSERT INTO `notizie` (`ID`, `Data`, `Titolo`, `AdminNick`, `Testo`, `XboxOne`, 
 -- Table structure for table `recensione`
 --
 
-CREATE TABLE `recensione` (
+CREATE TABLE `Recensione` (
   `IDr` int(4) NOT NULL,
   `NomeGioco` varchar(144) NOT NULL,
   `AdminNick` varchar(16) NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE `recensione` (
 -- Dumping data for table `recensione`
 --
 
-INSERT INTO `recensione` (`IDr`, `NomeGioco`, `AdminNick`, `Titolo`, `Testo`, `Data`, `Playstation3`, `Playstation4`, `Xbox360`, `XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`) VALUES
+INSERT INTO `Recensione` (`IDr`, `NomeGioco`, `AdminNick`, `Titolo`, `Testo`, `Data`, `Playstation3`, `Playstation4`, `Xbox360`, `XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`) VALUES
 (1, 'Assassin&rsquo;s Creed: Origins', 'Aiolos', 'La Recensione di Assassin&rsquo;s Creed: Origins, mummia o faraone?', 'Separare il suo nome dalle antipatie personali e dalla negativit&agrave; che fin troppo spesso lo circonda potrebbe essere una necessit&agrave; perch&egrave; molti giocatori ne comprendano il reale valore, eppure la serie <span lang=\"en\">Assassin&rsquo;s Creed </span> possiede ancora oggi una rilevanza a cui buona parte delle altre saghe possono solo aspirare, nata da un brillante misto di accessibilit&agrave; e fascino storico. \r\n  Stiamo pur sempre parlando dei giochi che hanno introdotto nel genere <span lang=\"en\">action adventure</span> la straordinaria meccanica del  <span lang=\"en\">free running</span>, e la definiamo &ldquo;straordinaria&rdquo; perch&egrave; per un  <span lang=\"en\">game designer</span> concettualizzare e applicare un sistema in grado di rendere il movimento verticale alla portata di tutti &egrave; qualcosa di equiparabile a una visione mistica. \r\n   <span lang=\"en\">Assassin&rsquo;s Creed Origins</span> &egrave; un  <span lang=\"en\">open world</span> enorme, per offrire un ancor pi&ugrave; riuscito misto di esplorazione, combattimento e libert&agrave; d&rsquo;azione, il tutto all&rsquo;interno di una suggestiva ambientazione egiziana nell&rsquo;era di Cesare e Cleopatra. \r\n  Oggi, forti di una sessione di prova di qualche giorno a Parigi, cercheremo di capire con voi se l&rsquo;origine degli assassini rappresenta davvero un nuovo inizio per questa iconica serie.', '2017-10-27', 0, 1, 0, 1, 0, 0, 1, 0),
 (2, 'Call of Duty: World War II', 'Depaa', 'La Recensione di Call of Duty: WWII, piedi in terra.', 'Se dovessimo guardare solamente i dati di vendita potremmo tranquillamente paragonare <span lang=\"en\">Call of Duty</span> a una macchina inarrestabile, una di quelle vetture talmente perfette da tagliare sempre per prime il traguardo, nonostante intoppi e incidenti di percorso. \r\n  Nell&rsquo;anno di maggior flessione per il <span lang=\"en\">brand</span>, con un capitolo non particolarmente amato dal pubblico e con un <span lang=\"en\">trailer</span> di lancio che fece registrare ai tempi il record assoluto di <span lang=\"en\">dislike</span> su <span lang=\"en\">Youtube</span>, <span lang=\"en\">Call of Duty</span> &egrave; riuscito comunque a imporsi sul mercato, perdendo forse terreno nei confronti di <span lang=\"en\">Battlefield</span> 1 ma restando saldamente ancorato sul trono. \r\n  Gi&agrave; tre anni fa per&ograve; i vertici <span lang=\"en\">Activision</span> avevano ben chiaro che il pubblico si stava disaffezionando al <span lang=\"en\">brand</span>, annoiato pi&ugrave; che dal <span lang=\"en\">gameplay</span>, da un <span lang=\"en\">setting</span> futuristico che ormai aveva ben poco altro da dire e da offrire. \r\n   La soluzione scelta per affacciarsi a questo radicale cambiamento &egrave; stata quella di far un passo indietro e tornare in quella seconda guerra mondiale che mancava dalla scena da ormai troppo tempo. Quest&rsquo;anno, tra le altre cose, della campagna di <span lang=\"en\">Call of Duty</span> e dei suoi contenuti extra se ne &egrave; parlato davvero pochissimo, lasciando che fosse il <span lang=\"en\">multiplayer</span> ad assorbire tutte le attenzioni durante gli eventi e le beta pubbliche. \r\n  Qualche settimana fa siamo per&ograve; volati a Londra per affondare i denti sul pacchetto completo e oggi torniamo da voi con il verdetto finale per la produzione.', '2017-11-03', 0, 1, 0, 1, 0, 0, 1, 0),
 (3, 'Super Mario Odyssey', 'admin', 'La Recensione di Super Mario Odyssey', 'Nonostante sia stato spesso definito come tale, Super Mario <span lang=\"en\">Odyssey</span>, almeno in senso stretto, non &egrave; il seguito di Super Mario 64. \r\n  Questo nuovo <span lang=\"en\">platform</span> tridimensionale, diretto da <span lang=\"ja\">Kenta Motokura</span> e prodotto da <span lang=\"ja\">Hayashida</span> e <span lang=\"ja\">Koizumi</span>, non si limita a voler rinverdire le meccaniche di Super Mario 64: prende il punto forte di ogni predecessore e lo sfida a duello, il tutto mentre tenta di armonizzare e fondere assieme queste dinamiche tra loro molto diverse. \r\n  Si ispira all&rsquo;esplorazione del capostipite su Nintendo 64, ripropone le missioni tematiche di Super Mario <span lang=\"en\">Sunshine</span>, eredita la variet&agrave; e gli scherzi gravitazionali di Super Mario <span lang=\"en\">Galaxy</span>, e perfino dall&rsquo;ultimo Super Mario 3D <span lang=\"en\">World</span>, teoricamente cos&igrave; diverso, riprende ritmo e abbondanza di contenuti.\r\n  Insomma, per dirla alla <span lang=\"en\">Tolkien</span>, &ldquo;un <span lang=\"en\">platform</span> per domarli, un <span lang=\"en\">platform</span> per trovarli, un <span lang=\"en\">platform</span> per ghermirli e nell&rsquo;oscurit&agrave; incatenarli&rdquo;.', '2017-10-27', 0, 0, 0, 0, 0, 1, 0, 0),
@@ -247,7 +247,7 @@ INSERT INTO `recensione` (`IDr`, `NomeGioco`, `AdminNick`, `Titolo`, `Testo`, `D
 -- Table structure for table `videogiochi`
 --
 
-CREATE TABLE `videogiochi` (
+CREATE TABLE `Videogiochi` (
   `ID` int(4) NOT NULL,
   `Nome` varchar(100) NOT NULL,
   `Data` date NOT NULL,
@@ -272,7 +272,7 @@ CREATE TABLE `videogiochi` (
 -- Dumping data for table `videogiochi`
 --
 
-INSERT INTO `videogiochi` (`ID`, `Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`, `PEGI`, `Valutazione`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`, `XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`) VALUES
+INSERT INTO `Videogiochi` (`ID`, `Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`, `PEGI`, `Valutazione`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`, `XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`) VALUES
 (1, 'Assassin&rsquo;s Creed: Origins', '2017-10-27', '<span lang="en"> <abbr title="Role Playing Game">RPG</abbr> </span>', 'Avventura', NULL, 18, NULL, '<span lang="en"> <abbr title="Playstation 4">Ps4</abbr>, Xbox One, Windows</span>', 0, 1, 0, 0, 0, 0, 1, 0, 'L&rsquo;Antico Egitto, sta scomparendo in una lotta spietata per il potere. Scopri oscuri segreti e miti dimenticati e vivi l&rsquo;inizio di tutto: le origini della Confraternita degli Assassini.\r\nEsplora tombe perdute e piramidi per scoprire i segreti delle mummie, degli d&egrave;i e degli ultimi faraoni.\r\nNaviga lungo il Nilo e scopri i misteri delle piramidi.\r\nScopri un nuovo sistema di combattimento e impossessati di molte nuove armi, ognuna diversa per rarit&agrave; e caratteristiche.'),
 (2, 'Call of Duty: World War II', '2017-11-03', '<span lang="en"> <abbr title="First Person Shooter">FPS</abbr> </span>', 'Azione', NULL, 18, NULL, '<span lang="en"> <abbr title="Playstation 4">Ps4</abbr>, Xbox One, Windows</span>', 0, 1, 0, 1, 0, 0, 1, 0, 'Un&rsquo;esperienza mozzafiato che porter&agrave; una nuova generazione nella Seconda Guerra Mondiale. Sbarca in Normandia e combatti in tutta Europa rivivendo leggendarie battaglie che hanno segnato il conflitto pi&ugrave; sanguinoso della storia. Scopri il classico combattimento di <span lang=\"en\">Call of Duty</span>, i legami del cameratismo e il cuore crudele della guerra.'),
 (3, 'Super Mario Odyssey', '2017-10-27', 'Avventura', 'Azione', NULL, 10, NULL, '<span lang="en"><abbr title="Nintendo Switch">NSwitch</abbr></span>', 0, 0, 0, 0, 0, 1, 0, 0, 'Mario approda su Nintendo <span lang=\"en\">Switch</span> con un&rsquo;avventura 3D senza precedenti! Questo fantastico gioco in stile <span lang=\"en\">sandbox</span>; il primo dai tempi degli amatissimi Super Mario 64 del 1996 e Super Mario <span lang=\"en\">Sunshine</span> del 2002, &egrave; pieno zeppo di segreti e sorprese! Mario pu&ograve; ora contare su tutta una serie di nuove mosse e abilit&agrave;, come lanci o salti che sfruttano il cappello. Pu&ograve; persino impossessarsi di personaggi e oggetti, per possibilit&agrave; di <span lang=\"en\">gameplay</span> incredibili e mai sperimentate prima.'),
@@ -290,7 +290,7 @@ INSERT INTO `videogiochi` (`ID`, `Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`
 --
 -- Indexes for table `account`
 --
-ALTER TABLE `account`
+ALTER TABLE `Account`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Nickname` (`Nickname`),
   ADD UNIQUE KEY `Email` (`Email`);
@@ -298,7 +298,7 @@ ALTER TABLE `account`
 --
 -- Indexes for table `commentinotizie`
 --
-ALTER TABLE `commentinotizie`
+ALTER TABLE `Commentinotizie`
   ADD PRIMARY KEY (`IDc`),
   ADD KEY `CommentiNotizie` (`TitoloNotizia`),
   ADD KEY `NickName` (`NickName`);
@@ -306,7 +306,7 @@ ALTER TABLE `commentinotizie`
 --
 -- Indexes for table `commentirecensione`
 --
-ALTER TABLE `commentirecensione`
+ALTER TABLE `Commentirecensione`
   ADD PRIMARY KEY (`IDc`),
   ADD KEY `commentirecensione` (`TitoloRecensione`),
   ADD KEY `NickName` (`NickName`);
@@ -314,27 +314,27 @@ ALTER TABLE `commentirecensione`
 --
 -- Indexes for table `genere`
 --
-ALTER TABLE `genere`
+ALTER TABLE `Genere`
   ADD PRIMARY KEY (`CodiceGenere`),
   ADD UNIQUE KEY `CodiceGenere` (`CodiceGenere`);
 
 --
 -- Indexes for table `immagini`
 --
-ALTER TABLE `immagini`
+ALTER TABLE `Immagini`
   ADD UNIQUE KEY `NomeGioco` (`NomeGioco`);
 
 --
 -- Indexes for table `notizie`
 --
-ALTER TABLE `notizie`
+ALTER TABLE `Notizie`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Titolo` (`Titolo`);
 
 --
 -- Indexes for table `recensione`
 --
-ALTER TABLE `recensione`
+ALTER TABLE `Recensione`
   ADD PRIMARY KEY (`IDr`),
   ADD UNIQUE KEY `CodiceRecensione` (`IDr`),
   ADD KEY `Articolo` (`AdminNick`),
@@ -343,7 +343,7 @@ ALTER TABLE `recensione`
 --
 -- Indexes for table `videogiochi`
 --
-ALTER TABLE `videogiochi`
+ALTER TABLE `Videogiochi`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `Videogioco` (`Genere1`),
   ADD KEY `Videogioco1` (`Genere2`),
@@ -356,43 +356,43 @@ ALTER TABLE `videogiochi`
 --
 -- AUTO_INCREMENT for table `account`
 --
-ALTER TABLE `account`
+ALTER TABLE `Account`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `commentinotizie`
 --
-ALTER TABLE `commentinotizie`
+ALTER TABLE `Commentinotizie`
   MODIFY `IDc` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `commentirecensione`
 --
-ALTER TABLE `commentirecensione`
+ALTER TABLE `Commentirecensione`
   MODIFY `IDc` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `genere`
 --
-ALTER TABLE `genere`
+ALTER TABLE `Genere`
   MODIFY `CodiceGenere` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `notizie`
 --
-ALTER TABLE `notizie`
+ALTER TABLE `Notizie`
   MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `recensione`
 --
-ALTER TABLE `recensione`
+ALTER TABLE `Recensione`
   MODIFY `IDr` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `videogiochi`
 --
-ALTER TABLE `videogiochi`
+ALTER TABLE `Videogiochi`
   MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
