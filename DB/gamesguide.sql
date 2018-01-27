@@ -118,7 +118,7 @@ INSERT INTO `Commentirecensione` (`IDc`, `TitoloRecensione`, `Data`, `Ora`, `Com
 
 CREATE TABLE `Genere` (
   `CodiceGenere` int(4) NOT NULL,
-  `Nome` varchar(32) NOT NULL
+  `Nome` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -251,9 +251,9 @@ CREATE TABLE `Videogiochi` (
   `ID` int(4) NOT NULL,
   `Nome` varchar(100) NOT NULL,
   `Data` date NOT NULL,
-  `Genere1` varchar(20) NOT NULL,
-  `Genere2` varchar(20) DEFAULT NULL,
-  `Genere3` varchar(20) DEFAULT NULL,
+  `Genere1` varchar(100) NOT NULL,
+  `Genere2` varchar(100) DEFAULT NULL,
+  `Genere3` varchar(100) DEFAULT NULL,
   `PEGI` int(5) DEFAULT NULL,
   `Valutazione` double DEFAULT NULL,
   `Disponibilita` varchar(144) DEFAULT NULL,
