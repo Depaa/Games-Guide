@@ -107,7 +107,7 @@ INSERT INTO `Commentirecensione` (`IDc`, `TitoloRecensione`, `Data`, `Ora`, `Com
 (3, 'La Recensione di FIFA 18: sempre il solito?', '2018-01-04', '01:32:18', 'commmentono', 'admin'),
 (4, 'La Recensione di Crash Bandicoot, un sogno che diventa realt&agrave;', '2018-01-04','01:32:22', 'asdasdadsa', 'admin'),
 (5, 'La Recensione di Crash Bandicoot, un sogno che diventa realt&agrave;', '2018-01-04', '01:32:27', 'molto bene', 'admin'),
-(6, 'La Recensione di Assassin&rsquo;s Creed : Origins, mummia o faraone?', '2018-01-04', '07:37:36', 'comento', 'admin'),
+(6, 'La Recensione di Assassin&rsquo;s Creed: Origins, mummia o faraone?', '2018-01-04', '07:37:36', 'comento', 'admin'),
 (7, 'La Recensione di Call of Duty: WWII, piedi in terra', '2018-01-04', '07:39:05', 'oggi Ã¨ un bel giorno 04/01', 'admin');
 
 -- --------------------------------------------------------
