@@ -19,7 +19,7 @@
 		if(isset($_POST['mac']))
 			$wh .= " AND Videogiochi.Mac=1";	
 		
-		$query= "SELECT IDr, Videogiochi.ID, Nome, GiocoImg, Genere1, Genere2, Genere3, Disponibilita, Videogiochi.Data, PEGI, Descrizione FROM Videogiochi JOIN Immagini ON Videogiochi.Nome=Immagini.NomeGioco JOIN Recensione ON Videogiochi.Nome=Recensione.NomeGioco $wh ORDER BY Videogiochi.Data DESC";
+		$query= "SELECT IDr, Videogiochi.ID, Nome, GiocoImg, MenuImg, Genere1, Genere2, Genere3, Disponibilita, Videogiochi.Data, PEGI, Descrizione FROM Videogiochi JOIN Immagini ON Videogiochi.Nome=Immagini.NomeGioco JOIN Recensione ON Videogiochi.Nome=Recensione.NomeGioco $wh ORDER BY Videogiochi.Data DESC";
 		$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 	}
 	
@@ -51,7 +51,7 @@
 		if(isset($_POST['hor']))
 			$wh .= " AND (Videogiochi.Genere1='Horror' OR Videogiochi.Genere2='Horror' OR Videogiochi.Genere3='Horror')";
 		
-		$query= "SELECT IDr, Videogiochi.ID, Nome, GiocoImg, Genere1, Genere2, Genere3, Disponibilita, Videogiochi.Data, PEGI, Descrizione FROM Videogiochi JOIN Immagini ON Videogiochi.Nome=Immagini.NomeGioco JOIN Recensione ON Videogiochi.Nome=Recensione.NomeGioco $wh ORDER BY Videogiochi.Data DESC LIMIT 100 OFFSET 1";
+		$query= "SELECT IDr, Videogiochi.ID, Nome, GiocoImg, MenuImg, Genere1, Genere2, Genere3, Disponibilita, Videogiochi.Data, PEGI, Descrizione FROM Videogiochi JOIN Immagini ON Videogiochi.Nome=Immagini.NomeGioco JOIN Recensione ON Videogiochi.Nome=Recensione.NomeGioco $wh ORDER BY Videogiochi.Data DESC LIMIT 100 OFFSET 1";
 		$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
 	}
 
