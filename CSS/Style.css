@@ -343,6 +343,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
+	border-right: 3px solid #333;
 }
 
 @media screen and (max-width: 860px) {
@@ -354,11 +355,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .filtro {
-	width: 12%;
+	width: 17%;
 	float: left;
 	top: 0;
 	background-color: #fff;
-	margin-right: 5%;
+	border-right: 3px solid #333;
 }
 
 .filtro h5 {
@@ -424,8 +425,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	float:left;
 	margin-top: 0%;
 	
-	border-right: 3px solid #333;
-	border-left: 3px solid #333;
 }
 
 .scheda {
