@@ -258,6 +258,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border-right: 3px solid #333;
 	margin-left: 10%;
 	margin-right: 10%;
+	height: 100%;
 }
 
 .slides-content {
@@ -349,6 +350,14 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin-left:  17%;
 	top: 0;
 	bottom: 0;
+}
+
+.nogamefound h3
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 1%;
+	text-align:center;
 }
 
 .videogiochi {
@@ -521,6 +530,27 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 
 /**************************************************** VIDEOGIOCHIM *************************************************/ 
+.nogamefoundM
+{
+	height: 40em;
+	width: 80%;
+	border-left: 3px solid #333;
+	top: 0;
+	bottom: 0;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
+}
+
+.nogamefoundM h3
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 1%;
+	text-align:center;
+}
+
 .giochiM {
 	font-family: Arial;
 	color: #333;
