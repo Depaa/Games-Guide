@@ -91,8 +91,11 @@
 					<?php if($success_message) { ?>
 					<div class="riga">
 						<h4><?php if(isset($success_message)) echo $success_message; ?></h4>
+						<h5>Stai per essere reinderizzato alla Home fra 10 secondi, clicca <a href="index.php">Qui</a> se non vuoi aspettare</h5>
+						<script type="text/javascript" src="JS/indexRedirect.js"></script>
 					</div>
-					<?php } ?>
+					<?php }
+					else {?>
 					<?php if($error_message) { ?>	
 					<div class="riga">
 						<h4><?php if(isset($error_message)) echo $error_message; ?></h4>
@@ -128,6 +131,7 @@
 					</div>
 					<p><button class="registrazionebtn" type="submit" name="submitR">REGISTRATI</button></p>
 				</form>
+					<?php } ?>
 			</div>
 		</div>
 		
