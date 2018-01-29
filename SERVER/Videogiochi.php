@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero più grande
+	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero piÃ¹ grande
 	
 	if(isset($_GET['pag'])) {
 		$correntePAG=$_GET['pag'];
@@ -190,18 +190,11 @@
 						echo '<img class="immagine2" src="IMG\\' .$row['MenuImg']. '" alt="' .$row['Nome']. '" lang="en"/>';
 						echo '<div class="desc">';
 							echo '<div class="descrizionesx">';
-								echo '<p> Data uscita:</p>';
-								echo '<p> Generi:</p>';
-								echo '<p> Disponibile per:</p>';
-								echo '<p> PEGI: </p>';
-							echo '</div>'; //chiudo descsx
-							
-							echo '<div class="descrizionedx">';
-								echo '<p>' .date('j M Y', strtotime($row['Data'])). '</p>';
-								echo '<p>' .$row['Genere1']. ' ' .$row['Genere2']. ' ' .$row['Genere3']. '</p>';
-								echo '<p>' .$row['Disponibilita']. '</p>';
-								echo '<p>' .$row['PEGI']. '</p>';
-							echo '</div>'; //chiudo descdx
+								echo '<p> Data uscita: ' .date('j M Y', strtotime($row['Data'])). '</p>';
+								echo '<p> Generi: ' .$row['Genere1']. ' ' .$row['Genere2']. ' ' .$row['Genere3']. '</p>';
+								echo '<p> Disponibile per: ' .$row['Disponibilita']. ' </p>';
+								echo '<p> PEGI: ' .$row['PEGI']. '</p>';
+							echo '</div>';
 							echo '<div class="descrec">';
 								echo '<a href="RewsPage.php?id='.$row['IDr'].'"> La nostra recensione del gioco </a>';
 							echo '</div>';
