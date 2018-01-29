@@ -159,7 +159,7 @@
 			else {
 				if($output1->num_rows == 0){
 					echo '<div class="nogamefound">';
-						echo '<h4>Nessuna notizia trovato, suggeriscici un gioco inviando una mail a gamesguide@assistenza.it</h4>';  //qua controllo 0results 
+						echo '<h4>Nessuna notizia trovata, suggeriscici un gioco inviando una mail a gamesguide@assistenza.it</h4>';  //qua controllo 0results 
 					echo '</div>';
 				}
 				else {
