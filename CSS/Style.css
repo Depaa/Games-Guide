@@ -542,7 +542,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 {
 	height: 40em;
 	width: 80%;
-	border-left: 3px solid #333;
 	top: 0;
 	bottom: 0;
 	margin-left: 10%;
@@ -804,7 +803,12 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
   border-bottom: 1px solid #ccc;
 }
 
-
+.nonewsFound {
+	height: 20em;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+}
 /*****************************************DELETE COSE***************************************************/
 .deletebtn {
 	margin-top: 1em;
