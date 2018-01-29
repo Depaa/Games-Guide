@@ -341,6 +341,16 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /**************************************************** VIDEOGIOCHI *************************************************/ 
+.nogamefound
+{
+	height: 60em;
+	width: 83%;
+	border-left: 3px solid #333;
+	margin-left:  17%;
+	top: 0;
+	bottom: 0;
+}
+
 .videogiochi {
 	font-family: Arial;
 	color: #333;
@@ -434,6 +444,20 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border-left: 3px solid #333;
 }
 
+.giochiPiccolo
+{
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 83%;
+	position: relative;
+	float:left;
+	margin-top: 0%;
+	height: 60em;
+	border-left: 3px solid #333;
+}
+
 .scheda {
 	width: 90%;
 	float: left;
@@ -458,7 +482,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	}
 }
 .descrec {
-	float: left;
 	margin-top: 0.5em;
 }
 .descrec a {
@@ -481,7 +504,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .descgi {
-	float: left;
 	margin: 0.5em 0.5em 0 0.5em;
 }
 
@@ -494,7 +516,9 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 110%;
 	margin-top: 5%;
 	border: none;
+	margin-bottom: 5%;
 }
+
 
 /**************************************************** VIDEOGIOCHIM *************************************************/ 
 .giochiM {
