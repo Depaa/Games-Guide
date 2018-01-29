@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero piÃ¹ grande //limitePAG-1 perchÃ¨ -1 Ã¨ la notizia in primo piano
 	//if($totPAG<1)
 		//$totPAG=1;
 	
@@ -169,7 +169,8 @@
 						echo '<div class="lastnewsoverlay">';
 							echo '<div class="lastnewstext">';
 							echo '<h4>'.$row['Titolo'].'</h4>';
-							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+							setlocale(LC_TIME, 'ita', 'it_IT');
+							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime('%d %B %Y', strtotime($row['Data'])). '</p>';
 							if (isset($_SESSION['userSession'])!="") {
 								if($rowA['Admin']==1) {
 									echo '<a href="deletethings.php?id='.$row['ID'].'&table=Notizie"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
@@ -198,7 +199,7 @@
 								echo '<div class="titolonews">';
 									echo '<a href="NewsPage.php?id='.$row['ID'].'" class="br">' .$row['Titolo']. '</a>';
 									echo '<div class="By-date-news">';
-										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime('%d %B %Y', strtotime($row['Data'])). '</p>';
 									echo '</div>'; /*chiudo bydate*/
 									if (isset($_SESSION['userSession'])!="") {
 										if($rowA['Admin']==1) {
