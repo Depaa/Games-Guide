@@ -157,8 +157,11 @@
 			if(!$output1) 
 				echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 			else {
-				if($output1->num_rows == 0)
-					echo '<p> Nessuna notizia trovata </p>';
+				if($output1->num_rows == 0){
+					echo '<div class="nogamefound">';
+						echo '<h4>Nessuna notizia trovato, suggeriscici un gioco inviando una mail a gamesguide@assistenza.it</h4>';  //qua controllo 0results 
+					echo '</div>';
+				}
 				else {
 					echo '<div class="Notizia">';
 					echo '<div class="lastnews">';
