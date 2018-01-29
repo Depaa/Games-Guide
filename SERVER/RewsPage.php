@@ -71,6 +71,7 @@
 	<body>
 <?php 
 	include 'Menu.php';
+	setlocale(LC_TIME, 'ita', 'it_IT');
 	echo '<div class="pagnotizia">';
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
@@ -80,7 +81,7 @@
 					<h1>'.$row['Titolo'].'</h1>
 				</div>
 				<div class="adminews">
-					<h4>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</h4>
+					<h4>Scritto da ' .$row['AdminNick']. ' il ' .strftime('%d %B %Y', strtotime($row['Data'])). '</h4>
 				</div>
 				<div class="imgnotizia">
 					<img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['NomeGioco'].'" lang="en"/>
@@ -112,7 +113,7 @@
 			foreach($output2 as $campo => $row2) 
 			{
 				echo '<div class="commenti">';
-					echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
+					echo '<h5>'.$row2['NickName']. ' | '.strftime('%d %B %Y', strtotime($row['Data'])).','.$row2 ['Ora'].'';
 					if (isset($_SESSION['userSession'])!="") {
 						if($rowA['Admin']==1) {
 							echo '<a href="deletethings.php?id='.$recensioneA['IDr'].'&idc='.$row2['IDc'].'&table=Recensione"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
