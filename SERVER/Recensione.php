@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero piÃ¹ grande //limitePAG-1 perchÃ¨ -1 Ã¨ la notizia in primo piano
 	//if($totPAG<1)
 		//$totPAG=1;
 	
@@ -157,7 +157,11 @@
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output1->num_rows == 0)
-				echo '<p> Nessuna recensione trovata </p>';
+			{
+				echo '<div class="nogamefound">';
+					echo '<h4> Nessuna recensione trovata, suggeriscici una recensione inviando una mail a gamesguide@assistenza.it </h4>';
+				echo '</div>';
+			}
 			else {
 				foreach($output1 as $campo => $row) {
 					echo '<div class="Notizia">';
@@ -168,7 +172,8 @@
 					echo '<div class="lastnewsoverlay">';
 						echo '<div class="lastnewstext">';
 							echo '<h4>'.$row['Titolo'].'</h4>';
-							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+							setlocale(LC_TIME, 'ita', 'it_IT');
+							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime("%d %B %Y", strtotime($row['Data'])). '</p>';
 							if (isset($_SESSION['userSession'])!="") {
 								if($rowA['Admin']==1) {
 									echo '<a href="deletethings.php?id='.$row['IDr'].'&table=Recensione"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
@@ -187,6 +192,7 @@
 			if($output->num_rows == 0)
 				echo '';
 			else {
+				setlocale(LC_TIME, 'ita', 'it_IT');
 				foreach($output as $campo => $row) {
 					echo '<div class="notizie">';
 						echo '<div class="columnleft">';
@@ -197,7 +203,8 @@
 								echo '<div class="titolonews">';
 									echo '<a href="RewsPage.php?id='.$row['IDr'].'" class="br">' .$row['Titolo']. '</a>';
 									echo '<div class="By-date-news">';
-										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+									
+										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime("%d %B %Y", strtotime($row['Data'])). '</p>';
 									echo '</div>'; /*chiudo By-date-news*/
 									if (isset($_SESSION['userSession'])!="") {
 										if($rowA['Admin']==1) {
