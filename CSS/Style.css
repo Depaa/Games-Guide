@@ -474,20 +474,12 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 		float: left;
 	}
 }
-.descrizionesx {
-	float: left;
-	width: 40%;
-}
 
-.descrizionedx {
-	float: left;
-	width: 60%;
-}
-
-.descrizionesx p, .descrizionedx p {
+.descrizionesx p {
 	padding-left: 0.5em;
 	margin-top: 0.5em;
 }
+
 .descgi {
 	float: left;
 	margin: 0.5em 0.5em 0 0.5em;
@@ -495,14 +487,15 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .filtrobtn
 {
-	width: 50%;
+	width: 90%;
 	background-color: #333;
-    	color: white;
+    color: white;
 	cursor: pointer;
 	font-size: 110%;
 	margin-top: 5%;
 	border: none;
 }
+
 /**************************************************** VIDEOGIOCHIM *************************************************/ 
 .giochiM {
 	font-family: Arial;
