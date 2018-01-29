@@ -116,7 +116,7 @@ ul.menu li:hover {
 	padding-left: 1em;
 }
 
-@media screen and (max-width: 619px){
+@media screen and (max-width: 630px){
   .mobile-toggle, ul.menu li{
     display: block;
   }
