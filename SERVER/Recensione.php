@@ -63,9 +63,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		
-		<script type="text/javascript" src="CSS/script.js"></script>
-		
+		<script type="text/javascript" src="JS/goTop.js"></script>
 	</head>
 	<body>
 <?php 
@@ -236,30 +234,8 @@
 		
 ?>
 			</div> 
-			
-		<a href="#" class="backtotopbtn">VAI SU</a>
-		<script>
-			$(document).ready(function() {
-				// Show or hide the sticky footer button
-				$(window).scroll(function() {
-					if ($(this).scrollTop() > 200) {
-						$('.backtotopbtn').fadeIn(200);
-					} else {
-						$('.backtotopbtn').fadeOut(200);
-					}
-				});
-				
-				// Animate the scroll to top
-				$('.backtotopbtn').click(function(event) {
-					event.preventDefault();
-					
-					$('html, body').animate({scrollTop: 0}, 300);
-				})
-			});
-		</script>
-		
+		<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>
 		</div> <!--chiudo news-->
-
 <?php 
 	include 'Footer.php';
 ?>
