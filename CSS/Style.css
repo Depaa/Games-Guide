@@ -493,8 +493,16 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	margin: 0.5em 0.5em 0 0.5em;
 }
 
-/* VIDEOGIOCHIM */ 
-
+.filtrobtn
+{
+	width: 50%;
+	background-color: #333;
+    color: white;
+	cursor: pointer;
+	font-size: 110%;
+	margin-top: 5%;
+}
+/**************************************************** VIDEOGIOCHIM *************************************************/ 
 .giochiM {
 	font-family: Arial;
 	color: #333;
@@ -537,7 +545,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     color: white;
     border: none;
     cursor: pointer;
-    color: white;
 	font-size: 150%;
 	padding: 0.5em 0.5em;
 	margin-left: 15%;
