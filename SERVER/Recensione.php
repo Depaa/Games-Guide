@@ -189,8 +189,10 @@
 	if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
-			if($output->num_rows == 0)
-				echo '';
+			if($output->num_rows == 0){
+				echo '<div class="nonewsFound">';
+				echo '</div>';
+			}
 			else {
 				setlocale(LC_TIME, 'ita', 'it_IT');
 				foreach($output as $campo => $row) {
