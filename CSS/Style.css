@@ -208,6 +208,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: absolute;
     background-color: white;
     width: 15%;
+	float: left;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: left;
@@ -229,10 +230,16 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: inline-block; /*come un float, solo senza il clear nel div successivo*/
 }
 
-.containerlogin label { /*ho cambiato p con label, da controllare se funziona*/
+.containerlogin label {
 	font-weight: bold;
-	margin-top: 0%;
-	margin-bottom: 0%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.containerlogin p {
+	font-weight: bold;
+	margin-top: 3%;
+	margin-bottom: 3%;
 }
 
 .logsigninbtn {
@@ -360,7 +367,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	bottom: 0;
 }
 
-.nogamefound h3
+.nogamefound h4
 {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -544,7 +551,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 {
 	height: 40em;
 	width: 80%;
-	border-left: 3px solid #333;
 	top: 0;
 	bottom: 0;
 	margin-left: 10%;
@@ -553,7 +559,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border-left: 3px solid #333;
 }
 
-.nogamefoundM h3
+.nogamefoundM h4
 {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -621,6 +627,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
+	border-right: 3px solid #333;
 }
 @media screen and (max-width: 860px) {
 	.News {
@@ -651,7 +658,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	padding-top: 3%;
-	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
 
@@ -806,7 +812,12 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
   border-bottom: 1px solid #ccc;
 }
 
-
+.nonewsFound {
+	height: 20em;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+}
 /*****************************************DELETE COSE***************************************************/
 .deletebtn {
 	margin-top: 1em;
@@ -916,19 +927,21 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /*BOTTONE ACCESSIBILITA'*/
-.backtotopbtn {
+.backtotop {
 	position: fixed;
 	bottom: 13%;
 	right: 1%;
 	text-decoration: none;
+	/*border: none;*/
 	color: white;
 	background-color: #333;
 	font-size: 120%;
 	padding: 1em;
 	display: none;
+	float: right;
 }
 
-.backtotopbtn:hover {
+.backtotop:hover {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 

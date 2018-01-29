@@ -32,7 +32,7 @@
 						}
 					
 					echo '<div class="polaroid">';
-						echo '<a href="Notizie.php"><img src="IMG\alexaecho.jpg" alt="Notizie Pagina Principale"/></a>';
+						echo '<a href="Notizie.php"><img src="IMG\scopritutte.jpg" alt="Notizie Pagina Principale"/></a>';
 						echo '<div class="polaroidText">';
 							echo '<p><a href="Notizie.php">SCOPRI TUTTE LE NOSTRE NOTIZIE</a></p>';
 						echo '</div>';
@@ -62,7 +62,7 @@
 						}
 						
 					echo '<div class="polaroid">';
-						echo '<a href="Recensione.php"><img src="IMG\alexaecho.jpg" alt="Recensioni Pagina Principale"/></a>';
+						echo '<a href="Recensione.php"><img src="IMG\scopritutte.jpg" alt="Recensioni Pagina Principale"/></a>';
 						echo '<div class="polaroidText">';
 							echo '<a href="Recensione.php">SCOPRI TUTTE LE NOSTRE RECENSIONI</a>';
 						echo '</div>';

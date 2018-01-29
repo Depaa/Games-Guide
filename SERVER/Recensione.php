@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero piÃ¹ grande //limitePAG-1 perchÃ¨ -1 Ã¨ la notizia in primo piano
 	//if($totPAG<1)
 		//$totPAG=1;
 	
@@ -63,9 +63,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		
-		<script type="text/javascript" src="CSS/script.js"></script>
-		
+		<script type="text/javascript" src="JS/goTop.js"></script>
 	</head>
 	<body>
 <?php 
@@ -157,7 +155,11 @@
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
 			if($output1->num_rows == 0)
-				echo '<p> Nessuna recensione trovata </p>';
+			{
+				echo '<div class="nogamefound">';
+					echo '<h4> Nessuna recensione trovata, suggeriscici una recensione inviando una mail a gamesguide@assistenza.it </h4>';
+				echo '</div>';
+			}
 			else {
 				foreach($output1 as $campo => $row) {
 					echo '<div class="Notizia">';
@@ -168,7 +170,8 @@
 					echo '<div class="lastnewsoverlay">';
 						echo '<div class="lastnewstext">';
 							echo '<h4>'.$row['Titolo'].'</h4>';
-							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+							setlocale(LC_TIME, 'ita', 'it_IT');
+							echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime("%d %B %Y", strtotime($row['Data'])). '</p>';
 							if (isset($_SESSION['userSession'])!="") {
 								if($rowA['Admin']==1) {
 									echo '<a href="deletethings.php?id='.$row['IDr'].'&table=Recensione"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
@@ -184,9 +187,12 @@
 	if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
-			if($output->num_rows == 0)
-				echo '';
+			if($output->num_rows == 0){
+				echo '<div class="nonewsFound">';
+				echo '</div>';
+			}
 			else {
+				setlocale(LC_TIME, 'ita', 'it_IT');
 				foreach($output as $campo => $row) {
 					echo '<div class="notizie">';
 						echo '<div class="columnleft">';
@@ -197,7 +203,8 @@
 								echo '<div class="titolonews">';
 									echo '<a href="RewsPage.php?id='.$row['IDr'].'" class="br">' .$row['Titolo']. '</a>';
 									echo '<div class="By-date-news">';
-										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</p>';
+									
+										echo '<p>Scritto da ' .$row['AdminNick']. ' il ' .strftime("%d %B %Y", strtotime($row['Data'])). '</p>';
 									echo '</div>'; /*chiudo By-date-news*/
 									if (isset($_SESSION['userSession'])!="") {
 										if($rowA['Admin']==1) {
@@ -227,30 +234,8 @@
 		
 ?>
 			</div> 
-			
-		<a href="#" class="backtotopbtn">VAI SU</a>
-		<script>
-			$(document).ready(function() {
-				// Show or hide the sticky footer button
-				$(window).scroll(function() {
-					if ($(this).scrollTop() > 200) {
-						$('.backtotopbtn').fadeIn(200);
-					} else {
-						$('.backtotopbtn').fadeOut(200);
-					}
-				});
-				
-				// Animate the scroll to top
-				$('.backtotopbtn').click(function(event) {
-					event.preventDefault();
-					
-					$('html, body').animate({scrollTop: 0}, 300);
-				})
-			});
-		</script>
-		
+		<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>
 		</div> <!--chiudo news-->
-
 <?php 
 	include 'Footer.php';
 ?>
