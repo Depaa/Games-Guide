@@ -208,6 +208,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: absolute;
     background-color: white;
     width: 15%;
+	float: left;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: left;
@@ -229,13 +230,13 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: inline-block; /*come un float, solo senza il clear nel div successivo*/
 }
 
-.containerlogin label { /*ho cambiato p con label, da controllare se funziona*/
+.containerlogin label {
 	font-weight: bold;
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
 
-.containerlogin p { /*ho cambiato p con label, da controllare se funziona*/
+.containerlogin p {
 	font-weight: bold;
 	margin-top: 3%;
 	margin-bottom: 3%;
@@ -931,19 +932,21 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 /*BOTTONE ACCESSIBILITA'*/
-.backtotopbtn {
+.backtotop {
 	position: fixed;
 	bottom: 13%;
 	right: 1%;
 	text-decoration: none;
+	/*border: none;*/
 	color: white;
 	background-color: #333;
 	font-size: 120%;
 	padding: 1em;
 	display: none;
+	float: right;
 }
 
-.backtotopbtn:hover {
+.backtotop:hover {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
