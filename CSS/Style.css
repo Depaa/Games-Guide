@@ -246,6 +246,14 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	color: white;
 }
 
+.containerlogin a {
+	color: #333;
+}
+.containerlogin a:hover {
+	color: blue;
+}
+
+
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
 .pagecontent {
