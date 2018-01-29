@@ -77,12 +77,14 @@
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
+			
+			setlocale(LC_TIME, 'ita', 'it_IT');
 			foreach($output as $campo => $row) {
 				echo '<div class="titolonotizia">
 					<h1>'.$row['Titolo'].'</h1>
 				</div>
 				<div class="adminews">
-					<h4>Scritto da ' .$row['AdminNick']. ' il ' .date('j M Y', strtotime($row['Data'])). '</h4>
+					<h4>Scritto da ' .$row['AdminNick']. ' il ' .strftime("%d %B %Y", strtotime($row['Data'])). '</h4>
 				</div>
 				<div class="imgnotizia">
 					<img src="IMG\\' .$row['MenuImg']. '" alt=" '.$row['Titolo'].'"/>
@@ -111,11 +113,10 @@
 				} 
 				echo'</form>
 			</div>';
-			
 			foreach($output2 as $campo => $row2) 
 			{
 				echo '<div class="commenti">';
-					echo '<h5>'.$row2['NickName']. ' | '.date('j M Y', strtotime($row2['Data'])).','.$row2 ['Ora'].'';
+					echo '<h5>'.$row2['NickName']. ' | '.strftime("%d %B %Y", strtotime($row['Data'])).','.$row2 ['Ora'].'';
 					if (isset($_SESSION['userSession'])!="") {
 						if($rowA['Admin']==1) {
 							echo '<a href="deletethings.php?id='.$notizieA['ID'].'&idc='.$row2['IDc'].'&table=CommentiNotizie"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
