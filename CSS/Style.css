@@ -101,6 +101,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: block;
 }
 
+.navbar .dropdown.with-js .dropdown-content {
+    display: none !important;
+}
+
+
 /*creo le colonne che riempiranno tutta la pagina*/
 .column {
     float: left;
@@ -224,7 +229,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: inline-block; /*come un float, solo senza il clear nel div successivo*/
 }
 
-.containerlogin p {
+.containerlogin label { /*ho cambiato p con label, da controllare se funziona*/
 	font-weight: bold;
 	margin-top: 0%;
 	margin-bottom: 0%;
@@ -244,6 +249,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
 .pagecontent {
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	top:0;
 	border-left: 3px solid #333;
 	border-right: 3px solid #333;
@@ -269,7 +278,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .mySlides img {
 	max-width: 100%;
-	margin-bottom: -5px; /*viene fuori il bordo sotto, va tolto*/
+	margin-bottom: -5px; /*provare con 1%*/ /*viene fuori il bordo sotto, va tolto*/
 }
 
 .mySlides .textslide {
@@ -288,7 +297,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	}
 }
 
-/* Next & previous buttons */
 .prev, .next {
 	cursor: pointer;
 	position: absolute;
@@ -309,14 +317,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
-
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: white;
   color: #333;
 }
 
-/* The dots/bullets/indicators */
 .dottod {
 	text-align: center;
 }
@@ -335,7 +340,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	background-color: #717171;
 }
 
-/* VIDEOGIOCHI */ 
+/**************************************************** VIDEOGIOCHI *************************************************/ 
 .videogiochi {
 	font-family: Arial;
 	color: #333;
@@ -418,8 +423,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 /*PARTE GIOCHI*/
 .giochi {
-	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;*/
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	width: 83%;
 	position: relative;
 	float:left;
@@ -492,8 +499,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	font-family: Arial;
 	color: #333;
 	width: 80%;
-	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;*/
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	float:left;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -569,8 +578,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .Notizia {
-	/*background: url(https://media.istockphoto.com/vectors/computer-games-seamless-background-vector-id528711245);
-	background-attachment: fixed;*/
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	width: 83%;
 	position: relative;
 	float:left;
@@ -666,6 +677,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .pagnotizia {
+	background: url(https://i1.creativecow.net/u/168337/background.jpg);
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
   margin: 0% 10% 0 10%;
   padding-top: 3%;
   padding-left: 3%;
@@ -902,10 +917,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	padding-top: 0.25em;
 	padding-bottom: 0.25em;
 	margin: 0.25em;
+	font-size: 120%;
 }
 
 .logoF {
 	width: 75px;
-	border-radius: 30%;
-	margin-right: 10px;
+	margin-right: 0.5em;
 }
