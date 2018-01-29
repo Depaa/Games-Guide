@@ -497,10 +497,11 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 {
 	width: 50%;
 	background-color: #333;
-    color: white;
+    	color: white;
 	cursor: pointer;
 	font-size: 110%;
 	margin-top: 5%;
+	border: none;
 }
 /**************************************************** VIDEOGIOCHIM *************************************************/ 
 .giochiM {
