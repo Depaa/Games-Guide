@@ -149,7 +149,7 @@
 						<input type="checkbox" name="pic"/>
 						<span class="checkmark"></span>
 					</label>
-					<label class="elenco">FPS
+					<label class="elenco"><span lang="en"><abbr title="First Person Shooter">FPS</abbr></span>
 						<input type="checkbox" name="fps"/>
 						<span class="checkmark"></span>
 					</label>
@@ -157,11 +157,11 @@
 						<input type="checkbox" name="pia"/>
 						<span class="checkmark"></span>
 					</label>
-					<label class="elenco">RPG
+					<label class="elenco"><span lang="en"><abbr title="Role Playing Game">RPG</abbr></span>
 						<input type="checkbox" name="rpg"/>
 						<span class="checkmark"></span>
 					</label>
-					<label class="elenco">Horror
+					<label class="elenco"><span lang="en">Horror</span>
 						<input type="checkbox" name="hor"/>
 						<span class="checkmark"></span>
 					</label>
@@ -169,6 +169,7 @@
 				</div>
 				</form>
 			</div> 
+
 			
 <?php
 		if(!$output) 
