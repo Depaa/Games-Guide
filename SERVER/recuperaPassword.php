@@ -8,7 +8,7 @@
 	$error_message=0;
 	$success_message=0;
 	
-	if(isset($_POST["submitR"])) {
+	if(isset($_POST["submitREC"])) {
 		
 		
 		if(empty($_POST["unick"]))
@@ -31,7 +31,7 @@
 				$success_message = "La tua password è: ".$Password['Password']."";	
 				unset($_POST);
 			} else {
-				$success_message = "Problemi con la registrazione :( Riprova.";	
+				$success_message = "I campi inseriti non sono corretti :(";	
 			}
 		}
 	}
@@ -66,8 +66,13 @@
 					<?php if($success_message) { ?>
 					<div class="riga">
 						<h4><?php if(isset($success_message)) echo $success_message; ?></h4>
+						<h5>Stai per essere reinderizzato alla Home fra 10 secondi, clicca <a href="index.php">Qui</a> se non vuoi aspettare</h5>
+						<script type="text/javascript" src="JS/indexRedirect.js"></script>
 					</div>
-					<?php } ?>
+					<?php } 
+					else
+					{?>
+					
 					<?php if($error_message) { ?>	
 					<div class="riga">
 						<h4><?php if(isset($error_message)) echo $error_message; ?></h4>
@@ -93,8 +98,9 @@
 						<h4>Nickname</h4>
 						<input type="text" name="unick" value="<?php if(isset($_POST['unick'])) echo $_POST['unick']; ?>"/>
 					</div>
-					<p><button class="registrazionebtn" type="submit" name="submitR">RECUPERA PASSWORD</button></p>
+					<p><button class="registrazionebtn" type="submit" name="submitREC">RECUPERA PASSWORD</button></p>
 				</form>
+					<?php } ?>
 			</div>
 		</div>
 		
