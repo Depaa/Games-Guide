@@ -185,6 +185,7 @@
 					echo '<div class="giochiPiccolo">';
 				else
 					echo '<div class="giochi">';
+				setlocale(LC_TIME, 'ita', 'it_IT');
 				foreach($output as $campo => $row) {
 					echo '<div class="scheda">';
 						if (isset($_SESSION['userSession'])!="") {
@@ -197,7 +198,8 @@
 						echo '<img class="immagine2" src="IMG\\' .$row['MenuImg']. '" alt="' .$row['Nome']. '" lang="en"/>';
 						echo '<div class="desc">';
 							echo '<div class="descrizionesx">';
-								echo '<p> Data uscita: ' .date('j M Y', strtotime($row['Data'])). '</p>';
+							
+								echo '<p> Data uscita: ' .strftime("%d %B %Y", strtotime($row['Data'])). '</p>';
 								echo '<p> Generi: ' .$row['Genere1']. ' ' .$row['Genere2']. ' ' .$row['Genere3']. '</p>';
 								echo '<p> Disponibile per: ' .$row['Disponibilita']. ' </p>';
 								echo '<p> PEGI: ' .$row['PEGI']. '</p>';
