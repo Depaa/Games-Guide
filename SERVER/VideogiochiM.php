@@ -90,12 +90,16 @@
 
 		
 <?php
+		setlocale(LC_TIME, 'ita', 'it_IT');
 		echo '<div class="giochiM">'; /*oppure /giochi/ */
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
-			if($output->num_rows == 0)
-				echo '<p> Nessun gioco trovato </p>';
+			if($output->num_rows == 0) {
+				echo '<div class="nogamefoundM">';
+					echo '<h4>Nessun gioco trovato, suggeriscici un gioco inviando una mail a gamesguide@assistenza.it</h4>';  //qua controllo 0results 
+				echo '</div>';
+			}
 			else {
 				foreach($output as $campo => $row) {
 					echo '<div class="scheda">';
@@ -109,7 +113,7 @@
 						echo '<img class="immagine2" src="IMG\\' .$row['MenuImg']. '" alt="' .$row['Nome']. '" lang="en"/>';
 						echo '<div class="desc">';
 							echo '<div class="descrizionesx">';
-								echo '<p> Data uscita: ' .date('j M Y', strtotime($row['Data'])). '</p>';
+								echo '<p> Data uscita: ' .strftime('%d %B %Y', strtotime($row['Data'])). '</p>';
 								echo '<p> Generi: ' .$row['Genere1']. ' ' .$row['Genere2']. ' ' .$row['Genere3']. '</p>';
 								echo '<p> Disponibile per: ' .$row['Disponibilita']. ' </p>';
 								echo '<p> PEGI: ' .$row['PEGI']. '</p>';
@@ -123,23 +127,23 @@
 						echo '</div>';
 					echo '</div>';
 				}
+				/*controlli più link per passare da una pagina all'altra*/
+					$precPAG=$correntePAG;
+					$postPAG=$correntePAG;
+					if($correntePAG>1)
+						$precPAG=$correntePAG-1;
+					if($correntePAG+1<=$totPAG)
+						$postPAG=$correntePAG+1;
+					echo '<div class="pagbtn">';
+						if($correntePAG>1) //nascondo il paging della prima pagina se siamo all'inizio
+							echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
+						echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
+						if($correntePAG<$totPAG) //nascondo il paging dell'ultima pagina se siamo alla fine
+							echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$postPAG.'"> &raquo;</a>';
+					echo '</div>';
+				echo '</div>'; /*giochi*/
 			}
 		}
-			/*controlli più link per passare da una pagina all'altra*/
-			$precPAG=$correntePAG;
-			$postPAG=$correntePAG;
-			if($correntePAG>1)
-				$precPAG=$correntePAG-1;
-			if($correntePAG+1<=$totPAG)
-				$postPAG=$correntePAG+1;
-			echo '<div class="pagbtn">';
-				if($correntePAG>1) //nascondo il paging della prima pagina se siamo all'inizio
-					echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$precPAG.'">&laquo; </a>'; //<i class="fa fa-arrow-left"></i>
-				echo '<a class="activepag" href="#">'.$correntePAG.'</a>';
-				if($correntePAG<$totPAG) //nascondo il paging dell'ultima pagina se siamo alla fine
-					echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$postPAG.'"> &raquo;</a>';
-			echo '</div>';
-		echo '</div>'; /*giochi*/
 		
 ?>
 <?php 
