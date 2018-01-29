@@ -43,13 +43,13 @@
 		if(isset($_POST['pic']))
 			$wh .= " AND (Videogiochi.Genere1='Picchiaduro' OR Videogiochi.Genere2='Picchiaduro' OR Videogiochi.Genere3='Picchiaduro')";
 		if(isset($_POST['fps']))
-			$wh .= " AND (Videogiochi.Genere1='FPS' OR Videogiochi.Genere2='FPS' OR Videogiochi.Genere3='FPS')";
+			$wh .= " AND (Videogiochi.Genere1='<span lang=".'"en"'."><abbr title=".'"First Person Shooter"'.">FPS</abbr></span>' OR Videogiochi.Genere2='<span lang=".'"en"'."><abbr title=".'"First Person Shooter"'.">FPS</abbr></span>' OR Videogiochi.Genere3='<span lang=".'"en"'."><abbr title=".'"First Person Shooter"'.">FPS</abbr></span>')";
 		if(isset($_POST['pia']))
 			$wh .= " AND (Videogiochi.Genere1='Piattaforma' OR Videogiochi.Genere2='Piattaforma' OR Videogiochi.Genere3='Piattaforma')";
 		if(isset($_POST['rpg']))
-			$wh .= " AND (Videogiochi.Genere1='RPG' OR Videogiochi.Genere2='RPG' OR Videogiochi.Genere3='RPG')";
+			$wh .= " AND (Videogiochi.Genere1='<span lang=".'"en"'."><abbr title=".'"Role Playing Game"'.">RPG</abbr></span>' OR Videogiochi.Genere2='<span lang=".'"en"'."><abbr title=".'"Role Playing Game"'.">RPG</abbr></span>' OR Videogiochi.Genere3='<span lang=".'"en"'."><abbr title=".'"Role Playing Game"'.">RPG</abbr></span>')";
 		if(isset($_POST['hor']))
-			$wh .= " AND (Videogiochi.Genere1='Horror' OR Videogiochi.Genere2='Horror' OR Videogiochi.Genere3='Horror')";
+			$wh .= " AND (Videogiochi.Genere1='<span lang=".'"en"'.">Horror</span>' OR Videogiochi.Genere2='<span lang=".'"en"'.">Horror</span>' OR Videogiochi.Genere3='<span lang=".'"en"'.">Horror</span>')";
 		
 		$query= "SELECT IDr, Videogiochi.ID, Nome, GiocoImg, MenuImg, Genere1, Genere2, Genere3, Disponibilita, Videogiochi.Data, PEGI, Descrizione FROM Videogiochi JOIN Immagini ON Videogiochi.Nome=Immagini.NomeGioco JOIN Recensione ON Videogiochi.Nome=Recensione.NomeGioco $wh ORDER BY Videogiochi.Data DESC LIMIT 100";	
 		$output = $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
