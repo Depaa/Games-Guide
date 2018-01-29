@@ -175,10 +175,16 @@
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
-			if($output->num_rows == 0)
-				echo '<p> Nessun gioco trovato </p>';  //qua controllo 0results 
+			if($output->num_rows == 0) {
+				echo '<div class="nogamefound">';
+					echo '<h4>Nessun gioco trovato, suggeriscici un gioco inviando una mail a gamesguide@assistenza.it</h4>';  //qua controllo 0results 
+				echo '</div>';
+			}
 			else {
-				echo '<div class="giochi">';
+				if($output->num_rows == 1)
+					echo '<div class="giochiPiccolo">';
+				else
+					echo '<div class="giochi">';
 				foreach($output as $campo => $row) {
 					echo '<div class="scheda">';
 						if (isset($_SESSION['userSession'])!="") {
