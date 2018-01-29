@@ -360,7 +360,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	bottom: 0;
 }
 
-.nogamefound h3
+.nogamefound h4
 {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -551,7 +551,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	border-left: 3px solid #333;
 }
 
-.nogamefoundM h3
+.nogamefoundM h4
 {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -619,6 +619,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
+	border-right: 3px solid #333;
 }
 @media screen and (max-width: 860px) {
 	.News {
@@ -649,7 +650,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	padding-top: 3%;
-	border-right: 3px solid #333;
 	border-left: 3px solid #333;
 }
 
