@@ -91,7 +91,7 @@
 		
 <?php
 		setlocale(LC_TIME, 'ita', 'it_IT');
-		echo '<div class="giochiM">'; /*oppure /giochi/ */
+		
 		if(!$output) 
 			echo '<p> Servizio momentaneamente non disponibile. Riprovare pi&ugrave; tardi</p>';
 		else {
@@ -101,6 +101,7 @@
 				echo '</div>';
 			}
 			else {
+				echo '<div class="giochiM">'; /*oppure /giochi/ */
 				foreach($output as $campo => $row) {
 					echo '<div class="scheda">';
 						if (isset($_SESSION['userSession'])!="") {
