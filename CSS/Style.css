@@ -77,12 +77,12 @@ html, body {
 }
 
 @media screen and (max-width: 860px) {
-	i.fa.fa-caret-down {
+	em.fa-caret-down { 
 		display: none;
 	}
 }
 
-i.fa.fa-caret-down { /*metto padding a freccetta*/
+em.fa-caret-down { /*metto padding a freccetta*/
 	padding-left: 0.5em;
 }
 
@@ -101,8 +101,8 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
     display: block;
 }
 
-.navbar .dropdown.with-js .dropdown-content {
-    display: none !important;
+.navbar .dropdown.with-js .dropdown-content { /*non va*/
+    display: none;
 }
 
 
@@ -768,7 +768,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .adminews h4{
-  color: #ccc;
+  color: #333;
 }
 
 .imgnotizia {
@@ -788,7 +788,7 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 .inscommenti {
   padding-top: 2%;
   padding-bottom: 2%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #333;
 }
 
 .inscommenti textarea {
@@ -798,18 +798,19 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .commenti {
   padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .commenti h5 {
   margin: 0;
-  color: #ccc;
+  color: #333;
 }
 
 .commenti p {
   margin: 0;
   padding-top: 1%;
   padding-bottom: 2%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #333;
 }
 
 .nonewsFound {
@@ -851,7 +852,9 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
   margin-top: 1%;
 }
 
-
+em.fa-trash {
+	display: none;
+}
 /*****************************************AGGIUNGI COSE***************************************************/
 .localA {
 	float: left;
@@ -926,13 +929,13 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 	display:none;
 }
 
-/*BOTTONE ACCESSIBILITA'*/
+/**********************************************************BOTTONE ACCESSIBILITA'*********************************************************/
 .backtotop {
 	position: fixed;
 	bottom: 13%;
 	right: 1%;
 	text-decoration: none;
-	/*border: none;*/
+	border: 3px solid #fff;
 	color: white;
 	background-color: #333;
 	font-size: 120%;
@@ -943,6 +946,10 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .backtotop:hover {
 	background-color: rgba(0, 0, 0, 0.6);
+}
+
+em.fa-arrow-circle-up {
+	display: none;
 }
 
 /***************************************************** PAGING ******************************************************/
@@ -973,7 +980,6 @@ i.fa.fa-caret-down { /*metto padding a freccetta*/
 
 .footer {
 	clear: both;
-	/*position: absolute;*/
 	bottom: 0;
 	right: 0;
 	left: 0;
