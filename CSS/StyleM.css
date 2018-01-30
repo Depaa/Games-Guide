@@ -177,7 +177,8 @@ ul.menu li:hover {
 	width: 99%;
 }
 .scheda h3 {
-	padding: 1em 0 1em 0;
+	padding: 1em 0 1em 0.3em;
+	margin: 0;
 	text-align: center;
 	font-size: 1.5em;
 	border-top-left-radius: 8px;
@@ -202,18 +203,17 @@ ul.menu li:hover {
 	width: 100%;
 }
 
-
 .descrizionesx {
-	width: 50%;
+	width: 100%;
 }
-.descrizionedx {
-	width: 50%;
-}
+
 .descrec {
 	clear: both;
 	text-align: center;
 }
-
+.descrec a:hover {
+	color: #333333;
+}
 .descgi p {
 	margin-bottom: 0.5em;
 }
@@ -259,7 +259,7 @@ ul.menu li:hover {
 }
 
 .lastnewstext {
-	background: rgba(255, 255, 255, 0.05);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .lastnewstext p {
@@ -267,7 +267,8 @@ ul.menu li:hover {
 }
 
 .notizie {
-	margin: 2em 1em 0 1em;
+	margin: 2em 4% 0 4%;
+	width: 92%;
 	padding: 0;
 	border-top: 1px solid #8c8c8c;
 	border-left: none;
@@ -393,3 +394,28 @@ ul.menu li:hover {
 	max-width: 100%;
 }
 /***************FINE AGGIUNGI*************/
+/***************DELETE COSE***************/
+.deletebtn {
+	display: none;
+}
+.deletebtnUL{
+	display: none;
+}
+.deletebtnVID {
+	display: none;
+}
+#trash {
+	float: right;
+}
+#trashln {
+	float: right;
+	color: #ffffff;
+	margin: 0 1em 0.5em 0;
+}
+#trashvid {
+	display: block;
+  float: right;
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 0.9em 0.4em 0 0.4em;
+}

@@ -695,13 +695,10 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	border-left: 3px solid #333333;
 }
 
-
-
 .lastnews {
   max-width: 90%;
   position: relative;
   margin-left: 5%;
-
 }
 
 .lastnewsimg img {
@@ -715,8 +712,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
   font-size: 120%;
   position: absolute;
   overflow: hidden;
-  bottom: 0.7%;
-  margin: 0%;
+  bottom: 0;
+  margin: 0;
 }
 .lastnewstext h4 {
   margin-top: 1%;
@@ -850,6 +847,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .deletebtnUL {
+	float: right;
 	width: 20%;
     background-color: #333333;
     color: #ffffff;
