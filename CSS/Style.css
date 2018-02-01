@@ -1,62 +1,19 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 * {
     box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
+    margin: 0;
 	padding: 0;
 	height: 100%;
-  font-family: 'Arial', 'sans-serif';
 }
 
 .navbar {
     overflow: hidden;
-    background-color: #333333;
+    background-color: #333;
+    font-family: Arial;
 	/*menu fisso ma non va il dropdown*/
-	/*position: sticky;
+	/*position: sticky; 
 	top: 0%;
 	z-index: 1;*/
 }
@@ -79,19 +36,19 @@ html, body {
 }
 
 .dropdownlogo .dropbtnlogo {
-    font-size: 120%;
+    font-size: 120%;    
 	border: none;
     outline: none;
-    color: #ffffff;
+    color: white;
     padding: .75em .75em .75em 0em;
 	font-weight: bold;
-	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	max-width: 100%;
 }
 
 .dropbtnlogo a:link, .dropbtnlogo a:visited {
 	text-decoration: none;
-	color: #ffffff;
+	color: white;
 }
 
 .navbar .dropdownlogo:hover .dropbtnlogo {
@@ -104,23 +61,23 @@ html, body {
     /*overflow: hidden;*/
 }
 .dropdown .dropbtn {
-    font-size: 120%;
+    font-size: 120%;    
     border: none;
     outline: none;
-    color: #ffffff;
+    color: white;
     padding: .75em .75em .75em .75em;
 	font-weight: bold;
-	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
 }
 
 .navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
-    background-color: #ffffff;
-	color: #000000;
+    background-color: white;
+	color: black;
 }
 
 @media screen and (max-width: 860px) {
-	em.fa-caret-down {
+	em.fa-caret-down { 
 		display: none;
 	}
 }
@@ -132,7 +89,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff; /*do not use #f9f9f9*/ /*oscuro signore*/
+    background-color: white; /*do not use #f9f9f9*/ /*oscuro signore*/
     width: 100%;
     left: 0;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
@@ -140,12 +97,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	text-align: center;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {/*, .dropdown:active .dropdown-content, .dropdown:focus .dropdown-content{*/
     display: block;
-}
-
-.navbar .dropdown.with-js .dropdown-content { /*non va*/
-    display: none;
 }
 
 
@@ -162,7 +115,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .column a {
     float: none;
 	text-align: center;
-    color: #000000;
+    color: black;
 	margin-left: 0em;
     padding: 0.25em 0em 0.25em 0em;
     text-decoration: none;
@@ -171,8 +124,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .column a:hover {
-    background-color: #333333;
-	color: #ffffff;
+    background-color: #333;
+	color: white;
 	/*-webkit-transition: 0.3s ease-in-out all;
     -moz-transition: 0.3s ease-in-out all;
     -o-transition: 0.3s ease-in-out all;
@@ -215,7 +168,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .polaroidText a:link, .polaroidText a:visited {
 	text-decoration: none;
-	color: #333333;
+	color: #333;
 }
 
 .polaroidText:hover{
@@ -236,20 +189,20 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .dropdownlogin .dropbtnlogin {
-    font-size: 120%;
+    font-size: 120%;    
     border: none;
     outline: none;
-    color: #ffffff;
+    color: white;
     padding: .75em .75em .75em .75em;
 	font-weight: bold;
-	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
+	background-color: #333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
 }
 
 .dropdown-content-login {
 	display: none;
 	position: absolute;
-    background-color: #ffffff;
+    background-color: white;
     width: 15%;
 	float: left;
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
@@ -286,20 +239,21 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .logsigninbtn {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
     padding: 3% 1.5% 3% 1.5%;
     margin: 1% 0;
     border: none;
     cursor: pointer;
     width: 100%;
+	color: white;
 }
 
 .containerlogin a {
-	color: #333333;
+	color: #333;
 }
 .containerlogin a:hover {
-	color: #0000ff;
+	color: blue;
 }
 
 
@@ -311,8 +265,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	top:0;
-	border-left: 3px solid #333333;
-	border-right: 3px solid #333333;
+	border-left: 3px solid #333;
+	border-right: 3px solid #333;
 	margin-left: 10%;
 	margin-right: 10%;
 	height: 100%;
@@ -367,7 +321,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 200%;
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
-	background-color: #333333;
+	background-color: #333;
 }
 
 /* metto a dx il bottone next */
@@ -376,8 +330,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	border-radius: 3px 0 0 3px;
 }
 .prev:hover, .next:hover {
-  background-color: #ffffff;
-  color: #333333;
+  background-color: white;
+  color: #333;
 }
 
 .dottod {
@@ -388,7 +342,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	height: 2em;
 	width: 2em;
 	margin: 1em 0.25em;
-	background-color: #333333;
+	background-color: #333;
 	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.6s ease;
@@ -398,12 +352,12 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	background-color: #717171;
 }
 
-/**************************************************** VIDEOGIOCHI *************************************************/
+/**************************************************** VIDEOGIOCHI *************************************************/ 
 .nogamefound
 {
 	height: 60em;
 	width: 83%;
-	border-left: 3px solid #333333;
+	border-left: 3px solid #333;
 	margin-left:  17%;
 	top: 0;
 	bottom: 0;
@@ -418,12 +372,13 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .videogiochi {
-	color: #333333;
+	font-family: Arial;
+	color: #333;
 	float: left;
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	border-right: 3px solid #333333;
+	border-right: 3px solid #333;
 }
 
 @media screen and (max-width: 860px) {
@@ -438,8 +393,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	width: 17%;
 	float: left;
 	top: 0;
-	background-color: #ffffff;
-
+	background-color: #fff;
+	
 }
 
 .filtro h5 {
@@ -472,16 +427,16 @@ em.fa-caret-down { /*metto padding a freccetta*/
     left: 8%;
     height: 0.7em;/* grandezze cerchio*/
     width: 0.7em;
-    background-color: #cccccc; /*colore normale*/
+    background-color: #ccc; /*colore normale*/
     border-radius: 35%;
 }
 
 .elenco:hover input ~ .checkmark {
-    background-color: #eeeeee;   /*colore quando vado sopra il cerchio*/
+    background-color: #eee;   /*colore quando vado sopra il cerchio*/
 }
 
 .elenco input:checked ~ .checkmark {
-    background-color: #333333; /*colore quando clicco sul cerchio*/
+    background-color: #333; /*colore quando clicco sul cerchio*/
 }
 
 .piattaforme {
@@ -494,7 +449,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 90%;
 }
 .generi {
-	border-top: 1px solid #333333;
+	border-top: 1px solid #333;
 }
 /*PARTE GIOCHI*/
 .giochi {
@@ -506,7 +461,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	margin-top: 0%;
-	border-left: 3px solid #333333;
+	border-left: 3px solid #333;
 }
 
 .giochiPiccolo
@@ -520,20 +475,21 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	float:left;
 	margin-top: 0%;
 	height: 60em;
-	border-left: 3px solid #333333;
+	border-left: 3px solid #333;
 }
 
 .scheda {
 	width: 90%;
 	float: left;
-	margin: 10% 5% 0 5%;
+	margin-bottom: 0%;
+	margin-top: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	background-color: #ffffff;
 	border: 3px solid #333333;
 	padding: 2% 2% 2% 2%;
 }
-.scheda h3 {
-  margin: 2% 0;
-}
+
 .immagine1 {
 	max-width: 20%;
 	margin-right: 0%;
@@ -574,8 +530,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .filtrobtn
 {
 	width: 90%;
-	background-color: #333333;
-    color: #ffffff;
+	background-color: #333;
+    color: white;
 	cursor: pointer;
 	font-size: 110%;
 	margin-top: 5%;
@@ -584,7 +540,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 
-/**************************************************** VIDEOGIOCHIM *************************************************/
+/**************************************************** VIDEOGIOCHIM *************************************************/ 
 .nogamefoundM
 {
 	height: 40em;
@@ -593,8 +549,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	bottom: 0;
 	margin-left: 10%;
 	margin-right: 10%;
-	border-right: 3px solid #333333;
-	border-left: 3px solid #333333;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
 }
 
 .nogamefoundM h4
@@ -606,7 +562,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .giochiM {
-	color: #333333;
+	font-family: Arial;
+	color: #333;
 	width: 80%;
 	background: url(https://i1.creativecow.net/u/168337/background.jpg);
 	background-attachment: fixed;
@@ -615,8 +572,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	float:left;
 	margin-left: 10%;
 	margin-right: 10%;
-	border-right: 3px solid #333333;
-	border-left: 3px solid #333333;
+	border-right: 3px solid #333;
+	border-left: 3px solid #333;
 }
 
 /*********************************REGISTRAZIONE*********************************/
@@ -642,8 +599,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .registrazionebtn {
 	margin-top: 1em;
 	width: 70%;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
     border: none;
     cursor: pointer;
 	font-size: 150%;
@@ -658,12 +615,13 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 /****************************************** NOTIZIE *******************************************/
 .News {
-	color: #333333;
+	font-family: Arial;
+	color: #333;
 	float: left;
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	border-right: 3px solid #333333;
+	border-right: 3px solid #333;
 }
 @media screen and (max-width: 860px) {
 	.News {
@@ -673,14 +631,16 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	}
 }
 
+
 .data {
-	border-top: 1px solid #333333;
+	border-top: 1px solid #333;
 }
 .data h4{
+	font-family: Arial;
 	padding-left: 8%;
 	padding-top: 10%;
 	margin-top: 0%;
-	color: #333333;
+	color: #333;
 }
 
 .Notizia {
@@ -692,13 +652,16 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	position: relative;
 	float:left;
 	padding-top: 3%;
-	border-left: 3px solid #333333;
+	border-left: 3px solid #333;
 }
+
+
 
 .lastnews {
   max-width: 90%;
   position: relative;
   margin-left: 5%;
+
 }
 
 .lastnewsimg img {
@@ -707,13 +670,14 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .lastnewstext {
   width: 100%;
-  color: ##ffffff;
+  color: #fff;
+  font-family: Arial;
   background-color: rgba(0,0,0,0.5);
   font-size: 120%;
   position: absolute;
   overflow: hidden;
-  bottom: 0;
-  margin: 0;
+  bottom: 0.7%;
+  margin: 0%;
 }
 .lastnewstext h4 {
   margin-top: 1%;
@@ -730,17 +694,28 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .notizie {
   width: 90%;
 	float: left;
-	margin: 5% 5% 5% 0;
-	background-color: #ffffff;
-	border: 3px solid #333333;
+	margin-bottom: 0%;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #fff;
+	border: 3px solid #333;
 	padding: 2% 2% 2% 2%;
 }
+
+
+
 			/******* COLONNA SINISTRA ****/
+
+
 .columnleft img {
   width:  40%;
   float: left;
 }
-      /******** COLONNA DESTRA ******/
+
+
+			/******** COLONNA DESTRA ******/
+
 .columnright {
   width: 60%;
   height: auto;
@@ -754,11 +729,13 @@ em.fa-caret-down { /*metto padding a freccetta*/
   padding-left: 5%;
 }
 .titolonews a {
+  font-family: Arial;
   font-weight: bold;
-  color: #333333;
+  color: #333;
 }
 .titolonews p {
-  color: #333333;
+  font-family: Arial;
+  color: #ccc;
   margin: 0;
   padding-top: 3%;
   font-size: 80%;
@@ -770,9 +747,12 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
   margin: 0% 10% 0 10%;
-  padding: 3% 3% 0 3%;
-  border-left: 3px solid #333333;
-  border-right: 3px solid #333333;
+  padding-top: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  font-family: Arial;
 }
 
 .titolonotizia h1{
@@ -782,11 +762,11 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .adminews h4{
-  color: #333333;
+  color: #333;
 }
 
 .imgnotizia {
-  border-bottom: 3px solid #333333;
+  border-bottom: 3px solid #333;
 }
 
 .imgnotizia img{
@@ -796,13 +776,13 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .testonotizia {
   text-align: left;
-  border-bottom: 3px solid #333333;
+  border-bottom: 3px solid #333;
 }
 
 .inscommenti {
   padding-top: 2%;
   padding-bottom: 2%;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #333;
 }
 
 .inscommenti textarea {
@@ -817,14 +797,14 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .commenti h5 {
   margin: 0;
-  color: #333333;
+  color: #333;
 }
 
 .commenti p {
   margin: 0;
   padding-top: 1%;
   padding-bottom: 2%;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid #333;
 }
 
 .nonewsFound {
@@ -837,22 +817,23 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .deletebtn {
 	margin-top: 1em;
 	width: 30%;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
     border: none;
     cursor: pointer;
+    color: white;
 	font-size: 120%;
 	margin-left: 0%;
 	overflow: hidden;
 }
 
 .deletebtnUL {
-	float: right;
 	width: 20%;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
     border: none;
     cursor: pointer;
+    color: white;
 	font-size: 120%;
 	margin-left: 5%;
 	margin-bottom: 0.25em;
@@ -860,43 +841,38 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .deletebtnVID {
-  float: right;
-  width: 20%;
-    background-color: #333333;
-    color: #ffffff;
+	width: 20%;
+	float: right;
+    background-color: #333;
+    color: white;
     border: none;
     cursor: pointer;
-  font-size: 120%;
-  margin-left: 3%;
-  margin-bottom: 0.25em;
-  overflow: hidden;
+    color: white;
+	font-size: 120%;
+	margin-left: 0%;
+	margin-bottom: 0.25em;
+	overflow: hidden;
 }
 
-@media screen and (min-width: 620px){
-  #trashvid{
-    display: none;
-  }
-  #trash {
-    display: none;
-  }
-  #trashln {
-    display: none;
-  }
+em.fa-trash {
+	display: none;
 }
 /*****************************************AGGIUNGI COSE***************************************************/
 .localA {
 	float: left;
 	width: 20%;
+	font-family: Arial;
 	top: 0;
 	margin-left: 5%;
 	margin-top: 5%;
 }
 .localA p {
+	
 	text-align: center;
 }
 .localA a {
-	color: #333333;
-
+	color: #333;
+	
 }
 
 .opzioniA {
@@ -904,7 +880,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	float: left;
 	margin-left: 5%;
 	margin-right: 10%;
-	color: #333333;
+	font-family: Arial;
+	color: #333;
 	margin-top: 2%;
 }
 .opzioniA h3 {
@@ -913,7 +890,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .AggA {
 	float: left;
-	border: 3px solid #333333;
+	border: 3px solid #333;
 	margin-bottom: 5%;
 }
 .aggiungi-contentA input, .aggiungi-contentA textarea{
@@ -930,7 +907,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .elencoA input {
 	width: auto;
 }
-
+ 
 .rigaA {
 	text-align: center;
 }
@@ -942,10 +919,11 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .aggiungi-contentA .aggiungibtnA {
 	width: 100%;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
     border: none;
     cursor: pointer;
+    color: white;
 	font-size: 150%;
 	padding: 5% 5%;
 }
@@ -959,9 +937,9 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	bottom: 13%;
 	right: 1%;
 	text-decoration: none;
-	border: 3px solid #ffffff;
-	color: #ffffff;
-	background-color: #333333;
+	border: 3px solid #fff;
+	color: white;
+	background-color: #333;
 	font-size: 120%;
 	padding: 1em;
 	display: none;
@@ -986,7 +964,7 @@ em.fa-arrow-circle-up {
 	text-align: center;
 	padding-top: 5%;
 	padding-bottom: 5%;
-
+	
 }
 
 .pagbtn a {
@@ -996,8 +974,8 @@ em.fa-arrow-circle-up {
     text-decoration: none;
 }
 .pagbtn a.activepag {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #333;
+    color: white;
 }
 
 /***************************************************** FOOTER ******************************************************/
@@ -1010,8 +988,8 @@ em.fa-arrow-circle-up {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	text-align: center;
-	color: #ffffff;
-	background-color: #333333;
+	color: white;
+	background-color: #333;
 }
 
 .footer p {
@@ -1023,5 +1001,6 @@ em.fa-arrow-circle-up {
 
 .logoF {
 	width: 75px;
+	border-radius: 50%;
 	margin-right: 0.5em;
 }
