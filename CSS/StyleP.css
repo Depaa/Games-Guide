@@ -267,3 +267,9 @@ em.fa-arrow-circle-up {
 .mainContent {
 	display: none;
 }
+
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0 0 0 0;
+}
