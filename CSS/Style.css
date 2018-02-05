@@ -865,6 +865,9 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 @media screen and (min-width: 620px){
+	em.fa-trash {
+		display: none;
+	}
   #trashvid{
     display: none;
   }
