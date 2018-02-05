@@ -238,7 +238,7 @@
 							<h4><?php if(isset($error_messageG)) echo $error_messageG; ?></h4>
 						</div>
 						<?php } ?>
-						</div>
+						<div class="rigaA">
 							<h4>Nome Gioco</h4>
 							<input type="text" name="gname" value ="<?php if(isset($_POST['gname'])) echo $_POST['gname']; ?>" /> 
 						</div>
