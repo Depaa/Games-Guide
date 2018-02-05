@@ -152,12 +152,7 @@ a.prev, a.next, .dottod, .dot, .dot active {
 	display: none;
 }
 
-.videogiochi, {
-	margin: 5%;
-	width: 100%;
-	
-	
-}
+
 
 
 .giochi, .giochiPiccolo {
@@ -261,7 +256,14 @@ div.AggA{
 }
 
 
+em.fa-trash {
+	display: none;
+}
+	
+em.fa-arrow-circle-up {
+	display:none;
+}
 
-
-
-
+.mainContent {
+	display: none;
+}
