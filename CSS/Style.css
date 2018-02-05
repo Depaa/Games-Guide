@@ -425,7 +425,8 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .filtro {
-	width: 17%;
+	width: 14%;
+	margin-right: 3%;
 	float: left;
 	top: 0;
 	background-color: #ffffff;
@@ -563,7 +564,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .filtrobtn
 {
-	width: 90%;
+	width: 100%;
 	background-color: #333333;
     color: #ffffff;
 	cursor: pointer;
