@@ -49,6 +49,10 @@ body
   font-family: 'Roboto', 'Arial', 'sans-serif';
 }
 
+.mainContent {
+	display: none;
+}
+
 .navbar
 {
   display: none;
