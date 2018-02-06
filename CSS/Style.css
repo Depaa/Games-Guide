@@ -23,7 +23,6 @@ table {
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 	font-family: 'Arial', 'sans-serif';
 }
 
@@ -40,10 +39,6 @@ a.skip:focus {
 .navbar {
     overflow: hidden;
     background-color: #333333;
-	/*menu fisso ma non va il dropdown*/
-	/*position: sticky;
-	top: 0%;
-	z-index: 1;*/
 }
 @media screen and (min-width:621px) {
 	.sandwich {
@@ -221,11 +216,11 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 @media screen and (max-width: 860px) {
 	.dropdownlogin {
-		margin-right: 1%;
+		margin-right: 0%;
 	}
 }
 
-.dropdownlogin .dropbtnlogin {
+.dropbtnlogin {
     font-size: 120%;
     border: none;
     outline: none;
@@ -234,56 +229,12 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	font-weight: bold;
 	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
 	width: 100%;
+	cursor: pointer;
 }
 
-.dropdown-content-login {
-	display: none;
-	position: absolute;
-    background-color: #ffffff;
-    width: 15%;
-	float: left;
-    box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
-    z-index: 1;
-	text-align: left;
-	margin: 0;
+.dropdownloginADMIN {
+	float: right;
 }
-
-.dropdownlogin:hover .dropdown-content-login {
-    display: block;
-}
-
-.containerlogin {
-    padding: 1%;
-}
-
-.dropdown-content-login input[type=text], .dropdown-content-login input[type=password] {
-    width: 100%;
-    padding: 3% 1.5% 3% 1.5%;
-    margin: 0.5em 0em;
-    display: inline-block; /*come un float, solo senza il clear nel div successivo*/
-}
-
-.containerlogin label {
-	font-weight: bold;
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
-
-.containerlogin p {
-	font-weight: bold;
-	margin-top: 3%;
-	margin-bottom: 3%;
-}
-
-
-
-.containerlogin a {
-	color: #333333;
-}
-.containerlogin a:hover {
-	color: #0000ff;
-}
-
 
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
@@ -297,7 +248,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	border-right: 3px solid #333333;
 	margin-left: 10%;
 	margin-right: 10%;
-	height: 100%;
+	height: 60em;
 }
 
 .slides-content {
@@ -844,16 +795,16 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .deletebtnVID {
-	float: right;
-	width: 20%;
+  float: right;
+  width: 20%;
     background-color: #333333;
     color: #ffffff;
     border: none;
     cursor: pointer;
-	font-size: 120%;
-	margin-left: 3%;
-	margin-bottom: 0.25em;	
-	overflow: hidden;
+  font-size: 120%;
+  margin-left: 3%;
+  margin-bottom: 0.25em;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 620px){
@@ -1072,5 +1023,3 @@ fieldset {
 	font-size: 100%;
 	padding: 2% 2%;
 }
-
-
