@@ -44,12 +44,13 @@
 							echo '<input type="text" name="uname" value="admin"/>';
 							echo '<p><span lang="en">Password</span></p>';
 							echo '<input type="password" name="psw" value="admin"/>';
-							echo '<button class="logsigninbtn" type="submit" name="submitA">Accedi</button>';
+							echo '<button class="logsigninbtn" type="submit" name="submitA">Conferma</button>';
 						echo '</fieldset>';
 					echo '</form>';
 				echo '</div>';
 				
 				echo '<div class="regacce">';
+					echo '<a href="recuperaPassword.php" id="recPWD"><span lang="en">Password</span> dimenticata? </a>';
 					echo '<p>Non sei ancora registrato? Puoi farlo <a href="registrazione.php">qui</a>!</p>';
 				echo '</div>';
 				
