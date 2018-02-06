@@ -8,7 +8,7 @@
 	<head>
 		<title>Games'Guide: Accedi</title>
 		
-		<meta name="description" content="Accedi ed entra a far parte delle community di Games'Guide">
+		<meta name="description" content="Accedi ed entra a far parte della community di Games'Guide">
 		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
 		<meta name="keywords" content="Videogiochi, Notizie, Accedi, Recensioni, Registrazione">
 		<meta name="robots" content="noindex, nofollow">
