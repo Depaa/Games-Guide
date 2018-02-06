@@ -353,6 +353,8 @@ ul.menu li:hover {
 /********************FINE PAGINA***************/
 /******************LOGIN***************/
 .pagaccesso {
+	border: none;
+	margin-left: 0;
 	width: 100%;
 }
 .titacc {
