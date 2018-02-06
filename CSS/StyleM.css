@@ -46,7 +46,451 @@ table {
 body
 {
   margin: 0;
+  font-family: 'Roboto', 'Arial', 'sans-serif';/*STYLEM*/
+/*STYLEM*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body
+{
+  margin: 0;
   font-family: 'Roboto', 'Arial', 'sans-serif';
+}
+
+.mainContent {
+	display: none;
+}
+
+.navbar
+{
+  display: none;
+}
+/****************************MENU MOBILE**************************/
+.sandwich {
+  background-color: #333333;
+  font-weight: bold;
+}
+
+.mobile-toggle{
+  display: none;
+  color: #333333;
+  width: 100%;
+  padding: 5% 5%;/*10px 15px*/
+  clear: both;
+}
+
+.hamburger {
+  color: #ffffff;
+}
+
+.mobile-toggle a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.mobile-toggle .hamburger{
+  display: inline-block;
+  float: right;
+  margin-right: 0.4em;
+}
+
+.mobile-toggle .hamburger:hover{
+  cursor: pointer;
+}
+.menu {
+  margin: 0;
+}
+ul.menu{
+  padding: 2% 0;
+}
+
+ul.menu li{
+  display: inline;
+  padding: 3% 10%;/*10px 20px;*/
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+ul.menu li:hover {
+  background-color: #333333;
+  cursor: pointer;
+}
+.menu a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.menu em {
+	padding-left: 1em;
+}
+
+@media screen and (max-width: 630px){
+  .mobile-toggle, ul.menu li{
+    display: block;
+  }
+  .collapse{
+    display: none;
+  }
+  .collapse.opened{
+    display: block;
+		margin-bottom: 2em;
+  }
+  ul.menu{
+    border-top: 1px solid #8c8c8c;
+  }
+}
+/********************************FINE MENU******************************/
+/*********************HOME*****************/
+.pagecontent {
+	background: none;
+	border: none;
+	margin: 0;
+	width: 100%;
+}
+
+.slides-content {
+	margin: 0;
+	width: 100%;
+}
+
+.mySlides {
+	display: block;
+}
+.mySlides .textslide {
+	font-size: 1.5em;
+	background: rgba(0,0,0, 0.5);
+}
+.dot{
+	display: none;
+}
+
+/******************FINE HOME**************/
+/*****************GIOCHI******************/
+.videogiochi {
+	width: 100%;
+	margin: 0;
+}
+.giochi {
+	width: 100%;
+	margin: 0;
+	background: none;
+	border: none;
+}
+.scheda{
+	margin: 2% 0.5% 2% 0.5%;
+	padding: 0;
+	border: 0.5px solid #8c8c8c;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #cccccc;
+	width: 99%;
+}
+.scheda h3 {
+	padding: 1em 0 1em 0.3em;
+	margin: 0;
+	text-align: center;
+	font-size: 1.5em;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: #333333;
+	color: #ffffff;
+}
+.pagbtn {
+	font-size: 1em;
+}
+.immagine1 {
+	display: none;
+}
+@media screen and (max-width:621px){}
+.immagine2 {
+	display: block;
+	width: 100%;
+}
+}
+
+.desc {
+	width: 100%;
+}
+
+.descrizionesx {
+	width: 100%;
+}
+
+.descrec {
+	clear: both;
+	text-align: center;
+}
+.descrec a:hover {
+	color: #333333;
+}
+.descgi p {
+	margin-bottom: 0.5em;
+}
+
+.giochiM {
+	background: none;
+	width: 100%;
+	margin: 0;
+	background: none;
+	border: none;
+}
+/****************************NEWS*****************/
+.News {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+  border:none;
+}
+
+.Notizia {
+  margin: 0;
+	margin-left: 0;
+	padding: 0;
+  background: none;
+  width: 100%;
+  border: none;
+}
+
+.filtro {
+  display: none;
+}
+
+.lastnews {
+	margin: 0;
+	margin-left: 0;
+	padding: 0;
+	max-width: 100%;
+}
+
+.lastnewsimg {
+  width: 100%;
+}
+
+.lastnewstext {
+	background: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+}
+
+.lastnewstext p {
+	font-size: 0.8em;
+}
+
+.notizie {
+	margin: 2em 4% 0 4%;
+	width: 92%;
+	padding: 0;
+	border-top: 1px solid #8c8c8c;
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+}
+
+.columnleft {
+	padding-top: 0.5em;
+  width: 100%;
+}
+
+.titolonews a {
+	font-size: 0.8em;
+	text-decoration: none;
+	text-align: center;
+}
+
+.titolonews p {
+	font-size: 0.6em;
+}
+
+.pagbtn a.activepag{
+	font-size: 2.5em;
+}
+
+.pagbtn a{
+	font-size: 3.5625em;
+}
+/*******************FINE NEWS****************/
+/*******************PAGINA NEWS***************/
+.pagnotizia {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.titolonotizia h1 {
+	font-weight: bold;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.adminews h4 {
+	padding: 0 0.5em 0.8em 0.8em;
+}
+
+.imgnotizia {
+	width: 100%;
+	border: none;
+	padding: 0;
+}
+
+.testonotizia {
+	border-top: 2px solid #333333;
+	border-bottom: 2px solid #333333;
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+	padding: 0.8em 1em 0.8em 1em;
+}
+
+.inscommenti {
+	width: 90%;
+	margin-left: 5%;
+}
+.inscommenti textarea {
+	padding: 0;
+	margin-left: 5%;
+	width: 90%;
+	height: 7em;
+}
+
+.deletebtn {
+	margin-left: 5%;
+}
+.commenti {
+	width: 90%;
+	margin-left: 5%;
+}
+.commenti h5 {
+	padding-left: 5%;
+}
+.commenti p {
+	padding-left: 5%;
+	padding-bottom: 1em;
+}
+/********************FINE PAGINA***************/
+/******************LOGIN***************/
+.pagaccesso {
+	border: none;
+	margin-left: 0;
+	width: 100%;
+	background: none;
+	background-color: #ffffff;
+}
+.titacc {
+	padding-top: 1em;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	border-bottom: 1px solid #8c8c8c;
+}
+.formacc {
+	padding-top: 1em;
+	text-align: center;
+}
+
+.regacce {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-align: center;
+}
+
+.regacce a{
+	color: #000000;
+}
+/***************FINE LOGIN**************/
+/*******************REGISTRAZIONE**************/
+
+
+/****************FINE REGISTRAZIONE*************/
+/*******************AGGIUNGI COSE***************/
+.localA {
+	margin: 1em 0 0 0;
+	float: none;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.localA p{
+	padding: 0.3em;
+}
+
+.opzioniA {
+	margin: 1em 0 0 0;
+	max-width: 100%;
+}
+/***************FINE AGGIUNGI*************/
+/***************DELETE COSE***************/
+.deletebtn {
+	display: none;
+}
+.deletebtnUL{
+	display: none;
+}
+.deletebtnVID {
+	display: none;
+}
+em.fa-trash {
+	float: right;
+	font-size: 1.5em;
+}
+#trashln {
+	float: right;
+	color: #ffffff;
+	margin: 0 1em 0.5em 0;
+	font-size: 1.5em;
+}
+#trashlr {
+	float: right;
+	color: #ffffff;
+	margin: 0 1em 0.5em 0;
+	font-size: 1.5em;
+}
+em.vid {
+	display: block;
+  float: right;
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 0.9em 0.4em 0 0.4em;
+}
+
 }
 
 .mainContent {
