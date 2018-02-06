@@ -275,15 +275,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	margin-bottom: 3%;
 }
 
-.logsigninbtn {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 3% 1.5% 3% 1.5%;
-    margin: 1% 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
+
 
 .containerlogin a {
 	color: #333333;
@@ -852,16 +844,16 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .deletebtnVID {
-  float: right;
-  width: 20%;
+	float: right;
+	width: 20%;
     background-color: #333333;
     color: #ffffff;
     border: none;
     cursor: pointer;
-  font-size: 120%;
-  margin-left: 3%;
-  margin-bottom: 0.25em;
-  overflow: hidden;
+	font-size: 120%;
+	margin-left: 3%;
+	margin-bottom: 0.25em;	
+	overflow: hidden;
 }
 
 @media screen and (min-width: 620px){
@@ -1027,3 +1019,54 @@ fieldset {
 	margin: 0;
 	padding: 0 0 0 0;
 }
+
+/************************ACCEDI**************************/
+.pagaccesso {
+	color: #333333;
+	float: left;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-right: 3px solid #333333;
+	border-left: 3px solid #333333;
+}
+
+.titacc {
+	font-size: 150%;
+	text-align: center;
+	margin: 5% 0 0 0;
+}
+.titacc h1 {
+	margin: 0 0 0 0;
+}
+.formacc {
+	font-size: 150%;
+	text-align: center;
+}
+
+.formacc input {
+	margin: 0 30% 0 30%;
+	width: 40%;
+	text-align: center;
+	font-size: 120%;
+	
+}
+
+.regacce {
+	margin: 5% 0 0 0;
+	font-size: 150%;
+	text-align: center;
+}
+
+.logsigninbtn {
+	margin: 5% 0 0 0;
+	width: 50%;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+	font-size: 100%;
+	padding: 2% 2%;
+}
+
+
