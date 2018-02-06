@@ -41,9 +41,26 @@ a.prev, a.next, .dottod, .dot, .dot active {
 
 /************* NOTIZIE, REC*****************/
 
-.filtro, .lastnews, .pagbtn, .backtotop{
+.filtro, .pagbtn, .backtotop{
 	display: none !important;
+
 }
+
+
+.lastnewsimg img {
+  max-width: 40%;
+  float: left;
+ margin-right: 1%;
+
+
+}
+
+.lastnewstext {
+  width: 100%;
+font-size: 100%;
+  
+}
+
 
 .Notizia {
 	padding-left: 3%;
