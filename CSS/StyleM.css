@@ -491,7 +491,6 @@ em.vid {
   margin: 0.9em 0.4em 0 0.4em;
 }
 
-}
 
 .mainContent {
 	display: none;
@@ -640,7 +639,7 @@ ul.menu li:hover {
 .immagine1 {
 	display: none;
 }
-@media screen and (max-width:621px){}
+@media screen and (max-width:621px){
 .immagine2 {
 	display: block;
 	width: 100%;
