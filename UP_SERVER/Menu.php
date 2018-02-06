@@ -108,41 +108,22 @@
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
-			if (!isset($_SESSION['userSession'])) {	/*se non c'è stato un accesso prima*/
+			if (!isset($_SESSION['userSession'])) {	/*se non c'Ã¨ stato un accesso prima*/
 				echo '<div class="dropdownlogin">';
-					echo '<button class="dropbtnlogin">Accedi<em class="fa fa-caret-down"></em></button>';
-					echo '<div class="dropdown-content-login">';
-						echo '<div class="containerlogin">';
-							echo '<form name="loginForm" method="post" action="" onsubmit="return checkFormL()">';
-								echo '<label>Username</label>';
-								echo '<input type="text" name="uname" id="userL"/>';
-								echo '<label>Password</label>';
-								echo '<input type="password" name="psw" id="passwordL"/>';
-								echo '<?php if(isset($msg)) {echo $msg;} ?>';
-								echo '<button class="logsigninbtn" type="submit" name="submitA">Accedi</button>';
-							echo '</form>';
-							echo '<a href="registrazione.php"><button class="logsigninbtn">Registrati</button></a>';
-							echo '<a href="recuperaPassword.php"><span lang="en">Password</span> dimenticata? </a>';
-						echo '</div>';
-					echo '</div>';
+					echo '<a href="accediM.php"><button class="dropbtnlogin">Accedi</button></a>';
 				echo '</div>';
 			} 
 			else {
 				$query = $conn->query("SELECT * FROM Account WHERE id=".$_SESSION['userSession']);
 				$rowA=$query->fetch_array();
 				echo '<div class="dropdownlogin">';
-					echo '<button class="dropbtnlogin">'.$rowA['Nickname'].'<em class="fa fa-caret-down"></em></button>';
-					echo '<div class="dropdown-content-login">';
-						echo '<div class="containerlogin">';
-							if($rowA['Admin']==1) { //se è admin allora può fare cose
-								echo '<p>Aggiungi Contenuti</p>';
-								echo '<a href="Admin.php"><button class="logsigninbtn">Aggiungi</button></a>';
-							}
-							echo '<p>Esci</p>';
-							echo '<a href="logout.php?logout"><button class="logsigninbtn">Esci</button></a>';
-						echo '</div>';
-					echo '</div>';
+					echo '<a href="logout.php?logout"><button class="dropbtnlogin">'.$rowA['Nickname'].'</button></a>';
 				echo '</div>';
+				if($rowA['Admin']==1) {//se Ã¨ admin allora puÃ² fare cose
+					echo '<div class="dropdownloginADMIN">';
+						echo '<a href="Admin.php"><button class="dropbtnlogin"><em class="fa fa-plus"></em></button></a>';
+					echo '</div>';
+				}
 			}
 		echo '</div>';
 		
@@ -164,11 +145,11 @@
 						echo '<li><a href="accediM.php">ACCEDI</a><em class="fa fa-user-circle"></em></li>';
 						echo '<li><a href="registrazione.php">REGISTRATI</a><em class="fa fa-sign-in"></em></li>';
 					}
-					else { //utente collegato, se sei admin allora puoi aggiungere sennò puoi solo uscire
+					else { //utente collegato, se sei admin allora puoi aggiungere sennÃ² puoi solo uscire
 						$query = $conn->query("SELECT * FROM Account WHERE id=".$_SESSION['userSession']);
 						$rowB=$query->fetch_array();
 						echo '<li>'.$rowB['Nickname'].'<em class="fa fa-user-circle"></em></li>';
-						if($rowB['Admin']==1) { //se è admin allora può fare cose
+						if($rowB['Admin']==1) { //se Ã¨ admin allora puÃ² fare cose
 							echo '<li><a href="Admin.php">AGGIUNGI</a></li>';
 						}
 						echo '<li><a href="logout.php?logout">ESCI</a><em class="fa fa-sign-out"></em></li>';
