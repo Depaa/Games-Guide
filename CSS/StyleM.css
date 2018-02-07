@@ -1,5 +1,4 @@
 /*STYLEM*/
-/*STYLEM*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -118,7 +117,7 @@ ul.menu li:hover {
 	padding-left: 1em;
 }
 
-@media screen and (max-width: 630px){
+@media screen and (max-width: 655px){ 
   .mobile-toggle, ul.menu li{
     display: block;
   }
@@ -194,11 +193,11 @@ ul.menu li:hover {
 .immagine1 {
 	display: none;
 }
-@media screen and (max-width:621px){}
-.immagine2 {
-	display: block;
-	width: 100%;
-}
+@media screen and (max-width:651px){
+	.immagine2 {
+		display: block;
+		width: 100%;
+	}
 }
 
 .desc {
@@ -442,4 +441,3 @@ em.vid {
   font-size: 1.5em;
   margin: 0.9em 0.4em 0 0.4em;
 }
-
