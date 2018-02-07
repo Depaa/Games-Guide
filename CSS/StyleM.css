@@ -489,6 +489,7 @@ em.fa-arrow-circle-up {
 	display: block;
 	float: right;
 	position: fixed;
+	padding: 0.1em;
 	bottom: 2.5em;
 	right: 1em;
 	font-size: 3em;
