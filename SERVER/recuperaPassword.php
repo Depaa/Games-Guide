@@ -31,7 +31,7 @@
 				$success_message = "La tua password è: ".$Password['Password']."";	
 				unset($_POST);
 			} else {
-				$success_message = "I campi inseriti non sono corretti :(";	
+				$success_message = "I campi inseriti non sono corretti";	
 			}
 		}
 	}
