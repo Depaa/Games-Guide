@@ -139,6 +139,7 @@ ul.menu li:hover {
 	border: none;
 	margin: 0;
 	width: 100%;
+	height: 30em;
 }
 
 .slides-content {
@@ -151,10 +152,15 @@ ul.menu li:hover {
 }
 .mySlides .textslide {
 	font-size: 1.5em;
+	padding: 0.3em;
 	background: rgba(0,0,0, 0.5);
+	}
+.prev, .next{
+	font-size: 2em;
+	padding: 0.3em;
 }
 .dot{
-	display: none;
+	font-size: 1em;
 }
 
 /******************FINE HOME**************/
@@ -306,6 +312,8 @@ ul.menu li:hover {
 	margin: 0;
 	padding: 0;
 	border: none;
+	background: none;
+	background-color: #ffffff;
 }
 
 .titolonotizia h1 {
@@ -334,6 +342,10 @@ ul.menu li:hover {
 .inscommenti {
 	width: 90%;
 	margin-left: 5%;
+	border: none;
+}
+.inscommenti p{
+	margin-left: 5%;
 }
 .inscommenti textarea {
 	padding: 0;
@@ -342,19 +354,30 @@ ul.menu li:hover {
 	height: 7em;
 }
 
-.deletebtn {
-	margin-left: 5%;
-}
+.commentibtn {
+	margin-right: 5%;
+	float: right;
+	width: auto;
+	font-size: 1.3em;
+	color: #ffffff;
+	background-color: #333333;
+	border: none;
+    	cursor: pointer;
+}	
 .commenti {
 	width: 90%;
 	margin-left: 5%;
 }
 .commenti h5 {
 	padding-left: 5%;
+	padding-top: 0.5em;
+	border-top: 1px solid #8c8c8c;
 }
 .commenti p {
 	padding-left: 5%;
 	padding-bottom: 1em;
+	border: none;
+
 }
 /********************FINE PAGINA***************/
 /******************LOGIN***************/
@@ -372,11 +395,16 @@ ul.menu li:hover {
 	font-weight: bold;
 	border-bottom: 1px solid #8c8c8c;
 }
+.titacc h5{
+	padding: 0.5em 0.5em 1em 0.5em;
+}
 .formacc {
 	padding-top: 1em;
 	text-align: center;
 }
-
+.formacc p{
+	padding-top: 0.5em;
+}
 .regacce {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -386,9 +414,19 @@ ul.menu li:hover {
 .regacce a{
 	color: #000000;
 }
+.regacce p{
+	padding-top:1em;
+}
 /***************FINE LOGIN**************/
 /*******************REGISTRAZIONE**************/
-
+.pagecontent {
+	margin: 0;
+	height: 37.5em;
+}
+.registrazione-contenuto {
+	margin: 0;
+	
+}
 
 /****************FINE REGISTRAZIONE*************/
 /*******************AGGIUNGI COSE***************/
@@ -420,7 +458,9 @@ ul.menu li:hover {
 }
 em.fa-trash {
 	float: right;
+	color: #333333;
 	font-size: 1.5em;
+	margin-right: 0.3em;
 }
 #trashln {
 	float: right;
@@ -440,4 +480,19 @@ em.vid {
   color: #ffffff;
   font-size: 1.5em;
   margin: 0.9em 0.4em 0 0.4em;
+}
+/*************************ACCESSIBILITA'*************/
+.backtotop {
+	display: none;
+}
+em.fa-arrow-up {
+	display: block;
+	float: right;
+	position: fixed;
+	bottom: 2.5em;
+	right: 1em;
+	font-size: 3em;
+	border: 3px solid #ffffff;
+	background-color: #333333;
+	color:#ffffff;
 }
