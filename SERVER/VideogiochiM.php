@@ -37,7 +37,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero più grande
+	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero piÃ¹ grande
 		
 	if(isset($_GET['pag'])) {
 		$correntePAG=$_GET['pag'];
@@ -69,7 +69,7 @@
 	<head>
 		<title>Games'Guide: Videogiochi</title>
 		
-		<meta name="description" content="Scopri le caratteristiche dei più recenti videogiochi">
+		<meta name="description" content="Scopri le caratteristiche dei piÃ¹ recenti videogiochi">
 		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
 		<meta name="keywords" content="Videogiochi, Recensioni">
 		<meta name="robots" content="index, follow">
@@ -135,7 +135,7 @@
 						echo '</div>';
 					echo '</div>';
 				}
-				/*controlli più link per passare da una pagina all'altra*/
+				/*controlli piÃ¹ link per passare da una pagina all'altra*/
 					$precPAG=$correntePAG;
 					$postPAG=$correntePAG;
 					if($correntePAG>1)
@@ -149,8 +149,9 @@
 						if($correntePAG<$totPAG) //nascondo il paging dell'ultima pagina se siamo alla fine
 							echo '<a href="VideogiochiM.php?id='.$_GET['id'].'&pag='.$postPAG.'"> &raquo;</a>';
 					echo '</div>';
-				echo '<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>';
-				echo '<em class="fa fa-arrow-circle-up" onclick="gotopFunctionM()"></em>';
+				echo '<div id="backtotop" class="backtotop">';
+					echo '<button onclick="gotopFunction()"><em class="fa fa-arrow-circle-up"></em></button>';
+				echo '</div>';
 				echo '</div>'; /*giochi*/
 			}
 		}
