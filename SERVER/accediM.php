@@ -58,6 +58,8 @@
 			echo '<div class="pagaccesso">';
 				echo '<div class="titacc">';
 					echo '<h1 id="contenutoPrincipale">Benvenuto '.$rowB['Nickname'].'</h1>';
+					echo '<h5>Stai per essere reinderizzato alla Home fra 10 secondi, clicca <a href="index.php">Qui</a> se non vuoi aspettare</h5>';
+					echo '<script type="text/javascript" src="JS/indexRedirect.js"></script>';
 				echo '</div>';
 			echo '</div>';
 		}
