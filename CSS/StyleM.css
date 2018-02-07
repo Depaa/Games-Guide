@@ -152,9 +152,8 @@ ul.menu li:hover {
 }
 .mySlides .textslide {
 	font-size: 1.5em;
-	padding: 0.3em;
 	background: rgba(0,0,0, 0.5);
-	}
+}
 .prev, .next{
 	font-size: 2em;
 	padding: 0.3em;
@@ -387,6 +386,7 @@ ul.menu li:hover {
 	width: 100%;
 	background: none;
 	background-color: #ffffff;
+	height: 30em;
 }
 .titacc {
 	padding-top: 1em;
@@ -394,6 +394,7 @@ ul.menu li:hover {
 	font-size: 2em;
 	font-weight: bold;
 	border-bottom: 1px solid #8c8c8c;
+	border: none;
 }
 .titacc h5{
 	padding: 0.5em 0.5em 1em 0.5em;
