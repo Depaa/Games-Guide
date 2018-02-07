@@ -46,7 +46,7 @@ CREATE TABLE `Account` (
 
 INSERT INTO `Account` (`id`, `Nickname`, `Password`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Admin`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', '1995-10-01', 'admin@admin.admin', 1),
-(2, 'Peachka', 'ciaone', 'Lucia', 'Fenu', '1995-06-30', 'lucia.fenu95@gmail.com', 1),
+(2, 'Peach', 'ciaone', 'Lucia', 'Fenu', '1995-06-30', 'lucia.fenu95@gmail.com', 1),
 (3, 'Aiolos', '123qwerty789', 'Gianmarco', 'Pettenuzzo', '1995-08-20', 'gian82095@gmail.com', 1),
 (4, 'Gionny', '0987654321', 'Francesco', 'Battistella', '1994-10-01', 'frabat@icloud.com', 1),
 (5, 'Depaa', 'asdfghjkl', 'Matteo', 'Depascale', '1995-08-20', 'depascale.matteo@gmail.com', 1),
