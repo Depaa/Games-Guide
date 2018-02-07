@@ -28,6 +28,9 @@
 	<body>
 <?php
 		include 'Menu.php';
+		
+		echo '<script type="text/javascript" src="JS/formControls.js"></script> ';
+		
 		if (!isset($_SESSION['userSession'])) {
 			echo '<div class="pagaccesso">';
 				echo '<div class="titacc">';
@@ -36,12 +39,12 @@
 				
 				echo '<div class="formacc">';
 					echo '<?php if(isset($msg)) {echo $msg;} ?>';
-					echo '<form method="post" action="">';
+					echo '<form method="post" action="" name="loginForm" onsubmit="return checkFormL()">';
 						echo '<fieldset>';
 							echo '<p><span lang="en">Username</span></p>';
-							echo '<input type="text" name="uname" value="admin"/>';
+							echo '<input type="text" name="uname"/>';
 							echo '<p><span lang="en">Password</span></p>';
-							echo '<input type="password" name="psw" value="admin"/>';
+							echo '<input type="password" name="psw"/>';
 							echo '<button class="logsigninbtn" type="submit" name="submitA">Conferma</button>';
 						echo '</fieldset>';
 					echo '</form>';
