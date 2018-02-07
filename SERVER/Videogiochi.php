@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero più grande
+	$totPAG=ceil(($limitePAG)/$maxPAG); //arrotondo all'intero piÃ¹ grande
 	
 	if(isset($_GET['pag'])) {
 		$correntePAG=$_GET['pag'];
@@ -243,8 +243,9 @@
 				}
 			}
 		}			
-		echo '<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>';
-		echo '<em class="fa fa-arrow-circle-up" onclick="gotopFunctionM()"></em>';
+		echo '<div id="backtotop" class="backtotop">';
+			echo '<button onclick="gotopFunction()"><em class="fa fa-arrow-circle-up"></em></button>';
+		echo '</div>';
 		echo '</div>'; /* chiudo videogiochi*/
 	
 ?>
