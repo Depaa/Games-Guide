@@ -290,3 +290,9 @@ fieldset {
 	margin: 0;
 	padding: 0 0 0 0;
 }
+
+/******* accesso ****/
+
+.regacce, button.logsigninbtn {
+	display: none;
+}
