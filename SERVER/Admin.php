@@ -483,7 +483,9 @@
 					</form>
 				</div>
 			</div>
-		<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>
+		<div id="backtotop" class="backtotop">
+			<button onclick="gotopFunction()"><em class="fa fa-arrow-circle-up"></em></button>
+		</div>
 		</div>
 	
 	
