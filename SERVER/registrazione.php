@@ -54,7 +54,7 @@
 				$success_message = "Complimenti! Ti sei registrato con successo!";	
 				unset($_POST);
 			} else {
-				$success_message = "Problemi con la registrazione :( Riprova.";	
+				$success_message = "Problemi con la registrazione. Riprova.";	
 			}
 		}
 	}
@@ -64,7 +64,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 	<head>
 		<title>Games'Guide: Registrazione</title>
-		<meta name="description" content="Entra nella community di Games'Guide, troverai tutte le recensioni e le notizie sui giochi più recenti">
+		<meta name="description" content="Entra nella community di Games'Guide, troverai tutte le recensioni e le notizie sui giochi piÃ¹ recenti">
 		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
 		<meta name="keywords" content="Videogiochi, Notizie, Recensioni, Registrazione">
 		<meta name="robots" content="index, follow">
