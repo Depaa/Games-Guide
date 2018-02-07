@@ -25,76 +25,89 @@
 		$risultato_G3= $conn->query($controllo_G3) or die("Errore nella query MySQL: ".$conn->error);
 		
 		if(empty($_POST["gname"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if(empty($_POST["gdata"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if(empty($_POST["ggenere1"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if(empty($_POST["gpegi"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if(empty($_POST["gdisp"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if(empty($_POST["gdesc"]))
-			$error_messageG = "All Fields are required";
+			$error_messageG = "Gioco non aggiunto. Tutti i campi sono obbligatori";
 		else if ($risultato_nome->num_rows != 0) {
-			$error_messageG = 'Nome gioco gi&agrave; utilizzato';
+			$error_messageG = "Gioco non aggiunto. Nome gioco gi&agrave; utilizzato";
 		}
 		else if ($risultato_nome2->num_rows != 0) {
-			$error_messageG = 'Nome gioco gi&agrave; utilizzato in tabella Immagini';
+			$error_messageG = "Gioco non aggiunto. Nome gioco gi&agrave; utilizzato in tabella Immagini";
 		}
 		else if ($risultato_G1->num_rows == 0) {
-			$error_messageG = 'Nome genere1 non esiste';
+			$error_messageG = "Gioco non aggiunto. Nome genere1 non esiste";
 		}
 		else if (!empty($_POST["ggenere2"]) && ($risultato_G2->num_rows == 0)) {
-			$error_messageG = 'Nome genere2 non esiste';
+			$error_messageG = "Gioco non aggiunto. Nome genere2 non esiste";
 		}
 		else if (!empty($_POST["ggenere3"]) && ($risultato_G3->num_rows == 0)) {
-			$error_messageG = 'Nome genere3 non esiste';
+			$error_messageG = "Gioco non aggiunto. Nome genere3 non esiste";
 		}
 		
 		
 		else {
-			$query= "INSERT INTO `Videogiochi` (`Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`, `PEGI`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`)
-			values  ('$_POST[gname]', '$_POST[gdata]', '$_POST[ggenere1]', '$_POST[ggenere2]' , '$_POST[ggenere3]', '$_POST[gpegi]', '$_POST[gdisp]', '". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])). "', '$_POST[gdesc]');";
-		
-			$nuovo_nome=basename($_FILES["gimgvid"]["name"]);//nuovo nome dell'immagine
+			$nuovo_nome=basename($_FILES["gimgvid"]["name"]); //nuovo nome dell'immagine
 			$nuovo_nome_vid= "game-" .basename($_FILES["gimgvid"]["name"]);
-		
-		
-			$query2="INSERT INTO `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) 
-			values ('$_POST[gname]', '$nuovo_nome', '$nuovo_nome_vid');";
-			$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
-			if(!empty($output)) 
+			
+			//controllo se esiste già img con stesso nome
+			$controllo_img= "SELECT * FROM Immagini WHERE Immagini.MenuImg= '".$nuovo_nome. "'";
+			$risultato_img= $conn->query($controllo_img) or die("Errore nella query MySQL: ".$conn->error);
+
+			$controllo_img_vid= "SELECT * FROM Immagini WHERE Immagini.MenuImg= '".$nuovo_nome_vid. "'";
+			$risultato_img_vid= $conn->query($controllo_img_vid) or die("Errore nella query MySQL: ".$conn->error);
+			
+			if ($risultato_img->num_rows != 0 || $risultato_img_vid->num_rows != 0) {
+				$error_messageG= "Gioco non aggiunto. Nome immagine gi&agrave utilizzato in tabella Immagini";
+			}
+
+			else
 			{
-				$error_messageG = "";
-				$success_messageG = "Gioco aggiunto con successo";
-			} 
-			else 
-			{
-				$success_messageG = "Gioco non aggiunto, riprovare";	
-			}
-			$output1= $conn->query($query2) or die("Errore nella query MySQL: ".$conn->error);
+				$query= "INSERT INTO `Videogiochi` (`Nome`, `Data`, `Genere1`, `Genere2`, `Genere3`, `PEGI`, `Disponibilita`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `Descrizione`)
+				values  ('$_POST[gname]', '$_POST[gdata]', '$_POST[ggenere1]', '$_POST[ggenere2]' , '$_POST[ggenere3]', '$_POST[gpegi]', '$_POST[gdisp]', '". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])). "', '$_POST[gdesc]');";
 			
-			$file_temp=$_FILES['gimgmen']['tmp_name'];
-			$file_temp_vid=$_FILES['gimgvid']['tmp_name']; //file temporaneo che contiene l'immagine caricata
+				$query2="INSERT INTO `Immagini` (`NomeGioco`, `MenuImg`, `GiocoImg`) 
+				values ('$_POST[gname]', '$nuovo_nome', '$nuovo_nome_vid');";
+				$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
+				if(!empty($output)) 
+				{
+					$error_messageG = "";
+					$success_messageG = "Gioco aggiunto con successo";
+				} 
+				else 
+				{
+					$success_messageG = "Gioco non aggiunto, riprovare";	
+				}		
+				$output1= $conn->query($query2) or die("Errore nella query MySQL: ".$conn->error);
+				
+				$file_temp=$_FILES['gimgmen']['tmp_name'];
+				$file_temp_vid=$_FILES['gimgvid']['tmp_name']; //file temporaneo che contiene l'immagine caricata
+				
+				$percorso="IMG/"; //cartella sul server dove verrà spostata la foto
 			
-			$percorso="IMG/"; //cartella sul server dove verrà spostata la foto
+				$nuovo_nome=$percorso . basename($_FILES["gimgvid"]["name"]);//nuovo nome dell'immagine
+				$nuovo_nome_vid=$percorso . "game-" .basename($_FILES["gimgvid"]["name"]);
 			
-			$nuovo_nome=$percorso . basename($_FILES["gimgvid"]["name"]);//nuovo nome dell'immagine
-			$nuovo_nome_vid=$percorso . "game-" .basename($_FILES["gimgvid"]["name"]);
-			
-			$inviato=file_exists($file_temp);
-			$inviato_vid=file_exists($file_temp_vid); //verifica se il file è stato caricato sul server
+				$inviato=file_exists($file_temp);
+				$inviato_vid=file_exists($file_temp_vid); //verifica se il file è stato caricato sul server
 		
-			if ($inviato) {
-				move_uploaded_file($_FILES["gimgmen"]["tmp_name"],$nuovo_nome);
-				header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
-			}
+				if ($inviato) {
+					move_uploaded_file($_FILES["gimgmen"]["tmp_name"],$nuovo_nome);
+					header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
+				}	
 		
-			if ($inviato_vid) {
-				move_uploaded_file($_FILES["gimgvid"]["tmp_name"],$nuovo_nome_vid);
-				header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
-			}
+				if ($inviato_vid) {
+					move_uploaded_file($_FILES["gimgvid"]["tmp_name"],$nuovo_nome_vid);
+					header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
+				}
+			}				
 		}
 	}
 	$error_messageN=0;
@@ -104,44 +117,51 @@
 	if(isset($_POST['submitN']))
 	{
 		if(empty($_POST["ndata"]))
-			$error_messageN = "All Fields are required";
+			$error_messageN = "Notizia non aggiunta. Tutti i campi sono obbligatori";
 		else if(empty($_POST["ntit"]))
-			$error_messageN = "All Fields are required";
+			$error_messageN = "Notizia non aggiunta. Tutti i campi sono obbligatori";
 		
 		else if(empty($_POST["ntest"]))
-			$error_messageN = "All Fields are required";
+			$error_messageN = "Notizia non aggiunta. Tutti i campi sono obbligatori";
 		else 
 		{
 			$nuovo_nome=basename($_FILES["nimg"]["name"]);
-		
-			$query= "INSERT INTO `notizie` (`Data`, `Titolo`, `AdminNick`, `Testo`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `MenuImg`)
-			values ('$_POST[ndata]', '$_POST[ntit]', '".$nickADMIN['Nickname']."', '$_POST[ntest]' ,'". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "', '$nuovo_nome');";
-		
-			$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
-			if(!empty($output)) 
-			{
-				$error_messageN = "";
-				$success_messageN = "News aggiunto con successo";
-			} 
-			else 
-			{
-				$success_messageN = "News non aggiunto, riprovare";	
-			}
-		
-			$file_temp=$_FILES['nimg']['tmp_name'];
-		
-			$percorso="IMG/"; //cartella sul server dove verrà spostata la foto
-		
-			$nuovo_nome=$percorso . basename($_FILES["nimg"]["name"]);//nuovo nome dell'immagine
-		
-			$inviato=file_exists($file_temp);
+			$controllo_img= "SELECT * FROM Notizie WHERE Notizie.MenuImg= '".$nuovo_nome. "'";
+			$risultato_img= $conn->query($controllo_img) or die("Errore nella query MySQL: ".$conn->error);
 			
-			if ($inviato) 
+			if ($risultato_img->num_rows != 0) {
+				$error_messageN= "Notizia non aggiunta. Nome immagine gi&agrave utilizzata nella tabella Notizie";
+			}
+			else
 			{
-				move_uploaded_file($_FILES["nimg"]["tmp_name"],$nuovo_nome);
+				$query= "INSERT INTO `notizie` (`Data`, `Titolo`, `AdminNick`, `Testo`, `Playstation3`, `Playstation4`, `Xbox360`,`XboxOne`, `NintendoDS`, `NintendoSwitch`, `Windows`, `Mac`, `MenuImg`)
+				values ('$_POST[ndata]', '$_POST[ntit]', '".$nickADMIN['Nickname']."', '$_POST[ntest]' ,'". (isset($_POST['p3'])). "', '". (isset($_POST['p4'])). "', '". (isset($_POST['x3'])). "', '". (isset($_POST['xo'])). "', '". (isset($_POST['ds'])). "', '". (isset($_POST['sw'])). "', '". (isset($_POST['win'])). "', '". (isset($_POST['mac'])).  "', '$nuovo_nome');";
+		
+				$output= $conn->query($query) or die("Errore nella query MySQL: ".$conn->error);
+				if(!empty($output)) 
+				{	
+					$error_messageN = "";
+					$success_messageN = "Notizia aggiunta con successo";
+				} 
+				else 
+				{
+					$success_messageN = "Notizia non aggiunta, riprovare";	
+				}
+		
+				$file_temp=$_FILES['nimg']['tmp_name'];
+			
+				$percorso="IMG/"; //cartella sul server dove verrà spostata la foto
+		
+				$nuovo_nome=$percorso . basename($_FILES["nimg"]["name"]);//nuovo nome dell'immagine
+		
+				$inviato=file_exists($file_temp);
+			
+				if ($inviato) 
+				{	
+					move_uploaded_file($_FILES["nimg"]["tmp_name"],$nuovo_nome);
 				header("Admin.php"); // sposto l'immagine nella cartella e vado alla pagina di visualizzazione
+				}
 			}
-			
 		}
 	}
 	$error_messageR=0;
@@ -149,13 +169,13 @@
 	if(isset($_POST['submitR']))
 	{
 		if(empty($_POST["rdata"]))
-			$error_messageR = "All Fields are required";
+			$error_messageR = "Recensione non aggiunta. Tutti i campi sono obbligatori";
 		else if(empty($_POST["rtit"]))
-			$error_messageR = "All Fields are required";
+			$error_messageR = "Recensione non aggiunta. Tutti i campi sono obbligatori";
 		else if(empty($_POST["rdesc"]))
-			$error_messageR = "All Fields are required";
+			$error_messageR = "Recensione non aggiunta. Tutti i campi sono obbligatori";
 		else if(empty($_POST["rname"]))
-			$error_messageR = "All Fields are required";
+			$error_messageR = "Recensione non aggiunta. Tutti i campi sono obbligatori";
 		else 
 		{
 			$nome_gioco = $_POST['rname'];
@@ -163,7 +183,7 @@
 			$controllo=$conn->query($query_controllo) or die("Errore nella query MySQL: ".$conn->error);
 			if($controllo->num_rows== 0)
 			{
-				$error_messageR = "il gioco non esiste";
+				$error_messageR = "Recensione non aggiunta. Nome gioco non esiste";
 			}
 			else
 			{				
@@ -200,7 +220,7 @@
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link type="text/css" rel="stylesheet" href="CSS/Style.css" media="handheld, screen"/>
-		<link rel="stylesheet" type="text/css" href="CSS/StyleM.css" media="handheld, screen and (max-width:651px), only screen and (max-device-width:651px)"/>
+		<link rel="stylesheet" type="text/css" href="CSS/StyleM.css" media="handheld, screen and (max-width:620px), only screen and (max-device-width:620px)"/>
 		<link type="text/css" rel="stylesheet" href="CSS/StyleP.css" media="print"/>
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
