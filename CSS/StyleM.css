@@ -485,14 +485,13 @@ em.vid {
 .backtotop {
 	display: none;
 }
-em.fa-arrow-up {
+em.fa-arrow-circle-up {
 	display: block;
 	float: right;
 	position: fixed;
 	bottom: 2.5em;
 	right: 1em;
 	font-size: 3em;
-	border: 3px solid #ffffff;
 	background-color: #333333;
 	color:#ffffff;
 }
