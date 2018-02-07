@@ -103,23 +103,13 @@ em.fa-caret-down { /*metto padding a freccetta*/
     z-index: 1;
 	text-align: center;
 	margin-top: 3em;
+	padding-bottom: .75em;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* semmai volessi aggiungerlo
-.dropdown-row {
-	margin: 0;
-	padding: 0 0 0 0;
-}
-.dropdown-row:after {
-	content: "";
-	display: table;
-	clear:both;
-}
-*/
 /*creo le colonne che riempiranno tutta la pagina per videogiochi*/
 .column {
     float: left;
@@ -178,7 +168,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .polaroidText {
 	text-align: center;
-	max-width: 90%;
+	max-width: 100%;
 	margin-top: 5%;
 	font-weight: bold;
 }
@@ -246,11 +236,11 @@ em.fa-caret-down { /*metto padding a freccetta*/
 }
 
 .slides-content {
-	max-width: 100%;
+	width: 90%;
 	position: relative;
 	padding-top: 5%;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	padding-bottom: 5%;
 	overflow: hidden;
 }
@@ -763,7 +753,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	bottom: 0;
 }
 /*****************************************DELETE COSE***************************************************/
-.deletebtn {
+.deletebtn, .commentibtn {
 	margin-top: 1em;
 	width: auto;
     background-color: #333333;
