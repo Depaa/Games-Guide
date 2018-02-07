@@ -11,7 +11,7 @@
 	
 	$correntePAG=0; //pagina corrente
 	
-	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero più grande //limitePAG-1 perchè -1 è la notizia in primo piano
+	$totPAG=ceil(($limitePAG-1)/$maxPAG); //arrotondo all'intero piÃ¹ grande //limitePAG-1 perchÃ¨ -1 Ã¨ la notizia in primo piano
 	//if($totPAG<1)
 		//$totPAG=1;
 	
@@ -52,7 +52,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 	<head>
 		<title>Games'Guide: Notizie</title>
-		<meta name="description" content="Scopri tutte le notizie sui fatti più recenti del mondo videoludico">
+		<meta name="description" content="Scopri tutte le notizie sui fatti piÃ¹ recenti del mondo videoludico">
 		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
 		<meta name="keywords" content="Videogiochi, Notizie">
 		<meta name="robots" content="index, follow">
@@ -245,8 +245,9 @@
 		}
 ?>
 		</div>
-		<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>
-		<em class="fa fa-arrow-circle-up" onclick="gotopFunctionM()"></em>
+		<div id="backtotop" class="backtotop">
+			<button onclick="gotopFunction()"><em class="fa fa-arrow-circle-up"></em></button>
+		</div>
 	</div>
 		
 <?php 
