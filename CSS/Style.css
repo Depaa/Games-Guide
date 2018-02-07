@@ -40,66 +40,50 @@ a.skip:focus {
     overflow: hidden;
     background-color: #333333;
 }
-@media screen and (min-width:621px) {
+@media screen and (min-width:651px) {
 	.sandwich {
 		display: none;
 	}
 }
 /*********************************LOGO*********************************/
-.dropdownlogo {
+.dropbtnlogo {
     float: left;
-    /*overflow: hidden;*/
-	margin-left:10%;
+	margin-left: 10%;
 }
 
-@media screen and (max-width: 860px) {
-	.dropdownlogo {
-		margin-left:1%;
+@media screen and (max-width: 880px) {
+	.dropbtnlogo {
+		margin-left:0%;
 	}
 }
 
-.dropdownlogo .dropbtnlogo {
-    font-size: 120%;
-	border: none;
-    outline: none;
-    color: #ffffff;
-    padding: .75em .75em .75em 0em;
-	font-weight: bold;
-	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
-	max-width: 100%;
-}
-
-.dropbtnlogo a:link, .dropbtnlogo a:visited {
-	text-decoration: none;
-	color: #ffffff;
-}
-
-.navbar .dropdownlogo:hover .dropbtnlogo {
-	cursor: pointer;
-}
-
-/*********************************NOTIZIE, RECENSIONI, VIDEOGIOCHI*********************************/
 .dropdown {
     float: left;
-    /*overflow: hidden;*/
 }
-.dropdown .dropbtn {
-    font-size: 120%;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    padding: .75em .75em .75em .75em;
+
+.dropbtn, .dropbtnlogo {
+	float: left;
+	font-size: 120%;
+	color: #ffffff;
+	text-align: center;
+	padding: .75em .75em .75em .75em;
+	text-decoration: none;
 	font-weight: bold;
 	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
-	width: 100%;
+	border: none;
+    outline: none;
 }
 
-.navbar .dropdown:hover .dropbtn, .navbar .dropdownlogin:hover .dropbtnlogin {
-    background-color: #ffffff;
-	color: #000000;
+.dropbtnAG {
+	float: right;
 }
 
-@media screen and (max-width: 860px) {
+.dropbtn:hover, .dropbtnAG:hover, .dropbtnlogin:hover, .dropdown:hover .dropbtn { /*l'ultimo permette di tenere attivo l'hover*/
+	background-color: #ffffff;
+	color: #333333;
+}
+
+@media screen and (max-width: 880px) {
 	em.fa-caret-down {
 		display: none;
 	}
@@ -118,23 +102,25 @@ em.fa-caret-down { /*metto padding a freccetta*/
     box-shadow: 0em 0.5em 0.7em 0em rgba(0,0,0,0.2);
     z-index: 1;
 	text-align: center;
+	margin-top: 3em;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-/*
-.row {
+
+/* semmai volessi aggiungerlo
+.dropdown-row {
 	margin: 0;
 	padding: 0 0 0 0;
 }
-.row:after {
+.dropdown-row:after {
 	content: "";
 	display: table;
 	clear:both;
-}*/
-
-/*creo le colonne che riempiranno tutta la pagina*/
+}
+*/
+/*creo le colonne che riempiranno tutta la pagina per videogiochi*/
 .column {
     float: left;
     width: 20%; /*5 colonne*/
@@ -170,31 +156,30 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	padding-top: 12%;
 }
 
+/*creo le colonne che riempiranno tutta la pagina per notizie e recensioni*/
+.polaroid {
+    float: left;
+    width: 19%;
+    background-color: #ffffff;
+    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 100%*/
+	margin: 1.5% .5% .5% .5%;
+}
+
 .polaroid img {
 	display: block;
-	max-width: 90%;
-	margin: auto;
-	margin-top: 7.5%;
+	width: 100%;
     display: flex;
+	
 }
 
 .polaroid img:hover {
 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);	/*per fare il contorno alle immagini*/
 }
 
-.polaroid {
-    float: left;
-    width: 20%;
-    padding: 0em;
-    background-color: #ffffff;
-    height: 100%;	/*da controllare come sistemare la %*/ /*prima era 100%*/
-}
-
 .polaroidText {
 	text-align: center;
 	max-width: 90%;
 	margin-top: 5%;
-	margin-bottom: 5%;
 	font-weight: bold;
 }
 
@@ -203,38 +188,47 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	color: #333333;
 }
 
-.polaroidText:hover{
+.polaroidText:hover {
 	text-decoration: underline;
 }
 
 /*********************************LOGIN*********************************/
 .dropdownlogin {
-    float: right;
-    /*overflow: hidden;*/
+    overflow: hidden;
 	margin-right: 10%;
 }
 
-@media screen and (max-width: 860px) {
+.dropdownAGG {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 880px) {
 	.dropdownlogin {
 		margin-right: 0%;
 	}
 }
 
 .dropbtnlogin {
-    font-size: 120%;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    padding: .75em .75em .75em .75em;
+    float: right;
+	font-size: 122%;
+	color: #ffffff;
+	text-align: center;
+	padding: .75em .75em .75em .75em;
+	text-decoration: none;
 	font-weight: bold;
 	background-color: #333333; /*serve per mettere lo sfondo sennò cambia*/
-	width: 100%;
-	cursor: pointer;
 }
 
-.dropdownloginADMIN {
-	float: right;
+.dropbtnAG {	
+    float: right;
+	font-size: 120%;
+	color: #ffffff;
+	text-align: center;
+	padding: .75em .25em .75em .25em;
+	text-decoration: none;
+	font-weight: bold;
 }
+
 
 /*********************************CONTENUTO HOME PAGE*********************************/
 /* Slideshow container */
@@ -282,7 +276,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	font-size: 90%;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
 	.mySlides .textslide {
 		font-size: 60%;
 	}
@@ -359,7 +353,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	border-right: 3px solid #333333;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
 	.videogiochi {
 		margin-left: 1%;
 		margin-right: 0%;
@@ -474,7 +468,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	float: left;
 }
 
-@media screen and (min-width:621px){
+@media screen and (min-width:651px){
 	.immagine2 {
 		display: none;
 	}
@@ -489,7 +483,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .descrec a:hover {
 	color: #0000ff;
 }
-@media screen and (min-width:621px){
+@media screen and (min-width:651px){
 	.desc {
 		width: 80%;
 		float: left;
@@ -600,7 +594,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	margin-right: 10%;
 	border-right: 3px solid #333333;
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
 	.News {
 		margin-left: 1%;
 		margin-right: 0%;
@@ -642,12 +636,12 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .lastnewstext {
   width: 100%;
-  color: ##ffffff;
+  color: #ffffff;
   background-color: rgba(0,0,0,0.5);
   font-size: 120%;
   position: absolute;
   overflow: hidden;
-  bottom: 0;
+  bottom: 2px;
   margin: 0;
 }
 .lastnewstext h4 {
@@ -771,7 +765,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 /*****************************************DELETE COSE***************************************************/
 .deletebtn {
 	margin-top: 1em;
-	width: 30%;
+	width: auto;
     background-color: #333333;
     color: #ffffff;
     border: none;
@@ -807,19 +801,10 @@ em.fa-caret-down { /*metto padding a freccetta*/
   overflow: hidden;
 }
 
-@media screen and (min-width: 620px){
+@media screen and (min-width: 651px){
 	em.fa-trash {
 		display: none;
 	}
-  #trashvid{
-    display: none;
-  }
-  #trash {
-    display: none;
-  }
-  #trashln {
-    display: none;
-  }
 }
 /*****************************************AGGIUNGI COSE***************************************************/
 .localA {
