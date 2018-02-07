@@ -77,7 +77,9 @@
 					<span class="dot" onclick="slideCorrente(4)"></span> 
 				</div>
 			</div>
-		<button class="backtotop" id="backtotop" onclick="gotopFunction()">VAI SU</button>
+		<div id="backtotop" class="backtotop">
+			<button onclick="gotopFunction()"><em class="fa fa-arrow-circle-up"></em></button>
+		</div>
 		</div> 
 		
 		<!--script che permette di visualizzare l'effetto slide della home-->
