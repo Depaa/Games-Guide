@@ -106,7 +106,7 @@
 					<fieldset>
 						<p>Commento: </p>
 						<textarea name="commento" rows="10" cols="100"></textarea>
-						<button class="deletebtn" type="submit" name="comment"> Commenta </button>';
+						<button class="commentibtn" type="submit" name="comment"> Commenta </button>';
 					
 						if($error_message) { 	
 						echo'<div class="riga"> ';
