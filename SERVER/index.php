@@ -21,6 +21,7 @@
 		<meta name="robots" content="index, follow">
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		
 		<link type="text/css" rel="stylesheet" href="CSS/Style.css" media="handheld, screen"/>
 		<link rel="stylesheet" type="text/css" href="CSS/StyleM.css" media="handheld, screen and (max-width:651px), only screen and (max-device-width:651px)"/>
 		<link type="text/css" rel="stylesheet" href="CSS/StyleP.css" media="print"/>
@@ -28,8 +29,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		
 		<!--per jquery, host google-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script type="text/javascript" src="JS/goTop.js"></script>
 	</head>
 	
