@@ -882,6 +882,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 	width: 4em;
 	height: 4em;
 	border: none;
+	padding: 0;
 }
 
 em.fa-arrow-circle-up {
