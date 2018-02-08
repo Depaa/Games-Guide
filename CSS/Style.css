@@ -721,7 +721,6 @@ em.fa-caret-down { /*metto padding a freccetta*/
 .inscommenti {
   padding-top: 2%;
   padding-bottom: 2%;
-  border-bottom: 1px solid #333333;
 }
 
 .inscommenti textarea {
@@ -736,14 +735,14 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .commenti h5 {
   margin: 0;
+  padding-top: 2% 
   color: #333333;
+  border-top: 1px solid #333333;
 }
 
 .commenti p {
   margin: 0;
   padding-top: 1%;
-  padding-bottom: 2%;
-  border-bottom: 1px solid #333333;
 }
 
 .nonewsFound {
