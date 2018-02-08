@@ -89,7 +89,7 @@
 		
 		<div class="pagecontent">
 			<div class="registrazione-contenuto">
-				<form name="registerForm" method="post">
+				<form method="post" action="">
 					<fieldset>
 						<?php if($success_message) { ?>
 						<div class="riga">
@@ -101,7 +101,7 @@
 						else {?>
 						<?php if($error_message) { ?>	
 						<div class="riga">
-							<h4 id="contenutoPrincipale"><?php if(isset($error_message)) echo $error_message; ?></h4>
+							<h4><?php if(isset($error_message)) echo $error_message; ?></h4>
 						</div>
 						<?php } ?>
 						<div class="riga">
