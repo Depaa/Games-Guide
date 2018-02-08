@@ -55,10 +55,10 @@
 	<head>
 		<title>Games'Guide: <?php echo $recensioneA['NomeGioco'];?></title>
 		
-		<meta name="description" content="Scopri la nostra recensione del gioco <?php echo $recensioneA['NomeGioco'];?>">
-		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
-		<meta name="keywords" content="Videogiochi, Recensioni">
-		<meta name="robots" content="index, follow">
+		<meta name="description" content="Scopri la nostra recensione del gioco <?php echo $recensioneA['NomeGioco'];?>"/>
+		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale"/>
+		<meta name="keywords" content="Videogiochi, Recensioni"/>
+		<meta name="robots" content="index, follow"/>
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link type="text/css" rel="stylesheet" href="CSS/Style.css" media="handheld, screen"/>
@@ -67,9 +67,9 @@
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="JS/goTop.js"></script>
 	</head>
 	
