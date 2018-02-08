@@ -13,11 +13,12 @@
 		$risultato_nick = $conn->query($controllo_nick) or die("Errore nella query MySQL: ".$conn->error);
 		$risultato_psw = $conn->query($controllo_psw) or die("Errore nella query MySQL: ".$conn->error);
 		
-		
-		if(empty($_POST["uname"]))
-			$error_message = "Tutti i campi sono richiesti";
-		else if(empty($_POST["psw"]))
-			$error_message = "Tutti i campi sono richiesti";
+		if ($risultato_nick->num_rows == 0) {
+			$error_message = 'Nickname non corretto';
+		}
+		else if ($risultato_psw->num_rows == 0) {
+			$error_message = 'Password non corretta';
+		}
 	}
 ?>
 
@@ -59,7 +60,9 @@
 				echo '<div class="formacc">';
 					echo '<form method="post" action="" name="loginForm" onsubmit="return checkFormL()">';
 						echo '<fieldset>';
-							echo '<p ><span lang="en">Username</span></p>';
+							if($error_message)
+								echo '<h5>'.$error_message.'</h5>';
+							echo '<p><span lang="en">Username</span></p>';
 							echo '<input type="text" name="uname"/>';
 							echo '<p><span lang="en">Password</span></p>';
 							echo '<input type="password" name="psw"/>';
