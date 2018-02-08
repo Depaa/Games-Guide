@@ -1,7 +1,7 @@
 <?php
 	echo '
 		<div class="footer">
-			<p>Seguiteci sui nostri <span lang="en"> social</span>: </p>
+			<p>Seguici sui nostri <span lang="en"> social</span>: </p>
 		
 			<a href="https://www.facebook.com/Games-Guide-1540711806043811/">
 			<img src="IMG/flogo.jpg" alt="sito facebook" class="logoF"> </a>
