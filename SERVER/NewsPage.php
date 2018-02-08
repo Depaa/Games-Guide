@@ -124,7 +124,7 @@
 			foreach($output2 as $campo => $row2) 
 			{
 				echo '<div class="commenti">';
-					echo '<h5>'.$row2['NickName']. ' | '.strftime("%d %B %Y", strtotime($row['Data'])).','.$row2 ['Ora'].'';
+					echo '<h5>'.$row2['NickName']. ' | '.strftime("%d %B %Y", strtotime($row2['Data'])).','.$row2['Ora'].'';
 					if (isset($_SESSION['userSession'])!="") {
 						if($rowA['Admin']==1) {
 							echo '<a href="deletethings.php?id='.$notizieA['ID'].'&idc='.$row2['IDc'].'&table=CommentiNotizie"><button class="deletebtnUL" type="submit" name="submitE">Elimina</button></a>';
