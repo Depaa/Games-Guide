@@ -370,11 +370,10 @@ ul.menu li:hover {
 .commenti h5 {
 	padding-left: 5%;
 	padding-top: 0.5em;
-	border-top: 1px solid #8c8c8c;
+	border-top: 1px solid #333333;
 }
 .commenti p {
 	padding-left: 5%;
-	padding-bottom: 1em;
 	border: none;
 
 }
