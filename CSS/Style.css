@@ -735,7 +735,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 
 .commenti h5 {
   margin: 0;
-  padding-top: 2% 
+  padding-top: 2%;
   color: #333333;
   border-top: 1px solid #333333;
 }
@@ -887,10 +887,10 @@ em.fa-caret-down { /*metto padding a freccetta*/
 em.fa-arrow-circle-up {
 	clear: both;
 	display: inline-block;
-	padding: 0.1em;
 	font-size: 4em;
 	color: #ffffff;
 	background-color: #333333;
+	padding: 0.1em;
 }
 /***************************************************** PAGING ******************************************************/
 .pagbtn {
@@ -962,6 +962,7 @@ fieldset {
 	margin-right: 10%;
 	border-right: 3px solid #333333;
 	border-left: 3px solid #333333;
+	height: 60em;
 }
 
 .titacc {
