@@ -887,6 +887,7 @@ em.fa-caret-down { /*metto padding a freccetta*/
 em.fa-arrow-circle-up {
 	clear: both;
 	display: inline-block;
+	padding: 0.1em;
 	font-size: 4em;
 	color: #ffffff;
 	background-color: #333333;
