@@ -54,12 +54,13 @@
 	<head>
 		<title>Games'Guide: <?php echo $notizieA['Titolo'];?></title>
 		
-		<meta name="description" content="Scopri le ultime novità riguardo a <?php echo $notizieA['Titolo'];?>">
-		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
-		<meta name="keywords" content="Videogiochi, Notizie">
-		<meta name="robots" content="index, follow">
+		<meta name="description" content="Scopri le ultime novità riguardo a <?php echo $notizieA['Titolo'];?>"/>
+		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale"/>
+		<meta name="keywords" content="Videogiochi, Notizie"/>
+		<meta name="robots" content="index, follow"/>
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		
 		<link type="text/css" rel="stylesheet" href="CSS/Style.css" media="handheld, screen"/>
 		<link rel="stylesheet" type="text/css" href="CSS/StyleM.css" media="handheld, screen and (max-width:651px), only screen and (max-device-width:651px)"/>
 		<link type="text/css" rel="stylesheet" href="CSS/StyleP.css" media="print"/>
@@ -68,8 +69,7 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="JS/goTop.js"></script>
 		
 	</head>
