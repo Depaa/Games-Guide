@@ -14,7 +14,7 @@
 	
 		echo '<div class="navbar">';
 			
-				echo '<a class="dropbtnlogo" href="index.php"><span lang="en"/>GAMES\' GUIDE</span></a>';
+				echo '<a class="dropbtnlogo" href="index.php"><span lang="en">GAMES\' GUIDE</span></a>';
 				echo '<div class="dropdown">';
 					echo '<a class="dropbtn" href="Notizie.php">Notizie<em class="fa fa-caret-down"></em></a>';
 					echo '<div class="dropdown-content">';
@@ -107,7 +107,7 @@
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';
-			if (!isset($_SESSION['userSession'])) {	/*se non c'è stato un accesso prima*/
+			if (!isset($_SESSION['userSession'])) {	/*se non c'Ã¨ stato un accesso prima*/
 				echo '<div class="dropdownlogin">';
 					echo '<a class="dropbtnlogin" href="accediM.php"><em class="fa fa-user-circle"></em></a>';
 				echo '</div>';
@@ -117,7 +117,7 @@
 				$rowA=$query->fetch_array();
 				echo '<div class="dropdownlogin">';
 				echo '<a class="dropbtnlogin" href="logout.php?logout">'.$rowA['Nickname'].' <em class="fa fa-sign-out"></em></a>';
-					if($rowA['Admin']==1) {//se è admin allora può fare cose
+					if($rowA['Admin']==1) {//se Ã¨ admin allora puÃ² fare cose
 						echo '<a class="dropbtnAG" href="Admin.php"><em class="fa fa-plus"></em></a>';
 					}
 				echo '</div>';
@@ -142,11 +142,11 @@
 						echo '<li><a href="accediM.php">ACCEDI</a><em class="fa fa-user-circle"></em></li>';
 						echo '<li><a href="registrazione.php">REGISTRATI</a><em class="fa fa-sign-in"></em></li>';
 					}
-					else { //utente collegato, se sei admin allora puoi aggiungere sennò puoi solo uscire
+					else { //utente collegato, se sei admin allora puoi aggiungere sennÃ² puoi solo uscire
 						$query = $conn->query("SELECT * FROM Account WHERE id=".$_SESSION['userSession']);
 						$rowB=$query->fetch_array();
 						echo '<li>'.$rowB['Nickname'].'<em class="fa fa-user-circle"></em></li>';
-						if($rowB['Admin']==1) { //se è admin allora può fare cose
+						if($rowB['Admin']==1) { //se Ã¨ admin allora puÃ² fare cose
 							echo '<li><a href="Admin.php">AGGIUNGI</a><em class="fa fa-plus"></em></li>';
 						}
 						echo '<li><a href="logout.php?logout">ESCI</a><em class="fa fa-sign-out"></em></li>';
