@@ -38,7 +38,6 @@
 		<?php 
 			include 'Menu.php';
 		?>
-		<script type="text/javascript" src="JS/menuDelay.js"></script>
 		
 		<div class="pagecontent">
 			<div class="slides-content">
