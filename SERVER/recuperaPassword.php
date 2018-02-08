@@ -41,10 +41,10 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
 	<head>
 		<title>Games'Guide: Recupera Password</title>
-		<meta name="description" content="Hai perso la password? recuperala inserendo le tue informazioni">
-		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale">
-		<meta name="keywords" content="Videogiochi, Password, Registrazione">
-		<meta name="robots" content="noindex, nofollow">
+		<meta name="description" content="Hai perso la password? recuperala inserendo le tue informazioni"/>
+		<meta name="author" content="Lucia Fenu, Francesco Battistella, Gianmarco Pettenuzzo, Matteo Depascale"/>
+		<meta name="keywords" content="Videogiochi, Password, Registrazione"/>
+		<meta name="robots" content="noindex, nofollow"/>
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<link type="text/css" rel="stylesheet" href="CSS/Style.css" media="handheld, screen"/>
@@ -53,9 +53,9 @@
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="JS/goTop.js"></script>
 	</head>
 	
@@ -80,7 +80,7 @@
 					
 					<?php if($error_message) { ?>	
 					<div class="riga">
-						<h4 id="contenutoPrincipale"><?php if(isset($error_message)) echo $error_message; ?></h4>
+						<h4><?php if(isset($error_message)) echo $error_message; ?></h4>
 					</div>
 					<?php } ?>
 					<div class="riga">
