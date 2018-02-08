@@ -940,6 +940,11 @@ em.fa-arrow-circle-up {
 .logoF {
 	width: 75px;
 	margin-right: 0.5em;
+	border-radius: 50%;
+}
+
+.footer a{
+	text-decoration: none;
 }
 
 /***********************************************/
