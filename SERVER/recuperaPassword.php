@@ -25,13 +25,13 @@
 		{
 			$controllo="SELECT Password FROM Account WHERE Nickname='".$_POST['unick']."'AND Nome='".$_POST['fname']."'AND Cognome='".$_POST['lname']."'AND DataNascita='".date("Y-m-d", strtotime($_POST['dnascita']))."'AND Email='".$_POST['email']."'";
 			$output = $conn->query($controllo) or die("Erroreeeeeeeee nella query MySQL: ".$conn->error);
-			if(!empty($output)) {
+			if($output->num_rows !=0) {
 				$Password= $output->fetch_array();
 				$error_message = "";
 				$success_message = "La tua password è: ".$Password['Password']."";	
 				unset($_POST);
 			} else {
-				$success_message = "I campi inseriti non sono corretti";	
+				$error_message = "I campi inseriti non sono corretti";	
 			}
 		}
 	}
